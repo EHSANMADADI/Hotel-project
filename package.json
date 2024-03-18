@@ -1,0 +1,39 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@mantine/hooks": "^7.0.2",
+    "@splidejs/react-splide": "^0.7.12",
+    "@vidstack/react": "^0.6.13",
+    "classnames": "^2.3.2",
+    "iconsax-react": "^0.0.8",
+    "next": "latest",
+    "next-themes": "^0.2.1",
+    "react": "latest",
+    "react-countup": "^6.4.2",
+    "react-dom": "latest",
+    "react-icons": "^5.0.1",
+    "react-multi-date-picker": "^4.3.1",
+    "react-paginate": "^8.2.0",
+    "react-visibility-sensor": "^5.1.1",
+    "vidstack": "^0.6.13"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest"
+  }
+}

@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --primary: #2095AE;
+    --secondary: secondary;
+}
+
+@layer components {
+    .container{
+        @apply mx-auto w-full max-w-6xl  px-4
+    }
+}
+
+@layer utilities {
+    .horizontal {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+}
+.bg-food{
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)),url('../public/images/bgres.jpeg') center no-repeat;
+ background-size:cover;
+
+}
+.card-over{
+    transition: left 0.5s;
+ 
+}
+.card:hover .card-over{
+    left: 0;
+}
