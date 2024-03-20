@@ -1,33 +1,28 @@
-"use client";
-import cls from "classnames";
-import useModal from "./use";
-import { useClickOutside } from "@mantine/hooks";
-import ModalImpl from "./types";
-const Modal = ({ children, open, setOpen, className = "" }: ModalImpl) => {
-  const { closeModal, showForm } = useModal({ open, setOpen });
-  const ref = useClickOutside(closeModal);
+import React from 'react'
+import { IoIosCloseCircle } from "react-icons/io";
+
+export default function Modal(props: { Open: Boolean, onClose: () => void, children: React.ReactNode }) {
+  console.log('props=' + props.Open);
+  if (!props.Open) return null;
+
+  const Handelclose = (e: any) => {
+    if (e.target.id === 'wrapper') props.onClose();
+
+  }
   return (
-    <>
-      <div
-        className={cls(
-          `fixed inset-0 z-[9999] bg-black/50 backdrop-blur-md transition-all duration-300 flex justify-center items-center`,
-          open ? "opacity-100 visible" : "opacity-0 invisible"
-        )}
-      >
-        <div
-          className={cls(
-            `absolute transition-all duration-300`,
-            showForm
-              ? "translate-y-0 opacity-100"
-              : "-translate-y-10 opacity-0",
-            className
-          )}
-          ref={ref}
-        >
-          {children}
+
+    <div className='fixed inset-0 flex justify-center items-center transition-colors bg-opacity-25 backdrop-blur-sm  border-black' id='wrapper' onClick={Handelclose}>
+      <div className='w-[600px] flex flex-col'>
+        <button className='text-black  place-self-end rounded   p-2 mb-1' onClick={() => props.onClose()}><IoIosCloseCircle className='text-2xl bg-white' /></button>
+        <div className='bg-slate-500 dark:bg-slate-600  rounded '>
+          <div className='w-full'>
+            {props.children}
+          </div>
+
         </div>
       </div>
-    </>
-  );
-};
-export default Modal;
+    </div>
+
+
+  )
+}

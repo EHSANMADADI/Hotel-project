@@ -17,7 +17,7 @@ import img14 from '@/public/images/kofte.jpeg';
 import { log } from 'console';
 import Modal from '@/components/shared/modal/index';
 import Auth from '@/components/user/pages/home/auth/index';
-
+import { useState } from 'react';
 
 
 export default function Product(props: { type: string; searchItem: any; }) {
@@ -27,16 +27,13 @@ export default function Product(props: { type: string; searchItem: any; }) {
      { nameFood: 'آب گوشت', price: '200T', img: img7, Category: 'old-food' }, { nameFood: 'آش رشته', price: '200T', img: img8, Category: 'old-food' }, { nameFood: 'بال مرغ کبابی', price: '200T', img: img9, Category: 'old-food' },
      { nameFood: 'دولمه برگ', price: '200T', img: img10, Category: 'old-food' }, { nameFood: 'کباب فیله', price: '200T', img: img11, Category: 'old-food' }, { nameFood: 'فسنجان', price: '200T', img: img12, Category: 'old-food' },
      { nameFood: 'کباب کوبیده', price: '200T', img: img13, Category: 'old-food' }, { nameFood: ' کوفته تبریزی', price: '200T', img: img14, Category: 'old-food' },]
+     const [open, setOpen] = useState(true);
 
-     const sefaresh = (name: string) => {
-          // <Modal children={<div>salam</div>} open={true} setOpen={} className=""   />
-          console.log(name);
-          return (<Auth />)
-     }
+
 
      ///search-user
      if (props.searchItem) {
-          
+
           return (
                <>
                     {
@@ -46,12 +43,17 @@ export default function Product(props: { type: string; searchItem: any; }) {
                                         <div className=" hover:left-0 h-full w-full flex  justify-center items-center flex-col absolute  -left-full top-0 text-white bg-blue-500 opacity-60 z-20 dark:bg-zinc-700  card-over">
                                              <h1 className="text-4xl font-bold card-overlay-heading">{p.nameFood}</h1>
                                              <p className="text-xl font-bold m-5 border-b-2 card-overlay-paragraph">{p.price} </p>
-                                             <button className="border border-white rounded-lg bg-transparent  p-5 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => sefaresh(p.nameFood)}>سفارش</button>
+                                             <button className="border border-white rounded-lg bg-transparent  p-5 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => setOpen(true)}>سفارش</button>
+                                             <Modal Open={open} onClose={() => setOpen(false)} >
+                                                  <div>
+                                                       {p.nameFood}
+                                                  </div>
+                                             </Modal>
                                         </div>
                                         <Image className='w-full h-full rounded-md dark:opacity-40  object-cover' src={p.img} alt={'Food photo'} />
                                    </div>
-                              ):(<div></div>)
-                             
+                              ) : (<div></div>)
+
                          ))
                     }
                </>
@@ -72,7 +74,12 @@ export default function Product(props: { type: string; searchItem: any; }) {
                                              <div className=" hover:left-0 h-full w-full flex  justify-center items-center flex-col absolute  -left-full top-0 text-white bg-blue-500 opacity-60 z-20 dark:bg-zinc-700  card-over">
                                                   <h1 className="text-4xl font-bold card-overlay-heading">{p.nameFood}</h1>
                                                   <p className="text-xl font-bold m-5 border-b-2 card-overlay-paragraph">{p.price} </p>
-                                                  <button className="border border-white rounded-lg bg-transparent  p-5 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => sefaresh(p.nameFood)}>سفارش</button>
+                                                  <button className="border border-white rounded-lg bg-transparent  p-5 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => setOpen(true)}>سفارش</button>
+                                                  <Modal Open={open} onClose={() => setOpen(false)} >
+                                                       <div>
+                                                            {p.nameFood}
+                                                       </div>
+                                                  </Modal>
                                              </div>
                                              <Image className='w-full h-full rounded-md dark:opacity-40  object-cover' src={p.img} alt={'Food photo'} />
                                         </div>
@@ -94,7 +101,12 @@ export default function Product(props: { type: string; searchItem: any; }) {
                                              <div className=" hover:left-0 h-full w-full flex  justify-center items-center flex-col absolute  -left-full top-0 text-white bg-blue-500 opacity-60 z-20 dark:bg-zinc-700  card-over">
                                                   <h1 className="text-4xl font-bold card-overlay-heading">{p.nameFood}</h1>
                                                   <p className="text-xl font-bold m-5 border-b-2 card-overlay-paragraph">{p.price} </p>
-                                                  <button className="border border-white rounded-lg bg-transparent  p-5 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => sefaresh(p.nameFood)} >سفارش</button>
+                                                  <button className="border border-white rounded-lg bg-transparent  p-5 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => setOpen(true)}>سفارش</button>
+                                                  <Modal Open={open} onClose={() => setOpen(false)} >
+                                                       <div>
+                                                            {p.nameFood}
+                                                       </div>
+                                                  </Modal>
                                              </div>
                                              <Image className='w-full h-full rounded-md dark:opacity-40  object-cover' src={p.img} alt={'Food photo'} />
                                         </div>
@@ -118,7 +130,13 @@ export default function Product(props: { type: string; searchItem: any; }) {
                                    <div className=" hover:left-0 h-full w-full flex  justify-center items-center flex-col absolute  -left-full top-0 text-white bg-blue-500 opacity-60 z-20 dark:bg-zinc-700  card-over">
                                         <h1 className="text-4xl font-bold card-overlay-heading">{p.nameFood}</h1>
                                         <p className="text-xl font-bold m-5 border-b-2 card-overlay-paragraph">{p.price} </p>
-                                        <button type="button" className="border border-white rounded-lg bg-transparent  p-5 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => sefaresh(p.nameFood)}>سفارش</button>
+                                        <button className="border border-white rounded-lg bg-transparent  p-5 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => setOpen(true)}>سفارش</button>
+                                        <Modal Open={open} onClose={() => setOpen(false)} >
+                                             <div>
+                                                  {p.nameFood}
+                                                 
+                                             </div>
+                                        </Modal>
                                    </div>
                                    <Image className='w-full h-full rounded-md dark:opacity-40  object-cover' src={p.img} alt={'Food photo'} />
                               </div>
