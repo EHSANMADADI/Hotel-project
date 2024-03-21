@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Product from './prodoct';
 import { LiaSearchSolid } from "react-icons/lia";
 import { useRef } from 'react';
+import Testimonials from '../home/testmonials/index'
 
 
 
@@ -33,6 +34,8 @@ const Resturant = () => {
                     <div className='flex border rounded-md border-gray-400 p-5 items-center w-11/12 mx-auto justify-between md:mt-20 md:w-full'>
                          <div>
                               <button className="rounded-3xl  text-2xl p-5 font-black m-5 bg-transparent border border-blue-400 hover:text-blue-500 hover:bg-white transition-all text-white">کترینگ میلاد</button>
+                              <button className="rounded-3xl  text-2xl p-5 font-black m-5 bg-transparent border border-blue-400 hover:text-blue-500 hover:bg-white transition-all text-white"> رزرو میز</button>
+
                          </div>
 
                          <form  onSubmit={(e) => { e.preventDefault() }} className='flex items-center'>
@@ -57,8 +60,9 @@ const Resturant = () => {
                <div className='flex flex-wrap'>
                     <Product type={typefood} searchItem={searchItem} />
                </div>
-
-
+               <div className='mt-8'>
+                    <Testimonials id={1}/>
+               </div>
 
           </div>
 

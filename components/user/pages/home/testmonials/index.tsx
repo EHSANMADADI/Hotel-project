@@ -8,7 +8,7 @@ import { SplideSlide } from "@splidejs/react-splide";
 import Slider from "@/components/shared/slider";
 import { useViewportSize } from "@mantine/hooks";
 
-const Testimonials = () => {
+const Testimonials = (props: { id?: number }) => {
   const { width } = useViewportSize();
 
   return (
@@ -97,30 +97,37 @@ const Testimonials = () => {
             </div>
           </div>
         </div>
-        <div className="absolute inset-0 bg-blue-950 opacity-60 z-10"></div>
-        <Image
+        <div className="absolute inset-0 bg-slate-950  opacity-60 z-10"></div>
+        {props.id ? (<Image
+          src={"/images/res1.jpg"}
+          alt="landing"
+          className="fixed top-0 left-0 w-full h-full object-cover object-center"
+          width={1500}
+          height={800}
+        />) : (<Image
           src={"/images/15.jpg"}
           alt="landing"
           className="fixed top-0 left-0 w-full h-full object-cover object-center"
           width={1500}
           height={800}
-        />
+        />)}
+
       </div>
-      <div className="w-full  py-4">
-        <div className="container flex justify-start items-center relative">
+      <div className="w-full  py-4 rounded-2xl">
+        <div className="container flex justify-start items-center relative rounded-2xl">
           <div
-            className="w-[450px] bg-white flex justify-center items-start flex-col p-[40px]
+            className="w-[450px] dark:bg-slate-900 bg-white flex justify-center items-start flex-col p-[20px] rounded-2xl
             pb-[80px] absolute left-5 bottom-6 lg:hidden
           "
           >
             <span className="text-primary font-light text-sm mb-2 mt-8">
               لورم ایپسوم متن ساختگی با تولید سادگی
             </span>
-            <h2 className="font-extrabold text-3xl md:text-4xl mb-3 leading-[1.4] text-blue-950">
+            <h2 className="font-extrabold text-3xl md:text-4xl mb-3 leading-[1.4] text-blue-950 dark:text-blue-300">
               دیدگاه های مشتریان
             </h2>
             <span className="w-full inline-block h-[1px] border-b-[1px] border-zinc-200 mb-5"></span>
-            <div className="w-full">
+            <div className="w-full ">
               <Slider
                 options={{
                   gap: "1rem",
@@ -135,7 +142,7 @@ const Testimonials = () => {
                   .fill("")
                   .map((_, i) => (
                     <SplideSlide key={i} className="cursor-grab">
-                      <div className="w-full felx justify-center items-center flex-col">
+                      <div className="w-full felx justify-center items-center flex-col ">
                         <div className="text-zinc-500 min-h-[150px]">
                           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
                           چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون
@@ -167,8 +174,8 @@ const Testimonials = () => {
               </Slider>
             </div>
           </div>
-          <div className="w-[calc(100%-450px)] lg:w-full">
-            <Slider
+          {/* <div className="w-[calc(100%-450px)] lg:w-full"> */}
+          {/* <Slider
               options={{
                 gap: "1rem",
                 perPage: width > 1023 ? 4 : 3,
@@ -177,8 +184,8 @@ const Testimonials = () => {
                 arrows: false,
               }}
               arrows={false}
-            >
-              {Array(8)
+            > */}
+          {/* {Array(8)
                 .fill("")
                 .map((_, i) => (
                   <SplideSlide key={i}>
@@ -195,11 +202,11 @@ const Testimonials = () => {
                       </div>
                     </div>
                   </SplideSlide>
-                ))}
-            </Slider>
-          </div>
+                ))} */}
+          {/* </Slider> */}
         </div>
       </div>
+      {/* </div> */}
     </>
   );
 };
