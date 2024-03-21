@@ -4,7 +4,8 @@ import { useState } from 'react';
 import Product from './prodoct';
 import { LiaSearchSolid } from "react-icons/lia";
 import { useRef } from 'react';
-import Testimonials from '../home/testmonials/index'
+import Testimonials from '../home/testmonials/index';
+import Footer from'@/components/user/pages/home/footer/index';
 
 
 
@@ -38,9 +39,9 @@ const Resturant = () => {
 
                          </div>
 
-                         <form  onSubmit={(e) => { e.preventDefault() }} className='flex items-center'>
+                         <form onSubmit={(e) => { e.preventDefault() }} className='flex items-center'>
                               <LiaSearchSolid className='font-bold  text-6xl text-white text-left' />
-                              <input onChange={handelSearchItem}   value={searchItem} type="text" className='border-none pb-5 pt-5   bg-transparent font-bold rounded-lg text-white text-right text-xl focus:outline-none ' placeholder='چی میل دارید؟' />
+                              <input onChange={handelSearchItem} value={searchItem} type="text" className='border-none pb-5 pt-5   bg-transparent font-bold rounded-lg text-white text-right text-xl focus:outline-none ' placeholder='چی میل دارید؟' />
                          </form>
 
                          <div className='flex'>
@@ -61,7 +62,10 @@ const Resturant = () => {
                     <Product type={typefood} searchItem={searchItem} />
                </div>
                <div className='mt-8'>
-                    <Testimonials id={1}/>
+                    <Testimonials id={1} />
+               </div>
+               <div>
+                    <Footer/>
                </div>
 
           </div>

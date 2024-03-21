@@ -1,12 +1,16 @@
 import PrimaryButton from "@/components/shared/buttons/primary";
 import { Instagram, Location } from "iconsax-react";
+import { FaTelegram } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { FaWhatsapp } from "react-icons/fa";
+
 import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
   return (
     <>
-      <div className="w-full bg-blue-950 py-10 pb-0">
+      <div className="w-full bg-blue-950 dark:bg-slate-900 py-10 pb-0">
         <div className="container flex justify-center items-start flex-col">
           <div className="w-full flex justify-center items-center border-[1px] p-5 md:p-0 border-white/10 md:flex-col">
             <Link
@@ -90,7 +94,7 @@ const Footer = () => {
                   className="min-w-[40px] aspect-square bg-primary flex justify-center 
                   items-center rounded-full ml-2.5 mb-2.5 last:ml-0 hover:bg-cyan-700 transition-all"
                 >
-                  <Instagram className="text-white" size="20" />
+                  <FaWhatsapp className="text-white" size="20" />
                 </Link>
                 <Link
                   href={"/"}
@@ -98,7 +102,7 @@ const Footer = () => {
                   className="min-w-[40px] aspect-square bg-primary flex justify-center 
                   items-center rounded-full ml-2.5 mb-2.5 last:ml-0 hover:bg-cyan-700 transition-all"
                 >
-                  <Instagram className="text-white" size="20" />
+                  <MdEmail  className="text-white" size="20" />
                 </Link>
                 <Link
                   href={"/"}
@@ -106,7 +110,7 @@ const Footer = () => {
                   className="min-w-[40px] aspect-square bg-primary flex justify-center 
                   items-center rounded-full ml-2.5 mb-2.5 last:ml-0 hover:bg-cyan-700 transition-all"
                 >
-                  <Instagram className="text-white" size="20" />
+                  <FaTelegram  className="text-white" size="20" />
                 </Link>
               </div>
             </div>
@@ -122,13 +126,13 @@ const Footer = () => {
                   className="text-zinc-300 hover:text-primary mb-2 last:mb-0"
                   href={"/"}
                 >
-                  درباره ما
+                  رزرو اتاق
                 </Link>
                 <Link
                   className="text-zinc-300 hover:text-primary mb-2 last:mb-0"
                   href={"/"}
                 >
-                  درباره ما
+                  روزرو میز
                 </Link>
                 <Link
                   className="text-zinc-300 hover:text-primary mb-2 last:mb-0"
