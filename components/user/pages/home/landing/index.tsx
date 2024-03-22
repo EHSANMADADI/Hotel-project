@@ -5,7 +5,7 @@ import Menu from "./menu";
 const Landing = () => {
   return (
     <>
-    <Menu/>
+      <Menu />
       <div className="w-full h-screen relative z-50">
         <Cover />
         <Details />

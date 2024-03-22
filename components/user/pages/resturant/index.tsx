@@ -6,19 +6,22 @@ import { LiaSearchSolid } from "react-icons/lia";
 import { useRef } from 'react';
 import Testimonials from '../home/testmonials/index';
 import Footer from'@/components/user/pages/home/footer/index';
+import Link from 'next/link';
+
 
 
 
 const Resturant = () => {
      const [typefood, setTypeFood] = useState('');
      const [searchItem, setSerchItem] = useState('');
+     
      function handelSearchItem(e: any) {
           const newsearch = e.target.value;
           setSerchItem(newsearch);
           console.log(newsearch);
 
      }
-     var search = ''
+
 
 
      return (<>
@@ -34,7 +37,7 @@ const Resturant = () => {
 
                     <div className='flex border rounded-md border-gray-400 p-5 items-center w-11/12 mx-auto justify-between md:mt-20 md:w-full'>
                          <div>
-                              <button className="rounded-3xl  text-2xl p-5 font-black m-5 bg-transparent border border-blue-400 hover:text-blue-500 hover:bg-white transition-all text-white">کترینگ میلاد</button>
+                              <Link href='./resturant/cetring' className="rounded-3xl  text-2xl p-5 font-black m-5 bg-transparent border border-blue-400 hover:text-blue-500 hover:bg-white transition-all text-white">کترینگ میلاد</Link>
                               <button className="rounded-3xl  text-2xl p-5 font-black m-5 bg-transparent border border-blue-400 hover:text-blue-500 hover:bg-white transition-all text-white"> رزرو میز</button>
 
                          </div>
