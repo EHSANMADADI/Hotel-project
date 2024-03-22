@@ -15,12 +15,34 @@ export default function Cetring() {
           width={1500}
           height={1500}
         />
+        <div
+          className="absolute inset-0 z-10 flex mx-auto
+        justify-center items-center flex-col container">
+
+          <h1
+            className="text-8xl text-white font-black
+         text-center leading-relaxed max-w-4xl w-full md:text-5xl md:leading-[1.3]  "
+          >
+            کیفیت را در کترینگ {" "}
+            <span
+              className="text-transparent  border-8 px-2"
+              style={{
+                WebkitTextStroke: "2px #fff",
+              }}
+            >
+              میلاد
+            </span>{" "}
+            تجربه  کنید
+          </h1>
+        </div>
       </div>
 
+      <div className='my-80'>slam</div>
 
 
 
-      <div className="h-4/5 m-44">slam</div>
+
+
     </>
 
   )

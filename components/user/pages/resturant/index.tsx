@@ -38,7 +38,7 @@ const Resturant = () => {
                     <div className='flex border rounded-md border-gray-400 p-5 items-center w-11/12 mx-auto justify-between md:mt-20 md:w-full'>
                          <div>
                               <Link href='./resturant/cetring' className="rounded-3xl  text-2xl p-5 font-black m-5 bg-transparent border border-blue-400 hover:text-blue-500 hover:bg-white transition-all text-white">کترینگ میلاد</Link>
-                              <button className="rounded-3xl  text-2xl p-5 font-black m-5 bg-transparent border border-blue-400 hover:text-blue-500 hover:bg-white transition-all text-white"> رزرو میز</button>
+                              <Link href='./resturant/rezervTable' className="rounded-3xl  text-2xl p-5 font-black m-5 bg-transparent border border-blue-400 hover:text-blue-500 hover:bg-white transition-all text-white"> رزرو میز</Link>
 
                          </div>
 
