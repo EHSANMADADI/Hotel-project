@@ -7,7 +7,7 @@ import Footer from '@/components/user/pages/home/footer/index';
 
 export default function RezervTable() {
   return (
-    <div className="bg-white" >
+    <div className="bg-white text-black dark:bg-slate-900  dark:text-yellow-100" >
       <div dir='ltr' className="p-5 m-2">
         <Link className='text-blue-500 text-6xl md:text-3xl bg-white hover:text-blue-800' href='/resturant'> <IoArrowBackCircleSharp /> </Link>
       </div>
