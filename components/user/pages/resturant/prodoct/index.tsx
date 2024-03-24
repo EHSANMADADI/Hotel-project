@@ -47,7 +47,7 @@ export default function Product(props: { type: string; searchItem: any; }) {
                     {
                          prodocts.map((p, index) => (
                               (props.searchItem == p.nameFood) ? (
-                                   <div key={index} className="w-1/3 h-[30vw] relative overflow-hidden card p-2">
+                                   <div key={index} className="w-1/3 h-[30vw] relative overflow-hidden card p-2 sm:w-full">
                                         <div className=" hover:left-0 h-full w-full flex  justify-center items-center flex-col absolute  -left-full top-0 text-white bg-blue-500 opacity-60 z-20 dark:bg-zinc-700  card-over">
                                              <h1 className="text-4xl font-bold card-overlay-heading">{p.nameFood}</h1>
                                              <p className="text-xl font-bold m-5 border-b-2 card-overlay-paragraph">{p.price} </p>
