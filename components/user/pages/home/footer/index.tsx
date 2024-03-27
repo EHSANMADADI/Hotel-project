@@ -130,9 +130,9 @@ const Footer = () => {
                 </Link>
                 <Link
                   className="text-zinc-300 hover:text-primary mb-2 last:mb-0"
-                  href={"/"}
+                  href={"/resturant/rezervTable"}
                 >
-                  روزرو میز
+                   روزرو میز در رستوران
                 </Link>
                 <Link
                   className="text-zinc-300 hover:text-primary mb-2 last:mb-0"
@@ -152,6 +152,7 @@ const Footer = () => {
               </p>
               <div className="mt-5 w-full relative">
                 <input
+                type="email"
                   placeholder="ایمیل خود را وارد کنید"
                   className="w-full p-4 pl-[120px] text-zinc-500 bg-white outline-none md:py-0 md:h-[40px] md:leading-[40px] md:pl-4"
                 />

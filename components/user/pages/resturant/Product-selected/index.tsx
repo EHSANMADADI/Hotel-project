@@ -7,7 +7,10 @@ type ImageCardProps={
     
  }
 const Selected = ({imageSrc,name,price}:ImageCardProps) => {
+    console.log(imageSrc,name,price);
+    
      return (
+        
        <div className='w-52 h-fit group relative overflow-hidden rounded-md  outline outline-2 outline-Theme-cream'>
            <Image 
                src={imageSrc} 
@@ -17,7 +20,7 @@ const Selected = ({imageSrc,name,price}:ImageCardProps) => {
            />
            <div className='absolute w-full h-full bg-Theme-black/40 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300'>
                <div className='text-white text-2xl relative top-20 p-2'>
-                   <h1>{name}</h1>
+                   <h1 className='text-white text-lg'>{name}</h1>
                    <p>{price}</p>
                   
                </div>
