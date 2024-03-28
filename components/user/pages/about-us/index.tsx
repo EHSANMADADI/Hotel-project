@@ -1,8 +1,10 @@
+'use client'
 import Image from "next/image";
 import AboutUsBanner from "../home/about-us";
 import PrimaryButton from "@/components/shared/buttons/primary";
 import TextInput from "@/components/shared/input/text-input";
 import PagesBanner from "@/components/shared/pages-banner";
+import Swal from 'sweetalert2';
 
 const AboutUs = () => {
   return (
@@ -40,12 +42,16 @@ const AboutUs = () => {
           </div>
           <div className="w-full flex justify-end items-center mt-5 sm:mt-0">
             <div className="w-[200px]">
-              <PrimaryButton className="py-3">ارسال</PrimaryButton>
-            </div>
+              <PrimaryButton onClick={() => {
+                Swal.fire({
+                  title: "با موفقیت انجام شد",
+                  icon: "success",
+                }) }} className="py-3">ارسال</PrimaryButton>
           </div>
         </div>
       </div>
     </div>
+    </div >
   );
 };
 export default AboutUs;

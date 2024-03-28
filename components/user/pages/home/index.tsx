@@ -10,7 +10,7 @@ import Stats from "./stats";
 import Videos from "./videos";
 import Testmonials from './testmonials'
 import Footer from "./footer";
-
+import ChatOnline from "@/components/shared/chatOnline/index";
 const Home = () => {
   return (
     <>
@@ -27,6 +27,7 @@ const Home = () => {
       <Videos />
       {/* <Auth /> */}
       <Footer />
+      <ChatOnline/>
 
     </>
   );

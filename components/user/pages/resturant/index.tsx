@@ -7,6 +7,7 @@ import { useRef } from 'react';
 import Testimonials from '../home/testmonials/index';
 import Footer from '@/components/user/pages/home/footer/index';
 import Link from 'next/link';
+import ChatOnline from '@/components/shared/chatOnline';
 
 
 
@@ -67,11 +68,12 @@ const Resturant = () => {
                <div className='mt-8'>
                     <Testimonials id={1} />
                </div>
-               <div>
+               <div className='bottom-0'>
                     <Footer />
                </div>
 
           </div>
+          <ChatOnline/>
 
 
 
