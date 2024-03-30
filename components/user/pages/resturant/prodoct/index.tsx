@@ -21,6 +21,7 @@ import Modal from '@/components/shared/modal/index';
 import Auth from '@/components/user/pages/home/auth/index';
 import { useState } from 'react';
 import Selected from '../Product-selected';
+import { IoMdReturnRight } from 'react-icons/io';
 
 
 
@@ -33,17 +34,22 @@ export default function Product(props: { type: string; searchItem: any; }) {
      { nameFood: 'دولمه برگ', price: '200T', img: img10, Category: 'old-food' }, { nameFood: 'کباب فیله', price: '200T', img: img11, Category: 'old-food' }, { nameFood: 'فسنجان', price: '200T', img: img12, Category: 'old-food' },
      { nameFood: 'کباب کوبیده', price: '200T', img: img13, Category: 'old-food' }, { nameFood: ' کوفته تبریزی', price: '200T', img: img14, Category: 'old-food' }, { nameFood: 'قورمه سبزی', price: '200T', img: img15, Category: 'old-food' }]
      const [open, setOpen] = useState(false);
-     var nameorder: string;
-     var priseItem: string;
-     var imageItem:StaticImageData;
+     const [nameorder,setNameOrder] = useState('');
+     const [priseItem,setPriseItem] = useState('');
+     const[imageItem,setImageItem] = useState('');
+     // var nameorder: string;
+     // var priseItem: string;
+     // var imageItem:StaticImageData;
      function handelsefaresh(name: string, prise : string, img: StaticImageData) {
           setOpen(true);
-          console.log(imageItem+'//////////////////////////');
-          
-          nameorder = name;
-          priseItem=prise;
-          imageItem = img;
-
+          // console.log(imageItem+'//////////////////////////');
+          setNameOrder(name);
+          setPriseItem(prise);
+          setImageItem(img.src);
+     //     nameorder=name;
+     //     priseItem=prise;
+     //     imageItem=img;
+        
      }
 
 

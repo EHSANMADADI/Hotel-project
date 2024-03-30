@@ -25,6 +25,7 @@ const Resturant = () => {
 
 
 
+
      return (<>
           <div className=" bg-food absolute inset-0 sm:w-full">
 
@@ -64,6 +65,7 @@ const Resturant = () => {
           <div className='mt-[48rem] mb-5 dark:bg-black'>
                <div className='flex flex-wrap'>
                     <Product type={typefood} searchItem={searchItem} />
+                
                </div>
                <div className='mt-8'>
                     <Testimonials id={1} />

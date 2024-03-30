@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Provider from '@/components/Provider';
 
+
 import { Inter } from "next/font/google";
 import RootContainer from "@/components/shared/containers/root";
 const inter = Inter({
