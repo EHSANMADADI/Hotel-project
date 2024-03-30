@@ -34,22 +34,22 @@ export default function Product(props: { type: string; searchItem: any; }) {
      { nameFood: 'دولمه برگ', price: '200T', img: img10, Category: 'old-food' }, { nameFood: 'کباب فیله', price: '200T', img: img11, Category: 'old-food' }, { nameFood: 'فسنجان', price: '200T', img: img12, Category: 'old-food' },
      { nameFood: 'کباب کوبیده', price: '200T', img: img13, Category: 'old-food' }, { nameFood: ' کوفته تبریزی', price: '200T', img: img14, Category: 'old-food' }, { nameFood: 'قورمه سبزی', price: '200T', img: img15, Category: 'old-food' }]
      const [open, setOpen] = useState(false);
-     const [nameorder,setNameOrder] = useState('');
-     const [priseItem,setPriseItem] = useState('');
-     const[imageItem,setImageItem] = useState('');
+     const [nameorder, setNameOrder] = useState('');
+     const [priseItem, setPriseItem] = useState('');
+     const [imageItem, setImageItem] = useState('');
      // var nameorder: string;
      // var priseItem: string;
      // var imageItem:StaticImageData;
-     function handelsefaresh(name: string, prise : string, img: StaticImageData) {
+     function handelsefaresh(name: string, prise: string, img: StaticImageData) {
           setOpen(true);
           // console.log(imageItem+'//////////////////////////');
           setNameOrder(name);
           setPriseItem(prise);
           setImageItem(img.src);
-     //     nameorder=name;
-     //     priseItem=prise;
-     //     imageItem=img;
-        
+          //     nameorder=name;
+          //     priseItem=prise;
+          //     imageItem=img;
+
      }
 
 
@@ -63,14 +63,12 @@ export default function Product(props: { type: string; searchItem: any; }) {
                          prodocts.map((p, index) => (
                               (props.searchItem == p.nameFood) ? (
                                    <div key={index} className="w-1/3 h-[30vw] relative overflow-hidden card p-2 sm:w-full">
-                                        <div className=" hover:left-0 h-full w-full flex  justify-center items-center flex-col absolute  -left-full top-0 text-white bg-blue-500 opacity-60 z-20 dark:bg-zinc-700  card-over">
+                                        <div className=" hover:left-0 h-full w-full flex  justify-center items-center flex-col absolute  -left-full top-0 text-white bg-blue-500 opacity-60 z-10 dark:bg-zinc-700  card-over">
                                              <h1 className="text-4xl md:text-base font-bold card-overlay-heading">{p.nameFood}</h1>
                                              <p className="text-xl md:text-sm font-bold m-5 border-b-2 card-overlay-paragraph">{p.price} </p>
-                                             <button className="border border-white rounded-lg bg-transparent  p-5 md:p-2 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => handelsefaresh(p.nameFood,p.price,p.img)}>سفارش</button>
+                                             <button className="border border-white rounded-lg bg-transparent  p-5 md:p-2 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => handelsefaresh(p.nameFood, p.price, p.img)}>سفارش</button>
                                              <Modal Open={open} onClose={() => setOpen(false)} >
-                                                  <div>
-                                                       {p.nameFood}
-                                                  </div>
+                                                  <Selected imageSrc={imageItem} name={nameorder} price={priseItem} />
                                              </Modal>
 
                                         </div>
@@ -98,11 +96,9 @@ export default function Product(props: { type: string; searchItem: any; }) {
                                              <div className=" hover:left-0 h-full w-full flex  justify-center items-center flex-col absolute  -left-full top-0 text-white bg-blue-500 opacity-60 z-20 dark:bg-zinc-700  card-over">
                                                   <h1 className="text-4xl font-bold card-overlay-heading">{p.nameFood}</h1>
                                                   <p className="text-xl font-bold m-5 border-b-2 card-overlay-paragraph">{p.price} </p>
-                                                  <button className="border border-white rounded-lg bg-transparent  p-5 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => handelsefaresh(p.nameFood,p.price,p.img)}>سفارش</button>
+                                                  <button className="border border-white rounded-lg bg-transparent  p-5 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => handelsefaresh(p.nameFood, p.price, p.img)}>سفارش</button>
                                                   <Modal Open={open} onClose={() => setOpen(false)} >
-                                                       <div>
-                                                            {nameorder}
-                                                       </div>
+                                                       <Selected imageSrc={imageItem} name={nameorder} price={priseItem} />
                                                   </Modal>
 
                                              </div>
@@ -126,11 +122,9 @@ export default function Product(props: { type: string; searchItem: any; }) {
                                              <div className=" hover:left-0 h-full w-full flex  justify-center items-center flex-col absolute  -left-full top-0 text-white bg-blue-500 opacity-60 z-20 dark:bg-zinc-700  card-over">
                                                   <h1 className="text-4xl font-bold card-overlay-heading">{p.nameFood}</h1>
                                                   <p className="text-xl font-bold m-5 border-b-2 card-overlay-paragraph">{p.price} </p>
-                                                  <button className="border border-white rounded-lg bg-transparent  p-5 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => handelsefaresh(p.nameFood , p.price , p.img)}>سفارش</button>
+                                                  <button className="border border-white rounded-lg bg-transparent  p-5 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => handelsefaresh(p.nameFood, p.price, p.img)}>سفارش</button>
                                                   <Modal Open={open} onClose={() => setOpen(false)} >
-                                                       <div>
-                                                            {nameorder}
-                                                       </div>
+                                                       <Selected imageSrc={imageItem} name={nameorder} price={priseItem} />
                                                   </Modal>
 
                                              </div>
@@ -157,9 +151,9 @@ export default function Product(props: { type: string; searchItem: any; }) {
                                         <h1 className="text-4xl md:text-base font-bold card-overlay-heading">{p.nameFood}</h1>
                                         <p className="text-xl font-bold m-5 md:text-sm md:m-2 border-b-2 card-overlay-paragraph">{p.price} </p>
                                         <button className="border border-white rounded-lg bg-transparent md:p-2  p-5 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => handelsefaresh(p.nameFood, p.price, p.img)}>سفارش</button>
-                                        {/* /////////////phto onloaded???????????? */}
+
                                         <Modal Open={open} onClose={() => setOpen(false)} >
-                                        <Selected imageSrc={imageItem} name={nameorder} price={priseItem}/>
+                                             <Selected imageSrc={imageItem} name={nameorder} price={priseItem} />
                                         </Modal>
 
                                    </div>
