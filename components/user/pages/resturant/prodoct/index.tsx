@@ -113,7 +113,6 @@ export default function Product(props: { type: string; searchItem: any; }) {
 
           if (props.type === 'old-food') {
                return (
-
                     <>
                          {
                               prodocts.map((p) => (
