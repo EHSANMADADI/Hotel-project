@@ -27,6 +27,7 @@ const config: Config = {
       colors: {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
+        coffee:"#6F4E37"
       },
     },
   },
