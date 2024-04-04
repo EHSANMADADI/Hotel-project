@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: 'class',
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,7 +14,8 @@ const config: Config = {
       lg: { max: "1023px" },
       md: { max: "767px" },
       sm: { max: "639px" },
-      xs:{max :"593px" },
+      xs: { max: "593px" },
+      xxl: { max: "2135px" },
       "991px": { max: "991px" },
       "520px": { max: "520px" },
       "350px": { max: "350px" },
@@ -28,7 +29,7 @@ const config: Config = {
       colors: {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
-        coffee:"#6F4E37"
+        coffee: "#6F4E37",
       },
     },
   },
