@@ -9,13 +9,13 @@ const config: Config = {
   ],
   theme: {
     screens: {
+      xxl: { max: "2135px" },
       "2xl": { max: "1535px" },
       xl: { max: "1279px" },
       lg: { max: "1023px" },
       md: { max: "767px" },
       sm: { max: "639px" },
       xs: { max: "593px" },
-      xxl: { max: "2135px" },
       "991px": { max: "991px" },
       "520px": { max: "520px" },
       "350px": { max: "350px" },
