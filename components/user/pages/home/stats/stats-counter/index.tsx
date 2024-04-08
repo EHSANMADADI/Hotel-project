@@ -3,13 +3,13 @@ import CountUp from "react-countup";
 import StatsCounterImpl from "./types";
 import { memo } from "react";
 
-const StatsCounter = ({ count }: StatsCounterImpl) => {
+const StatsCounter = ({ count, classNames }: StatsCounterImpl) => {
   return (
     <>
-      <CountUp end={count} redraw={true}>
+      <CountUp end={count} redraw={false}>
         {({ countUpRef, start }) => (
           <VisibilitySensor onChange={start} delayedCall>
-            <span className="font-extrabold text-4xl my-1" ref={countUpRef} />
+            <span className={`font-bold text-4xl my-1 ${classNames} `} ref={countUpRef} />
           </VisibilitySensor>
         )}
       </CountUp>

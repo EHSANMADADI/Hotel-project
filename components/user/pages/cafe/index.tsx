@@ -1,12 +1,17 @@
+'use client'
 import React from 'react'
 import Header from './Header'
 import Menu from './Menu'
-
+import Stats from './stats-counter'
+import BgOverlay from './BgOverlay'
 const Cafe = () => {
   return (
     <>
-    <Header />
-    <Menu />
+      <Header />
+      <BgOverlay >
+        <Menu />
+        <Stats />
+      </BgOverlay>
     </>
   )
 }
