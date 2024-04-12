@@ -1,39 +1,41 @@
 "use client";
-import { Teacher } from "iconsax-react";
+import { Car, Personalcard, Teacher } from "iconsax-react";
 import Image from "next/image";
 import StatsCounter from "./stats-counter";
 import useStats from "./use";
 import cls from "classnames";
+import { BiBuilding, BiLayer } from "react-icons/bi";
+import { MdCardTravel, MdMeetingRoom, MdRoom, MdRoomPreferences } from "react-icons/md";
 
 const items = [
   {
-    title: "تور های شگفت انگیز",
-    icon: Teacher,
-    count: 600,
+    title: "تور ها",
+    icon: MdCardTravel,
+    count: 25,
     id: 1,
   },
   {
-    title: "تور های شگفت انگیز",
-    icon: Teacher,
-    count: 600,
+    title: "مهمان",
+    icon: Personalcard,
+    count: 6000,
     id: 2,
   },
   {
-    title: "تور های شگفت انگیز",
-    icon: Teacher,
-    count: 600,
+    title: "شعبه",
+    icon: BiBuilding,
+    count: 6,
     id: 3,
   },
   {
-    title: "تور های شگفت انگیز",
-    icon: Teacher,
-    count: 600,
+    title: "اتاق",
+    icon: MdMeetingRoom,
+    count: 80,
     id: 4,
   },
 ];
 
 const Stats = () => {
-  const { activeCardId, onMouseEnter, onMouseLeave } = useStats();///costom Hooks
+  const { activeCardId, onMouseEnter, onMouseLeave } = useStats();///custom Hooks
 
   return (
     <>
