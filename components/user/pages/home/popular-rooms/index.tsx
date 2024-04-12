@@ -1,22 +1,20 @@
 import PrimaryCard from "@/components/shared/cards/primary";
 import { Clock } from "iconsax-react";
 import cls from "classnames";
-
 const PopularRooms = () => {
+  const images =['/images/room/2.jpg','/images/room/1.jpg','/images/room/B1424625030.jpg','/images/room/lox.jpg','/images/room/images.jpg']
   return (
     <>
       <div className="w-full ">
         <div className="container flex justify-start items-start flex-col py-24 md:py-7">
           <span className="text-primary font-light text-sm mb-2">
-            لورم ایپسوم متن ساختگی با تولید سادگی
+            متنوع ترین اتاق ها 
           </span>
           <h2 className="text-blue-950 font-extrabold text-5xl md:text-4xl mb-6 leading-[1.4]">
-            اتاق های <span className="text-primary">لوکس</span>
+          انواع اتاق های <span className="text-primary">لوکس</span>
           </h2>
           <div className="w-full grid grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-6">
-            {Array(5)
-              .fill("")
-              .map((_, i) => (
+            {images.map((src, i) => (
                 <div
                   className={cls(
                     "lg:h-auto lg:aspect-square",
@@ -28,8 +26,8 @@ const PopularRooms = () => {
                   key={i}
                 >
                   <PrimaryCard
-                    image="/images/maldives1.jpg"
-                    label="2 میلیون تومان"
+                    image={src}
+                    label={i+2+' میلیون تومان '}
                     title="اتاق ویژه مهمان"
                   >
                     <div className="flex justify-start items-center text-white">
