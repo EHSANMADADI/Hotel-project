@@ -5,6 +5,9 @@ import cls from "classnames";
 import { HambergerMenu } from "iconsax-react";
 import useMenu from "./use";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import { CiShoppingCart } from "react-icons/ci";
+import { FaUserEdit } from "react-icons/fa";
+
 
 const links = [
   {
@@ -84,7 +87,9 @@ const Menu = () => {
               >
                 {name}
               </Link>
+
             ))}
+
 
 
           </div>
@@ -130,13 +135,25 @@ const Menu = () => {
             </div>
           </div>
         </div>
-        
-          
 
-        
-        <div className={cls(`p-5`,showStickyMenu?'text-black':'text-white')}>
-          <ThemeSwitcher/>
+        {/* ThemeSwitcher-icon */}
+        <div className={cls(`p-5`, showStickyMenu ? 'text-black' : 'text-white')}>
+          <ThemeSwitcher />
         </div>
+        {/* 
+        //////////////////////////////////////// */}
+        <div>
+          <span className={cls(`mt-8 font-bold flex`, showStickyMenu ? 'text-black' : 'text-white')}>0</span>
+        </div>
+        {/* /////shoping */}
+        <div className={cls(` text-5xl z-50 m-0 border w-12 border-dashed border-yellow-200  flex rounded-full justify-center`, showStickyMenu ? "text-black" : "text-white")}>
+         <Link href={'/sabad'}> <CiShoppingCart className='p-1 cursor-pointer' /> </Link> 
+        </div>
+
+        <div className={cls(` text-5xl mx-1 z-50 m-0 border w-12 border-none hover:text-blue-300 cursor-pointer  flex rounded-full justify-center`, showStickyMenu ? "text-black" : "text-white")}>
+         <Link href={'/auth'}><FaUserEdit className="p-1" /></Link> 
+        </div>
+
 
       </div>
 

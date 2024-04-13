@@ -12,6 +12,8 @@ import ChatOnline from '@/components/shared/chatOnline';
 
 
 
+
+
 const Resturant = () => {
      const [typefood, setTypeFood] = useState('');
      const [searchItem, setSerchItem] = useState('');
@@ -27,8 +29,10 @@ const Resturant = () => {
 
 
      return (<>
-          <div className=" bg-food absolute inset-0 sm:w-full">
 
+
+
+          <div className=" bg-food absolute inset-0 sm:w-full">
                <div className=" mt-24  dark:text-white flex items-center flex-col ">
                     <div className="mt-10 mb-5 md:mt-16">
                          <h1 className="text-8xl text-white font-black text-center leading-[1.5] max-w-4xl w-full md:text-5xl md:leading-[1.3]">به رستوران <span className="text-transparent  border-8 px-2"
@@ -41,7 +45,6 @@ const Resturant = () => {
                          <div className='lg:flex lg:text-center'>
                               <Link href='./resturant/cetring' className="rounded-3xl md:rounded-md  text-2xl lg:text-base sm:text-xs p-5 lg:p-2 font-black m-5 lg:m-2 sm:mx-0  sm:text-center bg-transparent border border-blue-400 hover:text-blue-500 hover:bg-white transition-all text-white">کترینگ میلاد</Link>
                               <Link href='./resturant/rezervTable' className="rounded-3xl md:rounded-md  text-2xl lg:text-base sm:text-xs p-5 lg:p-2 font-black m-5 lg:m-2 sm:mr-1 md:text-center bg-transparent border border-blue-400 hover:text-blue-500 hover:bg-white transition-all text-white"> رزرو میز</Link>
-
                          </div>
 
                          <form onSubmit={(e) => { e.preventDefault() }} className='flex items-center'>
@@ -65,7 +68,7 @@ const Resturant = () => {
           <div className='mt-[48rem] mb-5 dark:bg-black'>
                <div className='flex flex-wrap'>
                     <Product type={typefood} searchItem={searchItem} />
-                
+
                </div>
                <div className='mt-8'>
                     <Testimonials id={1} />
@@ -75,7 +78,7 @@ const Resturant = () => {
                </div>
 
           </div>
-          <ChatOnline/>
+          <ChatOnline />
 
 
 

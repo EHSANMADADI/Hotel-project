@@ -15,11 +15,12 @@ const Home = () => {
   return (
     <>
       <Landing />
-      <AboutUs />
+      
       <PopularRooms />
       {/* commentsUser */}
       <Testmonials />
       <Stats />
+      <AboutUs />
       <PopularFoods />
       <Banner />
       <InfoBox />

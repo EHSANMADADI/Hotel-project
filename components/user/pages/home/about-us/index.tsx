@@ -1,4 +1,8 @@
-import { ArrowRight2, CallCalling, DirectRight } from "iconsax-react";
+import { CallCalling } from "iconsax-react";
+import { FaInstagram } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa";
+
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -23,33 +27,29 @@ const AboutUs = () => {
         </div>
         <div className="w-1/2 flex justify-start items-start flex-col text-zinc-500 sm:w-full">
           <span className="text-primary font-light text-sm mb-2">
-            لورم ایپسوم متن ساختگی با تولید سادگی
+            طعم خوش آسایش و آرامش
           </span>
           <h2 className="text-blue-950 font-extrabold text-4xl mb-6 leading-[1.4]">
-            لورم ایپسوم متن <span className="text-primary">ساختگی</span> با
-            تولید سادگی نامفهوم از صنعت چاپ
+              افتخار هتل  <span className="text-primary">میلاد</span> 
+             خدمت رسانی در خور شان شماست
           </h2>
           <p>
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
-            ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
+           هتل میلاد از سال 1385 خورشیدی خدمت رسانی خود را با بالاترین استاندار ها برای مشتریان محترم خود آغاز کرد و تا به امروز این خدمت رسانی با بالاترین کیفیت ادامه دارد
             <br />
-            کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی
-            در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را
-            می طلبد
+            هتل میلاد  دارای امکانات و بخش های متنوعی از قبیل سالن کنسرت و استخر رستوران و کافی شاپ و ..میباشد که باعث شده این هتل در ایران در گروه بهترین هتل ها قرار بگیرد
           </p>
           <div className="flex justify-start items-start flex-col space-y-2 text-zinc-500 mt-7">
             <div className="flex justify-center items-center">
               <div className="bg-primary w-8 aspect-square rounded-full flex justify-center items-center">
-                <DirectRight size="16" className="text-white" />
+              <FaInstagram className="text-white text-2xl mx-2" />
               </div>
-              <span className="mr-3">لورم ایپسوم متن ساختگی</span>
+              <span className="mr-3">Instagram</span>
             </div>
             <div className="flex justify-center items-center">
               <div className="bg-primary w-8 aspect-square rounded-full flex justify-center items-center">
-                <DirectRight size="16" className="text-white" />
+              <FaTiktok className="text-white text-2xl mx-2" />
               </div>
-              <span className="mr-3">لورم ایپسوم متن ساختگی</span>
+              <span className="mr-3">Tiktok </span>
             </div>
           </div>
           <Link
@@ -58,7 +58,7 @@ const AboutUs = () => {
           >
             <CallCalling size="38" className="text-primary" />
             <div className="flex justify-start items-start flex-col mr-3">
-              <span>لورم ایپسوم متن ساختگی</span>
+              <span>  شماره تماس </span>
               <h3 className="text-primary mt-1 text-2xl">09122563254</h3>
             </div>
           </Link>
