@@ -5,17 +5,17 @@ import { Play } from "iconsax-react";
 import Image from "next/image";
 import useVideos from "./use";
 
+
 const Videos = () => {
   const { openModal, setOpenModal, activeVideo, handleSetActiveVideo } =
     useVideos();///costom Hooks
   return (
     <>
       <Modal
-        open={openModal}
-        setOpen={setOpenModal}
-        className="w-full max-w-3xl"
+        Open={openModal}
+        onClose={()=>{setOpenModal(false)}}
       >
-        <div className="flex justify-center items-center mx-auto p-5">
+        <div className="flex justify-center items-center mx-auto p-5 z-50">
           <Video poster={activeVideo.poster} src={activeVideo.src} />
         </div>
       </Modal>
@@ -29,13 +29,13 @@ const Videos = () => {
               className="w-full aspect-video relative group"
               onClick={() =>
                 handleSetActiveVideo(
-                  "https://stream.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/low.mp4",
-                  "/images/1.jpg"
+                  "/Video/video.mp4",
+                  "/images/11.jpg"
                 )
               }
             >
               <div className="absolute inset-0 bg-blue-950 opacity-40 z-10"></div>
-              <div className="absolute inset-0 flex justify-center items-center z-20">
+              <div className="absolute inset-0 flex justify-center items-center">
                 <div
                   className="w-[80px] md:w-[70px] aspect-square border-2 border-zinc-300 
                 transition-all duration-500 group-hover:border-white
@@ -76,8 +76,8 @@ const Videos = () => {
               className="w-full aspect-video relative group"
               onClick={() =>
                 handleSetActiveVideo(
-                  "https://stream.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/low.mp4",
-                  "/images/1.jpg"
+                  "/Video/video.mp4",
+                  "/images/miladtawer.jpg"
                 )
               }
             >

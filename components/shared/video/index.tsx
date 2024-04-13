@@ -18,8 +18,7 @@ const Video = ({ poster, src }: VideoImpl) => {
           src={src}
           poster={poster}
           aspectRatio={16 / 9}
-          crossorigin=""
-        >
+          crossorigin="">
           <MediaOutlet>
             <MediaPoster alt="video" />
           </MediaOutlet>
