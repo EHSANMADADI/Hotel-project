@@ -8,13 +8,14 @@ const PrimaryCard = ({
   image,
   label,
   title,
+  id=0,
   layer = false,
   active = false,
 }: PrimaryCardImpl) => {
   return (
     <>
       <Link
-        href={"/"}
+        href={`rooms/${id}`}
         className="w-full h-full relative group overflow-hidden flex justify-end items-end"
       >
         <span className="absolute left-6 top-6 horizontal bg-primary text-white text-[14px] z-20 py-2.5 px-1">

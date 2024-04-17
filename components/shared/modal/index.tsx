@@ -21,7 +21,5 @@ export default function Modal(props: { Open: Boolean, onClose: () => void, child
         </div>                                                
       </div>
     </div>
-
-
   )
 }

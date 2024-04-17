@@ -27,13 +27,13 @@ const Slider = ({ children, arrows = false, options }: SliderImpl) => {
               onClick={prev}
             >
               <div
-                className="w-[40px] aspect-square border-[1px] border-white rounded-full 
+                className="w-[40px] aspect-square border-[1px] border-blue-400 rounded-full 
               flex justify-center items-center transition-all duration-200 hover:border-primary
               hover:scale-95
                group"
               >
                 <ArrowRight3
-                  className="text-white transition-all duration-200
+                  className="text-blue-500 transition-all duration-200
                  group-hover:text-primary"
                 />
               </div>
@@ -43,13 +43,13 @@ const Slider = ({ children, arrows = false, options }: SliderImpl) => {
               onClick={next}
             >
               <div
-                className="w-[40px] aspect-square border-[1px] border-white rounded-full 
+                className="w-[40px] aspect-square border-[1px] border-blue-400 rounded-full 
               flex justify-center items-center transition-all duration-200 hover:border-primary
               hover:scale-95
                group"
               >
                 <ArrowLeft3
-                  className="text-white transition-all duration-200
+                  className="text-blue-500 transition-all duration-200
                  group-hover:text-primary"
                 />
               </div>

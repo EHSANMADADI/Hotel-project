@@ -2,7 +2,7 @@ import PrimaryCard from "@/components/shared/cards/primary";
 import { Clock } from "iconsax-react";
 import cls from "classnames";
 const PopularRooms = () => {
-  const images =['/images/room/2.jpg','/images/room/1.jpg','/images/room/B1424625030.jpg','/images/room/lox.jpg','/images/room/images.jpg']
+  const images =['/images/room/2.jpg','/images/room/1.jpg','/images/room/B1424625030.jpg','/images/room/3.jpg','/images/room/4.jpg']
   return (
     <>
       <div className="w-full ">
@@ -26,6 +26,7 @@ const PopularRooms = () => {
                   key={i}
                 >
                   <PrimaryCard
+                  id={i}
                     image={src}
                     label={i+2+' میلیون تومان '}
                     title="اتاق ویژه مهمان"

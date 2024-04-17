@@ -2,3 +2,8 @@
 2-add DatePicker persian in form rezerv table
 3-add chatOnline
 4-optimize the Product-selected components
+5-Learn about React query pakage 
+6-اضافه کردن تغیرات جزئی به صفحه لا گین
+7-تکمیل قسمت درباره ما در صفحه اصلی هتل
+8-add video
+9-add roms/[id]
