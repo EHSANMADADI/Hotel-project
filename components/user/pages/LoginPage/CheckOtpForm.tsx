@@ -6,14 +6,12 @@ import { setCookie } from '@/utils/cookie'
 interface Props {
     setStep: Dispatch<SetStateAction<1 | 2>>
     mobile: string
-    OTP_Code: string
 }
 
-const CheckOtpForm = ({ OTP_Code, mobile, setStep }: Props) => {
+const CheckOtpForm = ({ mobile, setStep }: Props) => {
     const [OTPInput, setOTPInput] = useState('');
     const [expireOTPSecond, setExpireOTPSecond] = useState(59);
     const { mutate , data } = useCheckOTP()
-console.log(data);
 
     useEffect(() => {
         if (expireOTPSecond > 0) {
@@ -23,17 +21,10 @@ console.log(data);
             return () => { clearInterval(interval) }
         }
     }, [expireOTPSecond])
+    setCookie(data?.data.token)
     const submitHandler = (e: FormEvent) => {
         e.preventDefault();        
         mutate({ phone: mobile, otpcode: OTPInput })
-        console.log(data?.data.token);
-        
-        setCookie(data?.data.token)
-        
-        // if (OTPInput !== OTP_Code) {
-        //     //Error Occured
-        //     return false
-        // }
     }
     return (
         <form
@@ -43,7 +34,7 @@ console.log(data);
             <label htmlFor="OTP" className='text-slate-100 font-semibold text-lg w-11/12 text-center'
             >کد پنج رقمی پیامک شده به شماره &quot;<span className='font-bold tracking-wide'>{mobile}</span>&quot; را وارد کنید</label>
             <input type="number" id='OTP' value={OTPInput}
-                className='ring-1 bg-slate-100 ring-blue-700  rounded-sm px-4 py-1 outline-none focus:ring-2'
+                className='ring-1 bg-blue-800 ring-blue-700  rounded-md px-4 py-1 outline-none focus:ring-2'
                 onChange={(e) => { setOTPInput(e.target.value) }} />
             {
                 expireOTPSecond > 0 && <p className='text-slate-100'>مدت زمان اعتبار کد : {expireOTPSecond}  ثانیه</p>
@@ -53,14 +44,12 @@ console.log(data);
             }
 
             <div className='flex justify-center items-center gap-4'>
-
                 <button className='bg-blue-800 text-slate-100 px-4 py-1 rounded-md hover:bg-blue-900 duration-200'
                     type="submit">تایید کد</button>
                 <button className='bg-blue-800 text-slate-100 px-4 py-1 rounded-md hover:bg-blue-900 duration-200'
                     onClick={() => { setStep(1) }}>تغییر شماره موبایل</button>
             </div>
         </form >
-
     )
 }
 
