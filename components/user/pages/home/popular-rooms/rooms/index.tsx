@@ -17,12 +17,12 @@ export default function RoomsS() {
                     arrows: false,
                     autoplay: false,
                }} arrows={true}>
-                    {Array(4)
+                    {Array(6)
                          .fill("")
                          .map((_, i) => (
                               <SplideSlide key={i} >
                                    <div className="h-auto w-auto">
-                                        <Image src={`/images/room/${i + 1}.jpg`} alt="image" width={800} height={10} />
+                                        <Image src={`/images/room/item-room${i + 1}.jpg`} alt="image" width={800} height={10} />
                                    </div>
                               </SplideSlide>
                          ))}
