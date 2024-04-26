@@ -1,5 +1,4 @@
 'use client'
-import { useReducer } from "react";
 import RoomsS from '@/components/user/pages/home/popular-rooms/rooms/index'
 const Rooms = ({ params }: any) => {
      const Id = params.id;

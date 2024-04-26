@@ -2,10 +2,11 @@ import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Provider from '@/components/Provider';
-
+import Loading from "./loading";
 
 import { Inter } from "next/font/google";
 import RootContainer from "@/components/shared/containers/root";
+import { Suspense } from "react";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -76,10 +77,11 @@ export default function RootLayout({
   return (
     <html lang="en" dir="rtl">
       <body className={`${inter.variable} ${yekanBakh.className}`}>
+      <Suspense fallback={<Loading/>}>
         <Provider>
           <RootContainer>{children}</RootContainer>
         </Provider>
-
+        </Suspense>
       </body>
     </html>
   );
