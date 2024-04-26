@@ -1,5 +1,7 @@
 import { useState, useEffect, FormEvent, Dispatch, SetStateAction } from 'react'
 import Image from 'next/image'
+import useCheckOTP from './hooks/useCheckOTP'
+import { setCookie } from '@/utils/cookie'
 
 interface Props {
     setStep: Dispatch<SetStateAction<1 | 2>>
@@ -9,7 +11,10 @@ interface Props {
 
 const CheckOtpForm = ({ OTP_Code, mobile, setStep }: Props) => {
     const [OTPInput, setOTPInput] = useState('');
-    const [expireOTPSecond, setExpireOTPSecond] = useState(6);
+    const [expireOTPSecond, setExpireOTPSecond] = useState(59);
+    const { mutate , data } = useCheckOTP()
+console.log(data);
+
     useEffect(() => {
         if (expireOTPSecond > 0) {
             const interval = setTimeout(() => {
@@ -19,11 +24,16 @@ const CheckOtpForm = ({ OTP_Code, mobile, setStep }: Props) => {
         }
     }, [expireOTPSecond])
     const submitHandler = (e: FormEvent) => {
-        e.preventDefault();
-        if (OTPInput !== OTP_Code) {
-            //Error Occured
-            return false
-        }
+        e.preventDefault();        
+        mutate({ phone: mobile, otpcode: OTPInput })
+        console.log(data?.data.token);
+        
+        setCookie(data?.data.token)
+        
+        // if (OTPInput !== OTP_Code) {
+        //     //Error Occured
+        //     return false
+        // }
     }
     return (
         <form
@@ -31,7 +41,7 @@ const CheckOtpForm = ({ OTP_Code, mobile, setStep }: Props) => {
             onSubmit={submitHandler}>
             <Image src='/images/logo1.png' width={120} height={120} alt='logo' />
             <label htmlFor="OTP" className='text-slate-100 font-semibold text-lg w-11/12 text-center'
-            >کد شش رقمی پیامک شده به شماره &quot;<span className='font-bold tracking-wide'>{mobile}</span>&quot; را وارد کنید</label>
+            >کد پنج رقمی پیامک شده به شماره &quot;<span className='font-bold tracking-wide'>{mobile}</span>&quot; را وارد کنید</label>
             <input type="number" id='OTP' value={OTPInput}
                 className='ring-1 bg-slate-100 ring-blue-700  rounded-sm px-4 py-1 outline-none focus:ring-2'
                 onChange={(e) => { setOTPInput(e.target.value) }} />

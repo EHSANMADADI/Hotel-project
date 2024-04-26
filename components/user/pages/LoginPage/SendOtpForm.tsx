@@ -1,7 +1,7 @@
 import { Dispatch, FormEvent, SetStateAction } from 'react'
 import Image from 'next/image'
 import Menu from '@/components/user/pages/home/landing/menu/index'
-
+import useSendOTP from './hooks/useSendOTP'
 interface SendOTPPRops {
     setStep: Dispatch<SetStateAction<1 | 2>>
     mobile: string
@@ -10,13 +10,17 @@ interface SendOTPPRops {
 }
 
 const SendOtpForm = ({ setStep, mobile, setMobile, setOTPCode }: SendOTPPRops) => {
+    const {  data,mutate, isPending } = useSendOTP();    
+     console.log({data,isPending});
+    
+    
     const submitHandler = (e: FormEvent) => {
         e.preventDefault();
         if (mobile.length !== 11 || !mobile.startsWith('09')) {
             console.log("Error occured");
             return
         }
-        // Send mobileNumber to recieve OTP and Set OTP Code
+        mutate(mobile);
         setStep(2);
     }
     return (
@@ -33,11 +37,11 @@ const SendOtpForm = ({ setStep, mobile, setMobile, setOTPCode }: SendOTPPRops) =
                     className='bg-transparent text-white ring-1 p-2 ring-blue-700 rounded-md px-4 py-1 outline-none focus:ring-2'
                     placeholder='مثلا 09121212121'
                     onChange={(e) => { setMobile(e.target.value) }} />
+                    {/* <p>کدقبلی هنوز منقضی نشده است</p> */}
                 <button type='submit'
                     title={mobile.length === 11 && mobile.startsWith('09') ? 'مرحله بعد' : 'شماره موبایل نامعتبر است.'}
                     className='bg-blue-800 text-slate-100 py-2 px-4 py-1 rounded-md hover:bg-blue-900 duration-200'>ارسال کد</button>
             </form>
-
         </>
 
     )
