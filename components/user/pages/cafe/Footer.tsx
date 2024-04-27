@@ -9,7 +9,7 @@ import PrimaryButton from '@/components/shared/buttons/primary';
 
 const Footer = () => {
   return (
-    <div className="w-full bg-[#31221b] py-10 pb-0">
+    <footer id='Footer' className="w-full bg-[#31221b] py-10 pb-0">
         <div className="container flex justify-center items-start flex-col">
           <div className="w-full flex justify-center items-center border-[1px] p-5 md:p-0 border-white/10 md:flex-col">
             <Link
@@ -70,21 +70,21 @@ const Footer = () => {
                 </h4>
                 <Link
                   className="text-zinc-300 hover:text-zinc-100 hover:scale-105 duration-200 mb-2 last:mb-0"
-                  href={"/"}
+                  href={"/coffee-shop/reservation"}
                 >
                    رزرو میز                  
                 </Link>
                 <Link
                   className="text-zinc-300 hover:text-zinc-100 hover:scale-105 duration-200 mb-2 last:mb-0"
-                  href={"/resturant/rezervTable"}
+                  href={"#Menu"}
                 >
                   مشاهده منو
                 </Link>
                 <Link
                   className="text-zinc-300 hover:text-zinc-100 hover:scale-105 duration-200 mb-2 last:mb-0"
-                  href={"/"}
+                  href={"#Gallery"}
                 >
-                  درباره ما
+                  گالری
                 </Link>
               </div>
             </div>
@@ -114,7 +114,7 @@ const Footer = () => {
             تمام حقوق محفوظ است &copy;
           </p>
         </div>
-      </div>
+      </footer>
   )
 }
 

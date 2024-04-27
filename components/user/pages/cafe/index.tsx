@@ -5,6 +5,7 @@ import Menu from './Menu'
 import Stats from './stats-counter'
 import BgOverlay from './BgOverlay'
 import Gallery from './Gallery'
+import Footer from './Footer'
 const Cafe = () => {
   return (
     <>
@@ -13,6 +14,7 @@ const Cafe = () => {
         <Menu />
         <Stats />
         <Gallery />
+        <Footer />
       </BgOverlay>
     </>
   )

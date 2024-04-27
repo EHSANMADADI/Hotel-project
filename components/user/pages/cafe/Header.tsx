@@ -5,7 +5,7 @@ import { FaUserEdit } from "react-icons/fa";
 
 const Header = () => {
     return (
-        <header className="bg-[url('/images/cafe/b3.webp')] bg-neutral-800 bg-blend-overlay min-h-screen bg-cover bg-center">
+        <header id='header' className="bg-[url('/images/cafe/b3.webp')] bg-neutral-800 bg-blend-overlay min-h-screen bg-cover bg-center">
             <nav className='flex items-center justify-between px-12 sm:px-4'>
                 <Link href='#'>
                     <FaUserEdit color='white' size={32} className='hover:fill-coffee/90 duration-200 hover:scale-110' />
