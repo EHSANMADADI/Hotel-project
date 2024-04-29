@@ -10,7 +10,6 @@ interface SendOTPPRops {
 
 const SendOtpForm = ({ setStep, mobile, setMobile }: SendOTPPRops) => {
     const {  data,mutate, isPending } = useSendOTP();    
-    //  console.log({data,isPending});
     
     const submitHandler = (e: FormEvent) => {
         e.preventDefault();
@@ -32,7 +31,7 @@ const SendOtpForm = ({ setStep, mobile, setMobile }: SendOTPPRops) => {
                     className='text-slate-100 font-semibold text-lg '
                 >لطفا شماره موبایل خود را وارد نمایید</label>
                 <input type="number" id='mobileNumber' value={mobile}
-                    className='bg-blue-800 text-white ring-1 p-2 ring-blue-700 rounded-md px-4 py-1 outline-none focus:ring-2'
+                    className='bg-transparent text-white ring-1 p-2 ring-blue-700 rounded-md px-4 py-1 outline-none focus:ring-2'
                     placeholder='مثلا 09121212121'
                     onChange={(e) => { setMobile(e.target.value) }} />
                     {/* <p>کدقبلی هنوز منقضی نشده است</p> */}

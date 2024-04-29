@@ -9,7 +9,7 @@ import defaultOptions from '@/Configs/ReactQueryConfig';
 const LoginPage = () => {
     const [step, setStep] = useState<1 | 2>(1);
     const [mobile, setMobile] = useState("");
-
+    
     return (
         <QueryClientProvider client={new QueryClient({ defaultOptions })}>
             <main className="bg-[url('/images/MiladTower.jpg')] bg-cover bg-center bg-slate-900 bg-blend-overlay 
@@ -21,11 +21,8 @@ const LoginPage = () => {
                     }
                 </main>
             </main>
-            <Footer />
+            {/* <Footer /> */}
         </QueryClientProvider>
-
-
-
     )
 }
 
