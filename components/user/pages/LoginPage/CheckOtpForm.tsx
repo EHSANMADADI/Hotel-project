@@ -34,7 +34,7 @@ const CheckOtpForm = ({ mobile, setStep }: Props) => {
             <label htmlFor="OTP" className='text-slate-100 font-semibold text-lg w-11/12 text-center'
             >کد پنج رقمی پیامک شده به شماره &quot;<span className='font-bold tracking-wide'>{mobile}</span>&quot; را وارد کنید</label>
             <input type="number" id='OTP' value={OTPInput}
-                className='ring-1 bg-blue-800 ring-blue-700  rounded-md px-4 py-1 outline-none focus:ring-2'
+                className='ring-1 bg-transparent text-white ring-blue-700 rounded-md px-4 py-1 outline-none focus:ring-2'
                 onChange={(e) => { setOTPInput(e.target.value) }} />
             {
                 expireOTPSecond > 0 && <p className='text-slate-100'>مدت زمان اعتبار کد : {expireOTPSecond}  ثانیه</p>

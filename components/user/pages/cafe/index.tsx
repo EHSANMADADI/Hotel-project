@@ -6,9 +6,10 @@ import Stats from './stats-counter'
 import BgOverlay from './BgOverlay'
 import Gallery from './Gallery'
 import Footer from './Footer'
+import CartContextProvider from '@/Context/CartContextProvider'
 const Cafe = () => {
   return (
-    <>
+    <CartContextProvider>
       <Header />
       <BgOverlay >
         <Menu />
@@ -16,7 +17,7 @@ const Cafe = () => {
         <Gallery />
         <Footer />
       </BgOverlay>
-    </>
+    </CartContextProvider>
   )
 }
 
