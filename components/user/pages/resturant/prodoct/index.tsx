@@ -28,24 +28,26 @@ import { IoMdReturnRight } from 'react-icons/io';
 
 export default function Product(props: { type: string; searchItem: any; }) {
 
-     const prodocts = [{ nameFood: 'food Name', price: '200T', img: img1, Category: 'fast-food' }, { nameFood: 'food Name', price: '200T', img: img2, Category: 'fast-food' }, { nameFood: 'food Name', price: '200T', img: img3, Category: 'fast-food' },
-     { nameFood: 'food Name', price: '200T', img: img4, Category: 'old-food' }, { nameFood: 'food Name', price: '200T', img: img5, Category: 'old-food' }, { nameFood: 'food Name', price: '200T', img: img6, Category: 'old-food' },
-     { nameFood: 'آب گوشت', price: '200T', img: img7, Category: 'old-food' }, { nameFood: 'آش رشته', price: '200T', img: img8, Category: 'old-food' }, { nameFood: 'بال مرغ کبابی', price: '200T', img: img9, Category: 'old-food' },
-     { nameFood: 'دولمه برگ', price: '200T', img: img10, Category: 'old-food' }, { nameFood: 'کباب فیله', price: '200T', img: img11, Category: 'old-food' }, { nameFood: 'فسنجان', price: '200T', img: img12, Category: 'old-food' },
-     { nameFood: 'کباب کوبیده', price: '200T', img: img13, Category: 'old-food' }, { nameFood: ' کوفته تبریزی', price: '200T', img: img14, Category: 'old-food' }, { nameFood: 'قورمه سبزی', price: '200T', img: img15, Category: 'old-food' }]
+     const prodocts = [{Id:1, nameFood: 'food Name', price: 200, img: img1, Category: 'fast-food' }, {Id:2, nameFood: 'food Name', price: 200, img: img2, Category: 'fast-food' }, {Id:3, nameFood: 'food Name', price: 200, img: img3, Category: 'fast-food' },
+     {Id:4, nameFood: 'food Name', price: 200, img: img4, Category: 'old-food' }, {Id:5, nameFood: 'food Name', price:200, img: img5, Category: 'old-food' }, {Id:6, nameFood: 'food Name', price: 200, img: img6, Category: 'old-food' },
+     {Id:7, nameFood: 'آب گوشت', price: 200, img: img7, Category: 'old-food' }, {Id:8, nameFood: 'آش رشته', price: 200, img: img8, Category: 'old-food' }, {Id:9, nameFood: 'بال مرغ کبابی', price: 200, img: img9, Category: 'old-food' },
+     {Id:10, nameFood: 'دولمه برگ', price: 200, img: img10, Category: 'old-food' }, {Id:11, nameFood: 'کباب فیله', price: 200, img: img11, Category: 'old-food' }, {Id:12, nameFood: 'فسنجان', price: 200, img: img12, Category: 'old-food' },
+     {Id:13, nameFood: 'کباب کوبیده', price: 200, img: img13, Category: 'old-food' }, {Id:14, nameFood: ' کوفته تبریزی', price: 200, img: img14, Category: 'old-food' }, {Id:15, nameFood: 'قورمه سبزی', price: 200, img: img15, Category: 'old-food' }]
      const [open, setOpen] = useState(false);
      const [nameorder, setNameOrder] = useState('');
-     const [priseItem, setPriseItem] = useState('');
+     const [priseItem, setPriseItem] = useState(0);
      const [imageItem, setImageItem] = useState('');
+     const[id,setId]=useState(0);
      // var nameorder: string;
      // var priseItem: string;
      // var imageItem:StaticImageData;
-     function handelsefaresh(name: string, prise: string, img: StaticImageData) {
+     function handelsefaresh(name: string, prise: number, img: StaticImageData,id:number) {
           setOpen(true);
           // console.log(imageItem+'//////////////////////////');
           setNameOrder(name);
           setPriseItem(prise);
           setImageItem(img.src);
+          setId(id);
           //     nameorder=name;
           //     priseItem=prise;
           //     imageItem=img;
@@ -65,10 +67,10 @@ export default function Product(props: { type: string; searchItem: any; }) {
                                    <div key={index} className="w-1/3 h-[30vw] relative overflow-hidden card p-2 sm:w-full">
                                         <div className=" hover:left-0 h-full w-full flex  justify-center items-center flex-col absolute  -left-full top-0 text-white bg-blue-500 opacity-60 z-10 dark:bg-zinc-700  card-over">
                                              <h1 className="text-4xl md:text-base font-bold card-overlay-heading">{p.nameFood}</h1>
-                                             <p className="text-xl md:text-sm font-bold m-5 border-b-2 card-overlay-paragraph">{p.price} </p>
-                                             <button className="border border-white rounded-lg bg-transparent  p-5 md:p-2 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => handelsefaresh(p.nameFood, p.price, p.img)}>سفارش</button>
+                                             <p className="text-xl md:text-sm font-bold m-5 border-b-2 card-overlay-paragraph">{p.price+'T'} </p>
+                                             <button className="border border-white rounded-lg bg-transparent  p-5 md:p-2 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => handelsefaresh(p.nameFood, p.price, p.img,p.Id)}>سفارش</button>
                                              <Modal Open={open} onClose={() => setOpen(false)} >
-                                                  <Selected imageSrc={imageItem} name={nameorder} price={priseItem} />
+                                                  <Selected imageSrc={imageItem} name={nameorder} price={priseItem} id={id} />
                                              </Modal>
 
                                         </div>
@@ -95,10 +97,10 @@ export default function Product(props: { type: string; searchItem: any; }) {
                                         <div key={index} className="w-1/3 h-[30vw] relative overflow-hidden card p-2">
                                              <div className=" hover:left-0 h-full w-full flex  justify-center items-center flex-col absolute  -left-full top-0 text-white bg-blue-500 opacity-60 z-20 dark:bg-zinc-700  card-over">
                                                   <h1 className="text-4xl font-bold card-overlay-heading">{p.nameFood}</h1>
-                                                  <p className="text-xl font-bold m-5 border-b-2 card-overlay-paragraph">{p.price} </p>
-                                                  <button className="border border-white rounded-lg bg-transparent  p-5 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => handelsefaresh(p.nameFood, p.price, p.img)}>سفارش</button>
+                                                  <p className="text-xl font-bold m-5 border-b-2 card-overlay-paragraph">{p.price+'T'} </p>
+                                                  <button className="border border-white rounded-lg bg-transparent  p-5 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => handelsefaresh(p.nameFood, p.price, p.img,p.Id)}>سفارش</button>
                                                   <Modal Open={open} onClose={() => setOpen(false)} >
-                                                       <Selected imageSrc={imageItem} name={nameorder} price={priseItem} />
+                                                       <Selected imageSrc={imageItem} name={nameorder} price={priseItem} id={id} />
                                                   </Modal>
 
                                              </div>
@@ -120,10 +122,10 @@ export default function Product(props: { type: string; searchItem: any; }) {
                                         <div className="w-1/3 h-[30vw] relative overflow-hidden card p-2">
                                              <div className=" hover:left-0 h-full w-full flex  justify-center items-center flex-col absolute  -left-full top-0 text-white bg-blue-500 opacity-60 z-20 dark:bg-zinc-700  card-over">
                                                   <h1 className="text-4xl font-bold card-overlay-heading">{p.nameFood}</h1>
-                                                  <p className="text-xl font-bold m-5 border-b-2 card-overlay-paragraph">{p.price} </p>
-                                                  <button className="border border-white rounded-lg bg-transparent  p-5 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => handelsefaresh(p.nameFood, p.price, p.img)}>سفارش</button>
+                                                  <p className="text-xl font-bold m-5 border-b-2 card-overlay-paragraph">{p.price+'T'} </p>
+                                                  <button className="border border-white rounded-lg bg-transparent  p-5 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => handelsefaresh(p.nameFood, p.price, p.img,p.Id)}>سفارش</button>
                                                   <Modal Open={open} onClose={() => setOpen(false)} >
-                                                       <Selected imageSrc={imageItem} name={nameorder} price={priseItem} />
+                                                       <Selected imageSrc={imageItem} name={nameorder} price={priseItem} id={id} />
                                                   </Modal>
 
                                              </div>
@@ -148,11 +150,11 @@ export default function Product(props: { type: string; searchItem: any; }) {
                               <div className="w-1/3 sm:w-full md:w-2/4 h-[30vw] relative overflow-hidden card p-2">
                                    <div className=" hover:left-0 h-full w-full flex  justify-center items-center flex-col absolute  -left-full top-0 text-white bg-blue-500 opacity-60 z-20 dark:bg-zinc-700  card-over">
                                         <h1 className="text-4xl md:text-base font-bold card-overlay-heading">{p.nameFood}</h1>
-                                        <p className="text-xl font-bold m-5 md:text-sm md:m-2 border-b-2 card-overlay-paragraph">{p.price} </p>
-                                        <button className="border border-white rounded-lg bg-transparent md:p-2  p-5 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => handelsefaresh(p.nameFood, p.price, p.img)}>سفارش</button>
+                                        <p className="text-xl font-bold m-5 md:text-sm md:m-2 border-b-2 card-overlay-paragraph">{p.price+'T'} </p>
+                                        <button className="border border-white rounded-lg bg-transparent md:p-2  p-5 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => handelsefaresh(p.nameFood, p.price, p.img,p.Id)}>سفارش</button>
 
                                         <Modal Open={open} onClose={() => setOpen(false)} >
-                                             <Selected imageSrc={imageItem} name={nameorder} price={priseItem} />
+                                             <Selected imageSrc={imageItem} name={nameorder} price={priseItem} id={id} />
                                         </Modal>
 
                                    </div>

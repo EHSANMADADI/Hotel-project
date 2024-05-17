@@ -1,3 +1,4 @@
+
 import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
@@ -77,11 +78,14 @@ export default function RootLayout({
   return (
     <html lang="en" dir="rtl">
       <body className={`${inter.variable} ${yekanBakh.className}`}>
-      <Suspense fallback={<Loading/>}>
-        <Provider>
-          <RootContainer>{children}</RootContainer>
-        </Provider>
-        </Suspense>
+      
+          <Suspense fallback={<Loading />}>
+            <Provider>
+              <RootContainer>{children}</RootContainer>
+            </Provider>
+          </Suspense>
+       
+
       </body>
     </html>
   );

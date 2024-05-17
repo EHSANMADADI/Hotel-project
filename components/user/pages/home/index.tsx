@@ -1,3 +1,4 @@
+'use client'
 import AboutUs from "./about-us";
 import Articles from "./articles";
 import Auth from "./auth";
@@ -11,24 +12,29 @@ import Videos from "./videos";
 import Testmonials from './testmonials'
 import Footer from "./footer";
 import ChatOnline from "@/components/shared/chatOnline/index";
+import FoodContextProvider from "@/Context/FoodContextProvider";
 const Home = () => {
   return (
     <>
-      <Landing />
-      
-      <PopularRooms />
-      {/* commentsUser */}
-      <Testmonials />
-      <Stats />
-      <AboutUs />
-      <PopularFoods />
-      <Banner />
-      <InfoBox />
-      <Articles />
-      <Videos />
-      {/* <Auth /> */}
-      <Footer />
-      <ChatOnline/>
+      <FoodContextProvider>
+
+        <Landing />
+
+        <PopularRooms />
+        {/* commentsUser */}
+        <Testmonials />
+        <Stats />
+        <AboutUs />
+        <PopularFoods />
+        <Banner />
+        <InfoBox />
+        <Articles />
+        <Videos />
+        {/* <Auth /> */}
+        <Footer />
+        <ChatOnline />
+      </FoodContextProvider>
+
 
     </>
   );
