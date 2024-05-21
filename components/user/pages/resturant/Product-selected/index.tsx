@@ -31,7 +31,6 @@ const Selected = ({ imageSrc, name, price, id }: ImageCardProps) => {
             (
                 dispatch({ type: "ADD", payload: { id, price, name,quantity } }),
                 console.log(cart),
-                
                 Swal.fire({
                     title: "با موفقیت انجام شد",
                     icon: "success"

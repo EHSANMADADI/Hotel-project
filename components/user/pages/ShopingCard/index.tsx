@@ -5,15 +5,20 @@ import { IoArrowBackCircleSharp } from "react-icons/io5";
 import { PiSmileyStickerThin } from "react-icons/pi";
 import bgFood from '@/public/images/BgFood.jpg';
 import Image from 'next/image';
-import { IoMdClose } from "react-icons/io";
+import { FaMinus } from "react-icons/fa";
+import { IoAdd } from "react-icons/io5";
 export default function index() {
-
      const cart = useCart()
-     const [selectedItems,setSelectItems]=useState(cart.selectedItems)
-     const handeldel=(id:number)=>{
-          console.log(id);
-          const newArray = cart.selectedItems.filter((item) => item.id !== id);
-          setSelectItems(newArray);
+     const dispatch = useSetCart()
+     const [selectedItems, setSelectItems] = useState(cart.selectedItems)
+     const handeldel = (id: number,q:number) => {
+          // console.log(id);
+          // const newArray = cart.selectedItems.filter((item) => item.id !== id);
+          // setSelectItems(newArray);
+          dispatch({ type: "REMOVE", payload: {id,q} })
+     }
+     const handelAdd=(id:number, price:number, name:string,q:number=1) => {
+          dispatch({ type: "ADD", payload: {id,payload:{id,price,name,q}}})
      }
      return (
           <div>
@@ -40,16 +45,26 @@ export default function index() {
                                              <h3 className="text-3xl text-gray-400 p-2">تعداد:{item.quantity}</h3>
                                         </div>
                                         <div>
-                                             <h3 className="text-3xl text-gray-400 p-2"> قیمت:{item.price*item.quantity}تومان</h3>
+                                             <h3 className="text-3xl text-gray-400 p-2"> قیمت:{item.price * item.quantity}تومان</h3>
                                         </div>
-                                        <div className='text-4xl hover:text-red-700 cursor-pointer' onClick={()=>handeldel(item.id)}>
-                                             <IoMdClose/>
+                                        <div className='text-4xl  rounded-full hover:bg-blue-300 duration-200 cursor-pointer border border-dashed border-blue-700' onClick={() => handelAdd(item.id,item.name,item.price)}>
+                                             <IoAdd />
                                         </div>
+                                        <div className='text-3xl p-1 hover:text-white hover:bg-red-700 rounded-full duration-200 border border-dashed border-red-500 cursor-pointer' onClick={() => handeldel(item.id,item.quantity)}>
+                                             <FaMinus />
+                                        </div>
+
                                    </div>
                               ))
                          }
+                         <div className='flex justify-center '>
+                              <Link className='p-5 m-1 font-extrabold text-3xl text-white duration-200 hover:bg-blue-400 bg-blue-600 rounded-md hover:scale-75' href='/Payment'>ادامه خرید</Link>
+                         </div>
                     </div>
                )}
+
+
+
           </div>
      )
 }

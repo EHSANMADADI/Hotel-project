@@ -9,12 +9,6 @@ import Footer from '@/components/user/pages/home/footer/index';
 import Link from 'next/link';
 import ChatOnline from '@/components/shared/chatOnline';
 import FoodContextProvider from '@/Context/FoodContextProvider';
-
-
-
-
-
-
 const Resturant = () => {
      const [typefood, setTypeFood] = useState('');
      const [searchItem, setSerchItem] = useState('');
@@ -25,10 +19,6 @@ const Resturant = () => {
           console.log(newsearch);
 
      }
-
-
-
-
      return (<>
           {/* context */}
           <FoodContextProvider>
@@ -86,8 +76,6 @@ const Resturant = () => {
 
 
 
-     </>
-
-     )
+     </>)
 }
 export default Resturant;
