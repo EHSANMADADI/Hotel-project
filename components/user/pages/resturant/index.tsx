@@ -8,7 +8,6 @@ import Testimonials from '../home/testmonials/index';
 import Footer from '@/components/user/pages/home/footer/index';
 import Link from 'next/link';
 import ChatOnline from '@/components/shared/chatOnline';
-import FoodContextProvider from '@/Context/FoodContextProvider';
 const Resturant = () => {
      const [typefood, setTypeFood] = useState('');
      const [searchItem, setSerchItem] = useState('');
@@ -20,9 +19,7 @@ const Resturant = () => {
 
      }
      return (<>
-          {/* context */}
-          <FoodContextProvider>
-
+          <>
                <div className=" bg-food absolute inset-0 sm:w-full">
                     <div className=" mt-24  dark:text-white flex items-center flex-col ">
                          <div className="mt-10 mb-5 md:mt-16">
@@ -71,7 +68,7 @@ const Resturant = () => {
                </div>
                <ChatOnline />
 
-          </FoodContextProvider>
+          </>
 
 
 

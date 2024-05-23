@@ -7,8 +7,7 @@ import useMenu from "./use";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { CiShoppingCart } from "react-icons/ci";
 import { FaUserEdit } from "react-icons/fa";
-import { useCart , useSetCart } from '@/Context/FoodContextProvider'
-import { useEffect, useState } from "react";
+import { useCart } from '@/Context/FoodContextProvider'
 
 
 const links = [
@@ -47,11 +46,13 @@ const Menu = () => {
     useMenu();
 
   const cart = useCart();
-  const selectedItem = cart.selectedItems;
-  console.log(cart);
-  
- 
-  
+  const amountOfCart = cart.selectedItems.reduce((acc,item)=> item.quantity+acc,0 )
+  console.log(cart.selectedItems);
+  // const amountOfCart = cart.selectedItems.reduce((acc, item) => { return acc + item.quantity }, 0)
+  // const amountOfCart = 3; 
+
+  console.log({cart});
+
   return (
     <>
 
@@ -152,8 +153,8 @@ const Menu = () => {
         {/* 
         //////////////////////////////////////// */}
         <div>
-          <span className={cls(`mt-8 font-bold flex`, showStickyMenu ? 'text-black' : 'text-white')}>1</span>
-        
+          <span className={cls(`mt-8 font-bold flex`, showStickyMenu ? 'text-black' : 'text-white')}>{amountOfCart}</span>
+
         </div>
         {/* /////shoping */}
         <div className={cls(` text-5xl z-50 m-0 border w-12 border-dashed border-yellow-200  flex rounded-full justify-center`, showStickyMenu ? "text-black" : "text-white")}>
