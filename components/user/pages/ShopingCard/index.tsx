@@ -15,7 +15,7 @@ export default function index() {
           // console.log(id);
           // const newArray = cart.selectedItems.filter((item) => item.id !== id);
           // setSelectItems(newArray);
-          dispatch({ type: "REMOVE", payload: {id,q} })
+          dispatch({type: "REMOVE", payload: {id,q}})
      }
      const handelAdd=(id:number, price:number, name:string,q:number=1) => {
           dispatch({ type: "ADD", payload: {id,payload:{id,price,name,q}}})
