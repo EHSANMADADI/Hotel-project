@@ -12,31 +12,24 @@ import Videos from "./videos";
 import Testmonials from './testmonials'
 import Footer from "./footer";
 import ChatOnline from "@/components/shared/chatOnline/index";
-import FoodContextProvider from "@/Context/FoodContextProvider";
 const Home = () => {
-  return (
-    <>
-      <FoodContextProvider>
+  return (<>
+    <Landing />
 
-        <Landing />
-
-        <PopularRooms />
-        {/* commentsUser */}
-        <Testmonials />
-        <Stats />
-        <AboutUs />
-        <PopularFoods />
-        <Banner />
-        <InfoBox />
-        <Articles />
-        <Videos />
-        {/* <Auth /> */}
-        <Footer />
-        <ChatOnline />
-      </FoodContextProvider>
-
-
-    </>
+    <PopularRooms />
+    {/* commentsUser */}
+    <Testmonials />
+    <Stats />
+    <AboutUs />
+    <PopularFoods />
+    <Banner />
+    <InfoBox />
+    <Articles />
+    <Videos />
+    {/* <Auth /> */}
+    <Footer />
+    <ChatOnline />
+  </>
   );
 };
 export default Home;

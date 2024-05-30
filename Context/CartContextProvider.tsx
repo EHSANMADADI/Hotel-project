@@ -5,6 +5,7 @@ interface SelectedItems {
     name: string
     price: number
     quantity: number
+    image:string
 }
 
 interface Props {
@@ -32,6 +33,7 @@ interface Action {
         id: number,
         name: string,
         price: number,
+        image:string
     }
 }
 
@@ -40,7 +42,7 @@ const reducer = (state: Cart, action: Action) => {
         case "ADD": {
             const index = state.selectedItems.findIndex(item => item.id === action.payload.id)
             if (index === -1) {
-                state.selectedItems.push({ id: action.payload.id, name: action.payload.name, price: action.payload.price, quantity: 1 })
+                state.selectedItems.push({ id: action.payload.id, name: action.payload.name, price: action.payload.price , image:action.payload.image, quantity: 1 })
                 state.total += action.payload.price;
             }
             else {
@@ -87,13 +89,11 @@ const CartContextProvider = ({ children }: Props) => {
     </CartContext.Provider>
 }
 
-const useCart = () => {
-    return useContext(CartContext)
-}
+const useCart = () => useContext(CartContext)
 
-const useSetCart = () => {
-    return useContext(SetCartContext)
-}
+
+const useSetCart = () => useContext(SetCartContext)
+
 
 export default CartContextProvider
 

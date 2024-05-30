@@ -32,7 +32,7 @@ interface Action {
         id: number,
         name: string,
         price: number,
-        quantity:number,
+        quantity: number,
     }
 }
 
@@ -88,13 +88,10 @@ const CartContextProvider = ({ children }: Props) => {
     </CartContext.Provider>
 }
 
-const useCart = () => {
-    return useContext(CartContext)
-}
+const useCart = () => useContext(CartContext)
 
-const useSetCart = () => {
-    return useContext(SetCartContext)
-}
+
+const useSetCart = () => useContext(SetCartContext)
 
 export default CartContextProvider
 

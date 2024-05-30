@@ -6,7 +6,7 @@ interface Props {
 
 const BgOverlay = ({ children }: Props) => {
     return (
-        <section className="bg-stone-900 bg-blend-overlay bg-[url('/images/cafe/bg1.jpg')] bg-cover bg-center bg-fixed  ">
+        <section className="bg-stone-800/90 dark:bg-stone-900 bg-blend-overlay bg-[url('/images/cafe/bg1.jpg')] bg-cover bg-center bg-fixed  ">
             {children}
         </section>
 

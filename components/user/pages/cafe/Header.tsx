@@ -1,11 +1,9 @@
 import React from 'react'
 import Link from 'next/link';
-import Navbar from './Navbar';
-const Header = () => {
 
+const Header = () => {
     return (
-        <header id='header' className="bg-[url('/images/cafe/b3.webp')] bg-neutral-800 bg-blend-overlay min-h-screen bg-cover bg-center">
-            <Navbar />
+        <header id='header' className="bg-[url('/images/cafe/b3.webp')] dark:bg-neutral-800 bg-neutral-800/80 bg-blend-overlay min-h-screen bg-cover bg-center">
             <section>
                 <h1 className="text-8xl text-white font-black text-center leading-[1.5] py-12 sm:py-8 w-full md:text-5xl
              md:leading-[1.3]">به کافه <span className="text-transparent border-8 px-6"
@@ -21,7 +19,3 @@ const Header = () => {
 }
 
 export default Header
-
-
-
-
