@@ -2,11 +2,11 @@
 import React, { useState } from 'react'
 import Sidebar from './sidebar/Sidebar'
 import AddTable from './Table/AddTable';
-import EditTables from './Table/EditTables';
+// import EditTables from './Table/EditTables';
 import AddItem from './Menu/AddItem';
 import AddImage from './Gallery/AddImage';
-import RemoveImage from './Gallery/RemoveImage';
-import EditMenu from './Menu/EditMenu';
+// import RemoveImage from './Gallery/RemoveImage';
+// import EditMenu from './Menu/EditMenu';
 
 export type Step = "Add Table" | "Edit Table" | "Add to Menu" | "Edit Menu" | "Add Image" | "Remove Image";
 

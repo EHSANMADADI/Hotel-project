@@ -10,12 +10,13 @@ type ImageCardProps = {
     imageSrc: StaticImageData | string;
     name: string;
     price: number;
-    id: number|any;
+    id: number | any;
+    onClose: () => void;
 
 }
 
 
-const Selected = ({ imageSrc, name, price, id }: ImageCardProps) => {
+const Selected = ({ imageSrc, name, price, id, onClose }: ImageCardProps) => {
     const [img, setImg] = useState(imageSrc);
     const [names, setNames] = useState(name);
     const [prices, setPrices] = useState(price);
@@ -26,15 +27,15 @@ const Selected = ({ imageSrc, name, price, id }: ImageCardProps) => {
     const selectedItem = cart.selectedItems.find(item => item.id === id)
 
     const click = () => {
-
         quantity ?
             (
-                dispatch({ type: "ADD", payload: { id, price, name,quantity } }),
+                dispatch({ type: "ADD", payload: { id, price, name, quantity } }),
                 console.log(cart),
                 Swal.fire({
                     title: "با موفقیت انجام شد",
                     icon: "success"
-                })
+                }),
+                onClose()
             ) : (alert("لطفا تعداد محصول را وارد نمایید"))
     }
 
