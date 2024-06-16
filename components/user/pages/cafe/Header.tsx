@@ -11,7 +11,7 @@ const Header = () => {
                 <h2 className='text-white text-5xl font-mono  font-bold p-16 lg:p-12 sm:px-8 sm:py-4 sm:text-3xl'>لذت یک قهوه به یادماندنی را در کنار ما تجربه کنید</h2>
                 <div className='flex gap-4 justify-center py-6'>
                     <Link href="#Menu" className='px-8 py-4 text-white border-2 border-coffee font-semibold duration-200  bg-coffee rounded-md hover:bg-transparent' >مشاهده منو</Link>
-                    <Link href="/coffeeshop/reservation" className='px-8 py-4 text-white border-2 border-coffee font-semibold duration-200 hover:bg-coffee/85  rounded-md' >رزرو میز</Link>
+                    <Link href="/coffee-shop/reservation" className='px-8 py-4 text-white border-2 border-coffee font-semibold duration-200 hover:bg-coffee/85  rounded-md' >رزرو میز</Link>
                 </div>
             </section>
         </header>

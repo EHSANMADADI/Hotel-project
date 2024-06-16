@@ -8,11 +8,7 @@ import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { CiShoppingCart } from "react-icons/ci";
 import { FaUserEdit } from "react-icons/fa";
 import { useCart } from '@/Context/FoodContextProvider'
-<<<<<<< HEAD
-import { useEffect, useState } from "react";
-=======
->>>>>>> a199670cff7f69089e9adb5cce711d39be3b9133
-
+import { useState } from "react";
 
 const links = [
   {
@@ -49,21 +45,16 @@ const Menu = () => {
   const { setToggleMenu, showStickyMenu, toggleMenu, dashboardPage } =
     useMenu();
   const cart = useCart();
-<<<<<<< HEAD
   const [selectedItems, setSelectItems] = useState(cart.selectedItems)
   console.log("menue=>"+selectedItems);
   
  
   
-=======
   const amountOfCart = cart.selectedItems.reduce((acc,item)=> item.quantity+acc,0 )
   console.log(cart.selectedItems);
-  // const amountOfCart = cart.selectedItems.reduce((acc, item) => { return acc + item.quantity }, 0)
-  // const amountOfCart = 3; 
 
   console.log({cart});
 
->>>>>>> a199670cff7f69089e9adb5cce711d39be3b9133
   return (
     <>
       <div
