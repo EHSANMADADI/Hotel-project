@@ -70,7 +70,7 @@ export default function Product(props: { type: string; searchItem: any; }) {
                                              <p className="text-xl md:text-sm font-bold m-5 border-b-2 card-overlay-paragraph">{p.price+'T'} </p>
                                              <button className="border border-white rounded-lg bg-transparent  p-5 md:p-2 hover:bg-slate-50 hover:text-blue-500 font-bold" onClick={() => handelsefaresh(p.nameFood, p.price, p.img,p.Id)}>سفارش</button>
                                              <Modal Open={open} onClose={() => setOpen(false)} >
-                                                  <Selected imageSrc={imageItem} name={nameorder} price={priseItem} id={id} />
+                                                  <Selected imageSrc={imageItem} name={nameorder} price={priseItem} id={id} onClose={()=>setOpen(false)} />
                                              </Modal>
 
                                         </div>

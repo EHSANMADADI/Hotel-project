@@ -7,7 +7,6 @@ import DatePicker from "react-multi-date-picker";
 import axios from 'axios';
 import persian from 'react-date-object/calendars/persian';
 import persian_fa from 'react-date-object/locales/persian_fa';
-import Router from 'next/router';
 import { useRouter } from 'next/navigation';
 
 export default function FormRezerv() {
@@ -102,5 +101,6 @@ export default function FormRezerv() {
                     }}
                >ثبت</button>
           </form >
+          
      )
 }

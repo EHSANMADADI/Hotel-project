@@ -8,7 +8,8 @@ import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { CiShoppingCart } from "react-icons/ci";
 import { FaUserEdit } from "react-icons/fa";
 import { useCart } from '@/Context/FoodContextProvider'
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 
 const links = [
   {
@@ -45,6 +46,7 @@ const Menu = () => {
   const { setToggleMenu, showStickyMenu, toggleMenu, dashboardPage } =
     useMenu();
   const cart = useCart();
+
   const [selectedItems, setSelectItems] = useState(cart.selectedItems)
   console.log("menue=>"+selectedItems);
   

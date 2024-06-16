@@ -45,8 +45,6 @@ const Resturant = () => {
                                         onClick={() => { return (setTypeFood('old-food')) }}>غذای سنتی</button>
                                    <button className='sm:text-xs font-bold md:p-2 p-3 bg-transparent border border-blue-400 text-white rounded-md mx-5  hover:bg-slate-200 hover:text-blue-500 transition-all'
                                         onClick={() => { return (setTypeFood('fast-food')) }}> فست فوود</button>
-                                   {/* <button className='font-bold p-3 bg-transparent border border-blue-400 text-white rounded-md  hover:bg-slate-200 hover:text-blue-500 transition-all'
-                              onClick={() => {return(setTypeFood('drink'))}}> نوشیدنی</button> */}
                               </div>
                          </div>
                     </div>
