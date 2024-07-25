@@ -6,7 +6,7 @@ interface Props {
 
 const Title = ({ children }: Props) => {
     return (
-        <h2 className='text-center font-bold text-3xl mt-2 mb-10'>{children}</h2>
+        <h2 className='text-center font-bold xs:text-xl text-3xl mt-2 mb-10'>{children}</h2>
     )
 }
 
