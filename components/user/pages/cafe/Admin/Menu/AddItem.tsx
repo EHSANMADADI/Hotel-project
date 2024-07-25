@@ -45,11 +45,11 @@ const AddItem = () => {
                 toast.error("تعریف محصول با خطا مواجه شد. (خطای سمت سرور رخ داد.)", { duration: 3000 })
             else
                 toast.error("تعریف محصول با خطا مواجه شد.", { duration: 3000 })
-        
-            })
+
+        })
         //Add Image
     }
-    
+
     return (
         <>
             <Title>اضافه کردن به منو</Title>
