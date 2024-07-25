@@ -32,7 +32,8 @@ const AddTable = () => {
             type,
             number_of_chairs,
             number_of_table,
-            description
+            description,
+            is_disabled:true
         }).then(() => {
             toast.success("میز با موفقیت تعریف شد.")
         }).catch(err => {

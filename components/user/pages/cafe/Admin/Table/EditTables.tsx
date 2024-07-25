@@ -2,6 +2,7 @@ import React from 'react'
 import useTables from '../hooks/useTables';
 import Title from '../Title';
 import TablesGrid from './TablesGrid';
+import Spinner from '../Spinner';
 
 const EditTables = () => {
   const { data: tables, isError, isPending } = useTables()
@@ -15,7 +16,7 @@ const EditTables = () => {
     <div>
       <Title>حذف و ویرایش میزها</Title>
       {
-        isPending ? <p className='text-xl font-bold'>در حال دریافت اطلاعات ...</p> :
+        isPending ? <Spinner /> :
           <TablesGrid tables={tables} />
       }
     </div>
