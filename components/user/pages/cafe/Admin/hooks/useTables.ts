@@ -5,7 +5,7 @@ const useTables = () =>
   useQuery({
     queryKey: ["tables"],
     queryFn: async () => (await api.get("/coffee-shop/tables")).data,
-    gcTime: 10 * 1000,
+    gcTime: 3 * 1000,
   });
 
 export default useTables;
