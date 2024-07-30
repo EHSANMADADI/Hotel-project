@@ -51,8 +51,8 @@ const Menu = () => {
   console.log("menue=>"+selectedItems);
   
  
-  
-  const amountOfCart = cart.selectedItems.reduce((acc,item)=> item.quantity+acc,0 )
+  const amountOfCart = (cart.selectedItems || []).reduce((acc, item) => item.quantity + acc, 0);
+
   console.log(cart.selectedItems);
 
   console.log({cart});
