@@ -4,6 +4,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import toast from 'react-hot-toast';
 import api from '@/Configs/api';
 import { useQueryClient } from '@tanstack/react-query'
+import Link from 'next/link';
 
 type TableType = {
     id: number,
@@ -69,7 +70,9 @@ const TablesGrid = ({ tables }: TableProps) => {
                     {/* <TableData >{table.description || " - "}</TableData> */}
                     <TableData> <input type='checkbox' onChange={() => disable_enableTable(table)} checked={!!table.is_disabled} /> </TableData>
                     <td className='border border-indigo-400 font-semibold flex justify-center items-center gap-6 xs:gap-2'>
-                        <CiEdit onClick={() => { }} className='cursor-pointer' color='#0ecb11' size={24} />
+                        <Link href={`/coffee-shop/admin/editTable/${table.id}`}>
+                        <CiEdit  className='cursor-pointer' color='#0ecb11' size={24} />
+                        </Link>
                         <FaTrashAlt className='cursor-pointer' color='#e71212' size={20} onClick={() => deleteTable(table.id)} /></td>
                 </tr>)}
             </table>

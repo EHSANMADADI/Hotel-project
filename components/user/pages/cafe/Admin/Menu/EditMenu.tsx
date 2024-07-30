@@ -7,22 +7,14 @@ import { useQueryClient } from '@tanstack/react-query'
 import api from '@/Configs/api'
 import toast from 'react-hot-toast'
 import Spinner from '../Spinner'
+import Link from 'next/link'
+import { MenuType } from './MenuItemType'
 
-type MenuType = {
-  id: number,
-  name: string
-  description?: string
-  price: string
-  slug: string
-  type: string
-  category_id: number[]
-}
 
 
 const EditMenu = () => {
   const { data: menuItems, isError, isPending } = UseMenu()
   const queryClient = useQueryClient()
-  const updateItem = () => { }
 
   const deleteItem = (id: number) => {
     try {
@@ -34,7 +26,7 @@ const EditMenu = () => {
       toast.error("حذف آیتم با خطا مواجه شد")
     }
   }
-    if (isError)
+  if (isError)
     return <div><Title>حذف و ویرایش منو</Title>
       <h2 className='text-center font-bold text-xl py-8 animate-pulse'>دریافت اطلاعات با خطا مواجه شد. </h2>
     </div>
@@ -58,7 +50,9 @@ const EditMenu = () => {
                 <TableData>{Number(item.price).toLocaleString()}</TableData>
                 <TableData>{item.description || " - "}</TableData>
                 <td className='border border-indigo-400 font-semibold flex justify-center items-center gap-6 xs:gap-2'>
-                  <CiEdit onClick={() => { updateItem }} className='cursor-pointer' color='#0ecb11' size={24} />
+                  <Link href={`/coffee-shop/admin/editMenu/${item.id}`} >
+                    <CiEdit className='cursor-pointer' color='#0ecb11' size={24} />
+                  </Link>
                   <FaTrashAlt className='cursor-pointer' color='#e71212' size={20} onClick={() => { deleteItem(item.id) }} /></td>
               </tr>)}
             </table>
