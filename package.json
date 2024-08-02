@@ -29,7 +29,8 @@
     "sweetalert": "^2.1.2",
     "sweetalert2": "^11.10.7",
     "tw-elements": "^2.0.0",
-    "vidstack": "^0.6.13"
+    "vidstack": "^0.6.13",
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
     "@types/node": "latest",
