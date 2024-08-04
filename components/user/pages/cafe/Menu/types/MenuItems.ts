@@ -5,5 +5,8 @@ export interface MenuItems {
     type: string,
     description: string
     price: string
-    media: string
+    media: {
+        id:number
+        url:string
+    }[]
 }

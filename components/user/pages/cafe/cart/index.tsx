@@ -31,7 +31,7 @@ export default Cart
 
 const EmptyCart = () => {
   return <div className='flex flex-col items-center gap-8 '>
-    <p className='text-neutral-200 font-bold text-4xl'>سبد خرید شما خالی است</p>
+    <p className='text-slate-700 dark:text-neutral-200 font-bold text-4xl '>سبد خرید شما خالی است</p>
     <Link href='/coffee-shop#Menu' className='bg-orange-500 px-6 py-3 rounded-xl animate-bounce shadow-lg hover:bg-orange-600 duration-300'>مشاهده منو </Link>
   </div>
 }

@@ -6,6 +6,7 @@ interface SelectedItems {
     price: number
     quantity: number
     image:string
+    
 }
 
 interface Props {
@@ -25,7 +26,6 @@ const initialState = {
     total: 0,
     checkout: false,
     selectedItems: []
-
 }
 interface Action {
     type: "ADD" | "REMOVE" | "CHECKOUT",

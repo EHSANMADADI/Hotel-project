@@ -6,4 +6,5 @@ export type MenuType = {
   slug: string;
   type: string;
   category_id: number[];
+  media:string
 };
