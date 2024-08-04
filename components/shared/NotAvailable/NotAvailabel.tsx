@@ -6,6 +6,5 @@ export default function NotAvailable() {
     <h2 className="text-3xl p-5">403</h2>
     <div className='text-xl' >شما به این صفحه دسترسی ندارید لطفا لاگین کنید</div>
     </div>
-    
   )
 }

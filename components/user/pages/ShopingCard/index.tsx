@@ -25,14 +25,14 @@ export default function index() {
                <div className="p-5 flex justify-end  bg-transparent">
                     <Link className=' text-blue-500 text-6xl md:text-3xl hover:text-blue-800' href='/resturant'> <IoArrowBackCircleSharp /> </Link>
                </div>
-               {!selectedItems.length && (
+               {!selectedItems?.length && (
                     <div className="w-full h-screen flex items-center justify-center text-gray-300">
 
                          <h1 className="font-extrabold text-5xl text-center ">سبد خرید خالی است</h1>
                          <span className="text-6xl text-pink-300 font-extrabold"><PiSmileyStickerThin /></span>
                     </div>
                )}
-               {selectedItems.length && (
+               {selectedItems?.length && (
                     <div className="w-1/2 mx-auto h-screen">
                          {
                               selectedItems.map((item, index) => (
