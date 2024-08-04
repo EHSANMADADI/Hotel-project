@@ -1,22 +1,16 @@
 import React from 'react'
 import Image from 'next/image'
 import { useCart, useSetCart } from '@/Context/CartContextProvider'
+import { MenuItems } from './types/MenuItems'
 
-interface MenuItem {
-    item: {
-        id: number,
-        name: string
-        description: string
-        price: number
-        image: string
-    }
+interface MenuItemProps{
+    item:MenuItems
 }
 
-const CardItem = ({ item: { description, image, name, price, id } }: MenuItem) => {
+const CardItem = ( {item:{description,id,media:image ,name , price }} :MenuItemProps) => {
     const cart = useCart()
     const dispatch = useSetCart()
     const selectedItem = cart.selectedItems.find(item => item.id === id)
-
     return (<article className='flex xs:flex-col rounded-lg bg-stone-300/80 dark:bg-stone-950/80 justify-between px-4 lg:px-8 md:px-6 py-2 items-center'>
         <div className='flex gap-4 items-center'>
             <Image className='rounded-full border-2 border-dashed border-coffee bg-coffee/25' src={image} alt='He' width={72} height={72} />

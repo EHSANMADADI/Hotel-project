@@ -32,7 +32,7 @@ interface Action {
     payload: {
         id: number,
         name: string,
-        price: number,
+        price: string,
         image:string
     }
 }
@@ -42,8 +42,8 @@ const reducer = (state: Cart, action: Action) => {
         case "ADD": {
             const index = state.selectedItems.findIndex(item => item.id === action.payload.id)
             if (index === -1) {
-                state.selectedItems.push({ id: action.payload.id, name: action.payload.name, price: action.payload.price , image:action.payload.image, quantity: 1 })
-                state.total += action.payload.price;
+                state.selectedItems.push({ id: action.payload.id, name: action.payload.name, price: +action.payload.price , image:action.payload.image, quantity: 1 })
+                state.total += +action.payload.price;
             }
             else {
                 state.selectedItems[index].quantity++;
@@ -58,11 +58,11 @@ const reducer = (state: Cart, action: Action) => {
             if (index === -1)
                 return state;
             else if (state.selectedItems[index].quantity === 1) {
-                state.total -= state.selectedItems[index].price;
+                state.total -= +state.selectedItems[index].price;
                 state.selectedItems.splice(index, 1);
             }
             else {
-                state.total -= state.selectedItems[index].price;
+                state.total -= +state.selectedItems[index].price;
                 state.selectedItems[index].quantity--;
             }
             return {
