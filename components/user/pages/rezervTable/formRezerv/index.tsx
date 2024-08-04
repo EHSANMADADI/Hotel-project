@@ -59,7 +59,8 @@ export default function FormRezerv() {
           setShowList(false)
           Swal.fire({
                title: "لطفا اطلاعات را تکمیل نمایید ",
-               icon: "error"
+               icon: "error",
+               confirmButtonText:"تایید"
           })
          }
      }
