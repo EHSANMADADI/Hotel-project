@@ -9,12 +9,14 @@ import toast from 'react-hot-toast'
 import Spinner from '../Spinner'
 import Link from 'next/link'
 import { MenuType } from './MenuItemType'
-
-
+import Image from 'next/image'
 
 const EditMenu = () => {
-  const { data: menuItems, isError, isPending } = UseMenu()
+  const { data, isError, isPending } = UseMenu()
+  const menuItems = data?.filter((item) => item.type === 'coffeeShop')
   const queryClient = useQueryClient()
+  console.log(menuItems);
+  
 
   const deleteItem = (id: number) => {
     try {
@@ -38,14 +40,16 @@ const EditMenu = () => {
         isPending ?
           <Spinner />
           :
-          menuItems.length === 0 ? <h2 className=' text-center font-bold text-xl py-8 animate-pulse'>در حال حاضر هیچ آیتمی در منو وجود ندارد </h2> :
+          menuItems?.length === 0 ? <h2 className=' text-center font-bold text-xl py-8 animate-pulse'>در حال حاضر هیچ آیتمی در منو وجود ندارد </h2> :
             <table className=' px-6 py-10 dark:bg-slate-700 w-full text-center '>
               <caption className='text-lg font-semibold mb-2'>لیست آیتم های منو</caption>
+              <th className='border border-indigo-400'>تصویر محصول</th>
               <th className='border border-indigo-400'>نام محصول</th>
               <th className='border border-indigo-400'>قیمت </th>
               <th className='border border-indigo-400'>توضیحات</th>
               <th className='border border-indigo-400' colSpan={0.3} >ویرایش و حذف</th>
-              {menuItems.map((item: MenuType) => <tr key={item.id}>
+              {menuItems?.map((item: MenuType) => <tr key={item.id}>                
+                <TableData> <Image src={`http://127.0.0.1:8000/menu-item/${typeof item.media === 'object'&& item.media[item.media.length-1]?.url}` || ''} alt={item.name.substring(0,10)} width={40} height={40} className='object-cover m-auto' /> </TableData>
                 <TableData>{item.name}</TableData>
                 <TableData>{Number(item.price).toLocaleString()}</TableData>
                 <TableData>{item.description || " - "}</TableData>

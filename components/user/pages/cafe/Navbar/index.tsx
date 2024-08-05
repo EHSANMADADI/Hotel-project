@@ -32,17 +32,17 @@ const Navbar = () => {
         {!!role && (
           role === 'client' ?
             <Link href='/coffee-shop/user'>
-              <FaUserAlt color='#eee' size={32} />
+              <FaUserAlt cursor='pointer' className='hover:fill-slate-300 duration-100' color='#eee' size={32} />
             </Link>
             :
             <Link href='/coffee-shop/admin'>
-              <FaUserEdit color='#eee' size={32} />
+              <FaUserEdit cursor='pointer' className='hover:fill-slate-300 duration-100' color='#eee' size={32} />
             </Link>)
         }
         <Link href='/coffee-shop/cart' className='relative'>
           <span className='absolute -top-3 -right-2 px-1 bg-amber-400 rounded-full
            text-neutral-800 font-semibold text-lg'>{amountOfCart}</span>
-          <BsCart2 color='white' size={32} />
+          <BsCart2 color='#eee' className='hover:fill-slate-300 duration-100' size={32} />
         </Link>
         <Link href='#' className='md:self-end' >
           <Image src={'/images/cafe/Clogo.webp'} className='border-dotted
