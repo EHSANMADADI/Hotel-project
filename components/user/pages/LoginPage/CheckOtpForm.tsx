@@ -1,9 +1,6 @@
 import { useState, useEffect, FormEvent, Dispatch, SetStateAction } from 'react'
 import Image from 'next/image'
 import useCheckOTP from './hooks/useCheckOTP'
-import { setCookie } from '@/utils/cookie'
-import toast from 'react-hot-toast'
-import { useRouter } from 'next/navigation'
 
 interface Props {
     setStep: Dispatch<SetStateAction<1 | 2>>
@@ -12,9 +9,9 @@ interface Props {
 
 const CheckOtpForm = ({ mobile, setStep }: Props) => {
     const [OTPInput, setOTPInput] = useState('');
-    const [expireOTPSecond, setExpireOTPSecond] = useState(59);
-    const { mutate, data } = useCheckOTP()
-    const { push } = useRouter()
+    const [expireOTPSecond, setExpireOTPSecond] = useState(119);
+    const { mutate } = useCheckOTP()
+
     useEffect(() => {
         if (expireOTPSecond > 0) {
             const interval = setTimeout(() => {
@@ -23,11 +20,7 @@ const CheckOtpForm = ({ mobile, setStep }: Props) => {
             return () => { clearInterval(interval) }
         }
     }, [expireOTPSecond])
-    setCookie(data?.data.token)
-    if (data?.data.token) {
-        toast.success("با موفقیت وارد شدید.", { duration: 3000 })
-        push('/')
-    }
+
     const submitHandler = (e: FormEvent) => {
         e.preventDefault();
         mutate({ phone: mobile, otpcode: OTPInput })
