@@ -14,9 +14,7 @@ import Image from 'next/image'
 const EditMenu = () => {
   const { data, isError, isPending } = UseMenu()
   const menuItems = data?.filter((item) => item.type === 'coffeeShop')
-  const queryClient = useQueryClient()
-  console.log(menuItems);
-  
+  const queryClient = useQueryClient()  
 
   const deleteItem = (id: number) => {
     try {
