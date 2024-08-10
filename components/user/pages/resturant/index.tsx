@@ -8,6 +8,7 @@ import Testimonials from '../home/testmonials/index';
 import Footer from '@/components/user/pages/home/footer/index';
 import Link from 'next/link';
 import ChatOnline from '@/components/shared/chatOnline';
+import MenuResturont from './MenuResturont';
 const Resturant = () => {
      const [typefood, setTypeFood] = useState('');
      const [searchItem, setSerchItem] = useState('');
@@ -21,6 +22,10 @@ const Resturant = () => {
      return (<>
           <>
                <div className=" bg-food absolute inset-0 sm:w-full">
+                    <div className='text-white'>
+                    <MenuResturont/>
+                    </div>
+                    
                     <div className=" mt-24  dark:text-white flex items-center flex-col ">
                          <div className="mt-10 mb-5 md:mt-16">
                               <h1 className="text-8xl text-white font-black text-center leading-[1.5] max-w-4xl w-full md:text-5xl md:leading-[1.3]">به رستوران <span className="text-transparent  border-8 px-2"

@@ -1,12 +1,11 @@
-
-import Menu from "@/components/user/pages/home/landing/menu";
-import Resturant from '@/components/user/pages/resturant';
+import Resturant from "@/components/user/pages/resturant";
+import MenuResturont from "@/components/user/pages/resturant/MenuResturont";
 
 const Page = () => {
   return (
     <>
-        <Menu />
-        <Resturant />
+      <MenuResturont />
+      <Resturant />
     </>
   );
 };
