@@ -21,9 +21,9 @@ const Home = () => {
     <Testmonials />
     <Stats />
     <AboutUs />
-    <PopularFoods />
+    {/* <PopularFoods /> */}
     <Banner />
-    <InfoBox />
+    {/* <InfoBox /> */}
     <Articles />
     <Videos />
     {/* <Auth /> */}
