@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import BlogCardImpl from "./types";
+import React from "react";
 
 const BlogCard = ({ date, desc, href, src, title }: BlogCardImpl) => {
   return (
     <>
-      <Link href={"/"} className="w-full inline-block  relative group h-full">
+      <Link href={href} className="w-full inline-block  relative group h-full">
         <div className="w-full h-full overflow-hidden">
           <div
             className="absolute inset-0 opacity-20 bg-black transition-all duration-700
