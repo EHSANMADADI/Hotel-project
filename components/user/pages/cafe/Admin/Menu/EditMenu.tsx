@@ -41,11 +41,11 @@ const EditMenu = () => {
           menuItems?.length === 0 ? <h2 className=' text-center font-bold text-xl py-8 animate-pulse'>در حال حاضر هیچ آیتمی در منو وجود ندارد </h2> :
             <table className=' px-6 py-10 dark:bg-slate-700 w-full text-center '>
               <caption className='text-lg font-semibold mb-2'>لیست آیتم های منو</caption>
-              <th className='border border-indigo-400'>تصویر محصول</th>
-              <th className='border border-indigo-400'>نام محصول</th>
-              <th className='border border-indigo-400'>قیمت </th>
-              <th className='border border-indigo-400'>توضیحات</th>
-              <th className='border border-indigo-400' colSpan={0.3} >ویرایش و حذف</th>
+              <th className='border-2 border-indigo-400'>تصویر محصول</th>
+              <th className='border-2 border-indigo-400'>نام محصول</th>
+              <th className='border-2 border-indigo-400'>قیمت </th>
+              <th className='border-2 border-indigo-400'>توضیحات</th>
+              <th className='border-2 border-indigo-400' colSpan={0.3} >ویرایش و حذف</th>
               {menuItems?.map((item: MenuType) => <tr key={item.id}>                
                 <TableData> <Image src={`http://127.0.0.1:8000/menu-item/${typeof item.media === 'object'&& item.media[item.media.length-1]?.url}` || ''} alt={item.name.substring(0,10)} width={40} height={40} className='object-cover m-auto' /> </TableData>
                 <TableData>{item.name}</TableData>
@@ -66,7 +66,7 @@ const EditMenu = () => {
 export default EditMenu
 
 const TableData = ({ children }: { children: ReactNode }) => {
-  return <td className='border border-indigo-400 font-semibold'>
+  return <td className='border-2 border-indigo-400 font-semibold'>
     {children}
   </td>
 }

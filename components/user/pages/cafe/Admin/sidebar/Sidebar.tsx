@@ -13,6 +13,7 @@ const services: Services[] = [
     { text: "ویرایش میزها", step: "Edit Table" },
     { text: "افزودن به منو", step: "Add to Menu" },
     { text: "ویرایش منو", step: "Edit Menu" },
+    { text: "نمایش رزروها", step: "Show Reserves" },
 ]
 const Sidebar = ({ setStep, step }: Props) => {
     return (

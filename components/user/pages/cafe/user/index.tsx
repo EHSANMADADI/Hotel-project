@@ -20,7 +20,7 @@ const User = () => {
                     <TableHeader>تاریخ</TableHeader>
                     <TableHeader>تعداد مهمانان</TableHeader>
                     <TableHeader>وضعیت</TableHeader>
-                    <TableHeader>حذف</TableHeader>
+                    {/* <TableHeader>حذف</TableHeader> */}
                 </thead>
                 <tbody>
                     {data.map(reserve => <tr key={reserve.id}>
@@ -40,6 +40,7 @@ const User = () => {
                     </tr>)}
                 </tbody>
             </table>
+            <p className='font-bold text-xl text-center my-6'>برای پشتیبانی با شماره 09123456789 تماس حاصل فرمایید</p>
         </Overlay>
     )
 }

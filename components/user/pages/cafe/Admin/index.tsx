@@ -5,8 +5,9 @@ import AddTable from './Table/AddTable';
 import EditTables from './Table/EditTables';
 import AddItem from './Menu/AddItem';
 import EditMenu from './Menu/EditMenu';
+import ShowReserves from './Reserves/ShowReserves';
 
-export type Step = "Add Table" | "Edit Table" | "Add to Menu" | "Edit Menu";
+export type Step = "Add Table" | "Edit Table" | "Add to Menu" | "Edit Menu" | "Show Reserves";
 
 const AdminPanel = () => {
     const [step, setStep] = useState<Step>("Add Table")
@@ -18,6 +19,7 @@ const AdminPanel = () => {
                 {step === "Add Table" && <AddTable />}
                 {step === "Add to Menu" && <AddItem />}
                 {step === "Edit Menu" && <EditMenu />}
+                {step === 'Show Reserves' && <ShowReserves />}
             </section>
         </main>
     )

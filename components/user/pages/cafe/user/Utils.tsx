@@ -39,7 +39,7 @@ export const Error = () => {
 
 export const Overlay = ({ children }: { children: ReactNode }) => {
     return (
-        <div className='min-h-[calc(100vh-88px)] max-w-4xl mx-auto p-8 bg-gray-50'>
+        <div className='min-h-[calc(100vh-88px)] max-w-4xl mx-auto p-8'>
             {children}
         </div>
     )

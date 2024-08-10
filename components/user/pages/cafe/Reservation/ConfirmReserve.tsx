@@ -1,4 +1,5 @@
 import api from '@/Configs/api'
+import { useRouter } from 'next/navigation'
 import React, { FormEvent } from 'react'
 import toast from 'react-hot-toast'
 
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const ConfirmReserve = ({ checkInHour, checkOutHour, tableId, date }: Props) => {
+    const { push } = useRouter()
     const reserveTable = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         const formData = new FormData(e.currentTarget)
@@ -33,7 +35,7 @@ const ConfirmReserve = ({ checkInHour, checkOutHour, tableId, date }: Props) => 
             date,
             check_in_hour: checkInHour,
             check_out_hour: checkOutHour,
-        }).then(_ => toast.success('میز با موفقیت رزرو شد.')
+        }).then(_ => { toast.success('میز با موفقیت رزرو شد.'); push('/coffee-shop') }
         ).catch(_ => toast.error("رزرو میز با خطا مواجه شد.")
         )
     }
