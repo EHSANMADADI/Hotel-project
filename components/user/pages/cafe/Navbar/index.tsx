@@ -27,7 +27,7 @@ const Navbar = () => {
         {Links.map(link => <CustomLink key={link.id} href={link.href}>{link.title}</CustomLink>)}
       </ul>
       <MobileMenu />
-      <div className='flex items-center gap-6 -z-10'>
+      <div className='flex items-center gap-6 z-10'>
 
         {!!role && (
           role === 'client' ?
