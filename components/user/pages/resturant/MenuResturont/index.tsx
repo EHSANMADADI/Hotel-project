@@ -8,6 +8,19 @@ export default function MenuResturont() {
     <div className="flex z-50 text-center justify-between border-b-2 border-dashed m-5 p-5">
       <div className="flex justify-around">
         <Link
+          href="/"
+          className="mx-5 text-xl cursor-pointer hover:text-blue-500 duration-200"
+        >
+          هتل
+        </Link>
+      
+        <Link
+          href="/coffee-shop"
+          className="mx-5 text-xl cursor-pointer hover:text-blue-500 duration-200"
+        >
+          کافی شاپ
+        </Link>
+        <Link
           className="mx-5 text-xl cursor-pointer hover:text-blue-500 duration-200"
           href="/resturant/rezervTable"
         >
@@ -28,20 +41,14 @@ export default function MenuResturont() {
         </Link>
       </div>
       <div className="flex">
-        <div
-          className=
-            ' text-5xl z-50 m-0 border w-12 border-dashed border-yellow-200  flex rounded-full justify-center'
-        >
+        <div className=" text-5xl z-50 m-0 border w-12 border-dashed border-yellow-200  flex rounded-full justify-center">
           <Link href={"/ShopingCard"}>
             {" "}
             <CiShoppingCart className="p-1 cursor-pointer" />{" "}
           </Link>
         </div>
 
-        <div
-          className=
-            'text-5xl mx-1 z-50 m-0 border w-12 border-none hover:text-blue-300 cursor-pointer  flex rounded-full justify-center'
-        >
+        <div className="text-5xl mx-1 z-50 m-0 border w-12 border-none hover:text-blue-300 cursor-pointer  flex rounded-full justify-center">
           <Link href={"/auth"}>
             <FaUserEdit className="p-1" />
           </Link>

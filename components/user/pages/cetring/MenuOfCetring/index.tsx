@@ -7,6 +7,16 @@ export default function MenuOfCetring() {
     return (
         <div className="flex z-50 text-center justify-between border-b-2 border-dashed p-5">
           <div className="flex justify-around">
+
+            <Link href='/'  className="mx-5 text-xl cursor-pointer hover:text-blue-500 duration-200">
+               هتل
+            </Link>
+            <Link href='/resturant'  className="mx-5 text-xl cursor-pointer hover:text-blue-500 duration-200">
+              رستوران
+            </Link>
+            <Link href='/coffee-shop'  className="mx-5 text-xl cursor-pointer hover:text-blue-500 duration-200">
+            کافی شاپ
+             </Link>
             <Link
               className="mx-5 text-xl cursor-pointer hover:text-blue-500 duration-200"
               href="/resturant/personalPage"
