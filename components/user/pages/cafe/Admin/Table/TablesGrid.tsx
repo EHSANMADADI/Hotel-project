@@ -33,17 +33,17 @@ const TablesGrid = ({ tables }: TableProps) => {
         }
     }
 
-    const disable_enableTable = ({ id, is_disabled, number_of_chairs, number_of_table, rates, type, description }: TableType) => {
+    const disable_enableTable = async ({ id, is_disabled, number_of_chairs, number_of_table, rates, type, description }: TableType) => {
         try {
-            api.put(`/coffee-shop/tables/${id}`,
+             await api.put(`/coffee-shop/tables/${id}`,
                 {
                     is_disabled: +!(!!is_disabled),
                     number_of_chairs, number_of_table,
                     rates, type, coffee_shop_id: 1,
                     description
                 })
-            
-            toast.success( is_disabled ? "میز با موفقیت غیرفعال شد." : "میز با موفقیت فعال شد.")
+
+            toast.success(!is_disabled ? "میز با موفقیت غیرفعال شد." : "میز با موفقیت فعال شد.")
             queryClient.invalidateQueries()
         }
         catch (error) {
@@ -68,10 +68,10 @@ const TablesGrid = ({ tables }: TableProps) => {
                     <TableData>{table.type === "couple" ? "عاشقانه" : "خانوادگی"}</TableData>
                     <TableData>{Number(table.rates).toLocaleString()}</TableData>
                     {/* <TableData >{table.description || " - "}</TableData> */}
-                    <TableData> <input type='checkbox' onChange={() => disable_enableTable(table)} checked={!!table.is_disabled} /> </TableData>
+                    <TableData> <input type='checkbox' onChange={() => disable_enableTable(table)} checked={!(!!table.is_disabled)} /> </TableData>
                     <td className='border border-indigo-400 font-semibold flex justify-center items-center gap-6 xs:gap-2'>
                         <Link href={`/coffee-shop/admin/editTable/${table.id}`}>
-                        <CiEdit className='cursor-pointer fill-green-700 dark:fill-[#0ecb11] ' size={24} />
+                            <CiEdit className='cursor-pointer fill-green-700 dark:fill-[#0ecb11] ' size={24} />
                         </Link>
                         <FaTrashAlt className='cursor-pointer' color='#e71212' size={20} onClick={() => deleteTable(table.id)} /></td>
                 </tr>)}
@@ -82,7 +82,7 @@ const TablesGrid = ({ tables }: TableProps) => {
 
 export default TablesGrid
 
-const TableData = ({ children , className }: { children: ReactNode , className?:string }) => {
+const TableData = ({ children, className }: { children: ReactNode, className?: string }) => {
     return <td className={`border-2 border-indigo-400 font-semibold ${className}`} >
         {children}
     </td>
