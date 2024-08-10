@@ -1,12 +1,15 @@
 'use client'
 import CartContextProvider from "@/Context/CartContextProvider"
 import Navbar from "@/components/user/pages/cafe/Navbar"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 const CafeLayout = ({ children }: { children: React.ReactNode }) => {
     return <CartContextProvider>
-        <main className="bg-slate-400 dark:bg-slate-950">
-            <Navbar />
-            {children}
-        </main>
+        <QueryClientProvider client={new QueryClient()}>
+            <main className="bg-slate-200 dark:bg-slate-950">
+                <Navbar />
+                {children}
+            </main>
+        </QueryClientProvider>
     </CartContextProvider>
 }
 
