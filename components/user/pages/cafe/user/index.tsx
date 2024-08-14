@@ -4,6 +4,7 @@ import { Error, Loading, NoData, Overlay, TableHeader, Tabledata } from './Utils
 
 const User = () => {
     const { data, isError, isPending } = useCoffeeShopReserves()
+    
     if (isError) return <Error />
     if (isPending) return <Loading />
     if (!data.length) return <NoData />
@@ -40,7 +41,7 @@ const User = () => {
                     </tr>)}
                 </tbody>
             </table>
-            <p className='font-bold text-xl text-center my-6'>برای پشتیبانی با شماره 09123456789 تماس حاصل فرمایید</p>
+            <p className='font-bold text-xl text-center my-6'>برای پشتیبانی با شماره 09388852033 تماس حاصل فرمایید</p>
         </Overlay>
     )
 }

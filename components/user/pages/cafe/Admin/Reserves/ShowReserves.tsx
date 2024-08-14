@@ -31,7 +31,7 @@ const ShowReserves = () => {
             <Tabledata>{reserve.id}</Tabledata>
             <Tabledata>{reserve.check_in_hour.slice(0, 5)}</Tabledata>
             <Tabledata>{reserve.check_out_hour.slice(0, 5)}</Tabledata>
-            <Tabledata>{reserve.coffee_shop_table_id}</Tabledata>
+            <Tabledata>{reserve.table.number_of_table}</Tabledata>
             <Tabledata>{reserve.date}</Tabledata>
             <Tabledata>{reserve.number_of_guest}</Tabledata>
             <Tabledata>{reserve.status.toLocaleLowerCase() === 'full' ? 'پرداخت شده' : 'تسویه نشده'}</Tabledata>

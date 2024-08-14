@@ -2,7 +2,7 @@ import api from "@/Configs/api";
 import toast from "react-hot-toast";
 import { useQuery } from "@tanstack/react-query";
 
-interface CafeReserves {
+export interface CafeReserves {
   check_in_hour: string;
   check_out_hour: string;
   date: string;
@@ -10,6 +10,10 @@ interface CafeReserves {
   status: string;
   coffee_shop_table_id: number;
   number_of_guest: string;
+  table: {
+    id: number;
+    number_of_table: string;
+  };
 }
 
 const useReserves = () => {

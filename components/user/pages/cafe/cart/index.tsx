@@ -1,32 +1,102 @@
 'use client'
-
 import Link from 'next/link'
 import CartItem from './CartItem'
 import { useCart } from '@/Context/CartContextProvider'
+import api from '@/Configs/api'
+import { useState } from 'react'
+import toast from 'react-hot-toast'
+import { Tabledata, TableHeader } from '../user/Utils'
+import { useRouter } from 'next/navigation'
+import { CafeReserves } from '../Admin/hooks/useReserves'
 
 const Cart = () => {
   const cart = useCart()
+  const { push } = useRouter()
+  const [reserves, setReserves] = useState([] as CafeReserves[])
+  const [selectedReserve, setSelectedReserve] = useState(-1)
   return (
     <main className='bg-slate-300/90 dark:bg-[#161a21] min-h-screen py-24'>
       {
         !cart.selectedItems.length ? <EmptyCart />
           :
           <section className='flex flex-col gap-8 items-center '>
-            {cart.selectedItems.map(item => <CartItem key={item.id} details={item} />)}
-            <Link href='#' title='اتصال به درگاه پرداخت' className='bg-orange-500 text-neutral-900 w-4/5 max-w-lg rounded-xl sm:px-6 px-12 py-4 text-center font-bold tracking-wide'>
-              {/* جمع فاکتور  : */}
-              پرداخت
-              {" "} {cart.total.toLocaleString()} {""}
-              تومان
-            </Link>
+            {cart.selectedItems.map(item =>
+              <CartItem key={item.id} details={item} />
+            )}
+            <button className='bg-orange-500 hover:bg-orange-600 duration-200
+             hover:-translate-y-1 text-neutral-900 w-4/5 max-w-lg rounded-xl 
+             sm:px-6 px-12 py-4 text-center font-bold tracking-wide'
+              onClick={() => {
+                api.get<{ coffeeShopReserves: CafeReserves[] }>('/my-reserves').then((data) => {
+                  if (!data.data.coffeeShopReserves.length)
+                    push('/coffee-shop/reservation')
+                  setReserves(data.data.coffeeShopReserves)
+                }).catch(() => toast.error("دریافت رزروها با خطا مواجه شد."))
+              }}
+            >
+              انتخاب رزرو
+            </button>
+            {
+              !!reserves.length &&
+              <table className='text-center w-4/6'>
+                <thead>
+                  <TableHeader>شماره رزرو</TableHeader>
+                  <TableHeader>ساعت ورود</TableHeader>
+                  <TableHeader>ساعت خروج</TableHeader>
+                  <TableHeader>شماره میز</TableHeader>
+                  <TableHeader>تاریخ</TableHeader>
+                  <TableHeader>تعداد مهمانان</TableHeader>
+                  <TableHeader>وضعیت</TableHeader>
+                  <TableHeader>انتخاب</TableHeader>
+                </thead>
+                <tbody>
+                  {reserves.map(reserve => <tr key={reserve.id}>
+                    <Tabledata>{reserve.id}</Tabledata>
+                    <Tabledata>{reserve.check_in_hour.slice(0, 5)}</Tabledata>
+                    <Tabledata>{reserve.check_out_hour.slice(0, 5)}</Tabledata>
+                    <Tabledata>{reserve.table.number_of_table}</Tabledata>
+                    <Tabledata>{reserve.date}</Tabledata>
+                    <Tabledata>{reserve.number_of_guest}</Tabledata>
+                    <Tabledata>{reserve.status.toLocaleLowerCase() === 'full' ? 'پرداخت شده' : 'تسویه نشده'}</Tabledata>
+                    <Tabledata><button
+                      onClick={() => setSelectedReserve(reserve.id)}
+                      className='px-2 py-1 bg-green-600 text-white rounded-md my-1'>انتخاب</button></Tabledata>
+                  </tr>)}
+                </tbody>
+              </table>
+            }
+            {
+              !!(selectedReserve !== -1) &&
+              <button onClick={() => {
+                const menuItemQuantities = [] as number[]
+                const menuItemIds = [] as number[]
+                cart.selectedItems.map(item => {
+                  menuItemQuantities.push(item.quantity)
+                  menuItemIds.push(item.id)
+                  api.post('/coffee-shop/1/orders', {
+                    reserve_id: selectedReserve,
+                    menu_item_quantities: menuItemQuantities,
+                    date: "2222/02/02",
+                    menu_item_id: menuItemIds
+                  }).then(() => {
+                    toast.success('آیتم ها با موفقیت رزرو شدند. منتظر شما هستیم🌹'); push('/coffee-shop')
+                  })
+                    .catch(() => toast.error('خطایی در پشت صحنه رخ داد. دقایقی دیگر دوباره تلاش کنید.'))
+                })
+
+              }} title='اتصال به درگاه پرداخت' className='bg-orange-500 hover:bg-orange-600 duration-200 hover:-translate-y-1 text-neutral-900 w-4/5 max-w-lg rounded-xl sm:px-6 px-12 py-4 text-center font-bold tracking-wide'>
+                پرداخت
+                {" "} {cart.total.toLocaleString()} {""}
+                تومان
+              </button>
+            }
           </section>
       }
-    </main>
+    </main >
   )
 }
 
 export default Cart
-
 
 
 const EmptyCart = () => {
