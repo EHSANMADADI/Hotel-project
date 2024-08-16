@@ -2,11 +2,11 @@ import React from "react";
 
 export default function BlogTow() {
   return (
-    <div className="bg-white">
-      <h2 className="text-2xl font-bold text-center m-10">
+    <div className="dark:bg-slate-900 bg-white px-4 py-8">
+      <h2 className="text-3xl font-bold text-center">
         چه نوع سفری در پیش روی خود دارید؟
       </h2>
-      <div className="p-5 leading-10" dir="rtl">
+      <div className="p-5 leading-10 text-justify dark:text-gray-200" dir="rtl">
         خب به عنوان یک خانم باید بدانید که چه نوع سفری را در پیش روی خود تجربه
         خواهید کرد تا در مجهزترین حالت ممکن به سفر بروید. در یک تقسیم‌بندی کلی،
         ما ۸ مدل سفر داریم که شامل موارد زیر می‌شود: سفرهای دوستانه همان‌طور که
@@ -27,10 +27,10 @@ export default function BlogTow() {
         در بین مردم و مخصوصا جوانان اهمیت ویژه‌ای دارد. کوله‌گردی کوله‌گردی از
         دیگر انواع سفر است که شاید با نام دیگر آن یعنی بک‌پکری آشنا باشید. در
         این سبک از سفر به جای چمدان، از کوله‌پشتی استفاده می‌کنید و تا آنجایی که
-        می‌توانید تمام وسایل خود را در آن جای می‌دهید. سفرهای آخرهفته
-      </div>
+        می‌توانید تمام وسایل خود را در آن جای می‌دهید. 
       <div className="flex justify-center p-5 rounded-md">
         <img className="rounded-md" src="/images/woman1.jpg" alt="woman"/>
+      </div>
       </div>
     </div>
   );

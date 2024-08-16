@@ -2,27 +2,27 @@ import React from "react";
 import Kordan from "@/public/images/kordan.jpg";
 export default function BlogOne() {
   return (
-    <div className="bg-white" dir="rtl">
-      <h2 className="text-2xl text-center font-bold my-5">
+    <div className="dark:bg-slate-900 bg-white px-4 py-8" dir="rtl">
+      <h2 className="text-3xl text-center font-bold">
         معرفی شهر های نزدیک تهران برای مسافرت
       </h2>
-      <div className="border-2 border-dotted p-5  m-2 rounded-md leading-10 flex flex-col">
-        <p>
+      <div className="p-5 leading-10 text-justify flex flex-col">
+        <p className="dark:text-gray-200">
           در زندگی امروزه که همه مشغول کار و تلاش‌اند مسافرت با اینکه خیلی دلچسب
           است اما کار سختی به‌نظر می‌رسد چون نیاز به وقت کافی و برنامه‌ریزی
           دارد. خیلی از افراد فکر می‌کنند برای سفر نیاز به روزهای تعطیل زیادی
           دارند اما ما به آن‌ها می‌گوییم سفر به شهرهای نزدیک به تهران و دیدن
           جاذبه‌های گردشگری آن‌ها در روزهای آخر هفته هم امکان‌پذیر است.
         </p>
-        <p>
+        <p className="dark:text-gray-200">
           با یک شب اقامت و اجاره ویلا در شهرهای نزدیک شهرتان می‌توانید یک سفر
           کوتاه و لذت‌بخش در روزهای آخر هفته داشته باشید و خستگی یک‌ هفته کار و
           تلاش را بین ببرید. اگر پایتخت‌‌نشین‌اید و قصد سفر به شهرهای نزدیک
           تهران یا اجاره سوئیت در تهران را دارید و وقت زیادی هم ندارید ما را تا
           انتهای این مطلب همراهی کنید که پیشنهاد‌های خوبی برایتان داریم.
         </p>
-        <h3 className="text-center font-bold">کردان و روستا های اطراف</h3>
-        <p>
+        <h3 className="text-center text-xl font-bold my-4">کردان و روستا های اطراف</h3>
+        <p className="dark:text-gray-200">
           کردان که در گذشته روستا بود و حالا به شهری پر از کارخانه و ویلاهای
           استخردار تبدیل شده و یکی از شهرهای نزدیک به تهران و مقصدهای سفر ساکنین
           پایتخت است. این شهر که در غرب استان البرز قرار گرفته آب‌و‌هوای مطبوعی
@@ -35,10 +35,10 @@ export default function BlogOne() {
           اتوبان کرج-قزوین حرکت کنید و بعد از ۲۰ کیلومتر وارد خروجی کردان شوید و
           مسیر را ادامه دهید.
         </p>
-        <h3 className="text-center font-bold">
+        <h3 className="text-center text-xl font-bold my-4">
           کاشان، شهر شعر و سهراب، از دیگر شهرهای نزدیک به تهران
         </h3>
-        <p>
+        <p className="dark:text-gray-200">
           یکی از شهرهای نزدیک به تهران ، که مقصد خوبی برای سفر ارزان و کوتاه
           است، کاشان است. این شهر تاریخی نه تنها به دلیل فاصله نزدیک مورد توجه
           تهرانی‌هاست بلکه از سراسر جهان برای دیدن بناهای تاریخی و تپه‌های

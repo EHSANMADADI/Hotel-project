@@ -74,13 +74,13 @@ const EditMenuPage = ({ menuItemId }: { menuItemId: string }) => {
         const uploadedData = new FormData()
         images.forEach((image, index) => {
             uploadedData.append(`file[${index}]`, image)
-        })
+        })        
         try {
             await api.post(`/menu-item/${menuItemId}/medias`, uploadedData)
             toast.success("تصویر با موفقیت آپلود شد.")
         } catch (err) {
             console.log(err)
-            toast.error("تعریف محصول با خطا مواجه شد.", { duration: 3000 })
+            toast.error("تغییر تصویر با خطا مواجه شد.", { duration: 3000 })
         }
     }
     if (isPending)
@@ -89,12 +89,12 @@ const EditMenuPage = ({ menuItemId }: { menuItemId: string }) => {
         </div>
     if (isError)
         return <div className='text-center flex flex-col gap-6 min-h-[620px] p-4 text-2xl font-bold'>میزی پیدا نشد
-            <Link href='/coffee-shop/admin' className='mx-auto bg-coffee w-fit text-lg px-4 py-2 inline-block animate-pulse rounded-lg'>بازگشت به پنل ادمین </Link>
+            <Link href='/coffee-shop/admin' className='mx-auto bg-coffee w-fit xs:w-20 text-gray-200 text-lg px-4 py-2 inline-block animate-pulse rounded-lg'>بازگشت به پنل ادمین </Link>
         </div>
 
     return (
         <main className='min-h-[620px] py-4 flex flex-col gap-4 items-center bg-neutral-300 dark:bg-slate-800'>
-            <Link href='/coffee-shop/admin' className='absolute top-24 left-4 bg-coffee text-lg px-4 py-2 inline-block animate-pulse rounded-lg'>بازگشت به پنل ادمین </Link>
+            <Link href='/coffee-shop/admin' className='absolute top-24 left-4 xs:w-20 text-gray-200 text-center bg-coffee text-lg px-4 py-2 inline-block animate-pulse rounded-lg'>بازگشت به پنل ادمین </Link>
             <Title> تغییر آیتم منو</Title>
             <form onSubmit={submitHandler} className='flex flex-col items-center gap-4'>
                 <label htmlFor="Name" className='font-semibold'>نام  : </label>

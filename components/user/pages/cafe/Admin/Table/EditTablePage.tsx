@@ -66,12 +66,12 @@ const EditTablePage = ({ tableId }: { tableId: string }) => {
         </div>
     if (isError)
         return <div className='text-center flex flex-col gap-6 min-h-[620px] p-4 text-2xl font-bold'>میزی پیدا نشد
-            <Link href='/coffee-shop/admin' className='mx-auto bg-coffee w-fit text-lg px-4 py-2 inline-block animate-pulse rounded-lg'>بازگشت به پنل ادمین </Link>
+            <Link href='/coffee-shop/admin' className='mx-auto bg-coffee w-fit xs:w-20 text-gray-200 text-lg px-4 py-2 inline-block animate-pulse rounded-lg'>بازگشت به پنل ادمین </Link>
             </div>
 
     return (
         <main className='min-h-[620px] py-4 bg-neutral-300 dark:bg-slate-800'>
-            <Link href='/coffee-shop/admin' className='absolute top-24 left-4 bg-coffee text-lg px-4 py-2 inline-block animate-pulse rounded-lg'>بازگشت به پنل ادمین </Link>
+            <Link href='/coffee-shop/admin' className='absolute top-24 left-4 xs:w-20 text-gray-200 bg-coffee text-lg px-4 py-2 inline-block animate-pulse rounded-lg'>بازگشت به پنل ادمین </Link>
             <Title>صفحه به روزرسانی اطلاعات میز {table.number_of_table}</Title>
             <form onSubmit={submitHandler} className='flex flex-col items-center gap-4'>
                 <label htmlFor="Capacity" className='font-semibold'>ظرفیت میز : </label>

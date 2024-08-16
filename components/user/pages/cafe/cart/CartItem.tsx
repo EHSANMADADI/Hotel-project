@@ -14,9 +14,10 @@ interface Props {
 const CartItem = ({ details: { name, price, quantity, id, image } }: Props) => {
     const dispatch = useSetCart()
     return (
-        <article className='bg-[#e79a3c] flex justify-between items-center shadow-lg text-neutral-900 max-w-3xl w-5/6 rounded-xl p-6'>
+        <article className='bg-[#e79a3c] flex justify-between xs:flex-col items-center shadow-lg text-neutral-900 max-w-3xl w-5/6 rounded-xl p-6'>
+            
             <Image src={`http://127.0.0.1:8000/menu-item/${image}` || ''} alt={`${name} Photo`} width={80} height={80} className='rounded-full' />
-            <span className='font-bold text-center text-lg'>{name} </span>
+            <span className='font-bold text-center text-lg '>{name} </span>
             <div className='flex flex-col gap-4'>
                 <div className='flex gap-2 items-center justify-center mt-2'>
                     <button onClick={() => (dispatch({ type: "ADD", payload: { id, price, name, image } }))} className='bg-green-500 font-semibold   hover:bg-green-600 flex justify-center items-center duration-200 w-8 h-8 rounded-full'>+</button>
