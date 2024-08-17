@@ -13,7 +13,7 @@ export default function MenuResturont() {
         >
           هتل
         </Link>
-      
+
         <Link
           href="/coffee-shop"
           className="mx-5 text-xl cursor-pointer hover:text-blue-500 duration-200"

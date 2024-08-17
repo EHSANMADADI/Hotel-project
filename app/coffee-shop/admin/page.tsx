@@ -9,7 +9,11 @@ const AdminPage = () => {
     if (isAdmin) {
         return <Admin />
     }
-    else{
+    else if(!isAdmin){
+        return <NotAvailable/>
+    }
+
+    else if(isAdmin===null){
         return <NotAvailable/>
     }
 
