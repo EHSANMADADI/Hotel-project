@@ -1,9 +1,14 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import { CiShoppingCart } from "react-icons/ci";
 import { FaUserEdit } from "react-icons/fa";
-
+import useStore from "@/store/Store";
+import { log } from "console";
 export default function MenuResturont() {
+  const { isAdmin } = useStore();
+  console.log(isAdmin);
+
   return (
     <div className="flex z-50 text-center justify-between border-b-2 border-dashed m-5 p-5">
       <div className="flex justify-around">
@@ -13,7 +18,7 @@ export default function MenuResturont() {
         >
           هتل
         </Link>
-      
+
         <Link
           href="/coffee-shop"
           className="mx-5 text-xl cursor-pointer hover:text-blue-500 duration-200"
@@ -32,13 +37,15 @@ export default function MenuResturont() {
         >
           کترینگ
         </Link>
-        <Link
-          className="mx-5 text-xl cursor-pointer hover:text-blue-500 duration-200"
-          href="/resturant/personalPage"
-        >
-          {" "}
-          خرید های من
-        </Link>
+        {isAdmin === false && (
+          <Link
+            className="mx-5 text-xl cursor-pointer hover:text-blue-500 duration-200"
+            href="/resturant/personalPage"
+          >
+            {" "}
+            خرید های من
+          </Link>
+        )}
       </div>
       <div className="flex">
         <div className=" text-5xl z-50 m-0 border w-12 border-dashed border-yellow-200  flex rounded-full justify-center">
