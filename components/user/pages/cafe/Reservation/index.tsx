@@ -33,7 +33,8 @@ export default function ReserveFormPage() {
         if (!_checkInHour || !_date || !_checkOutHour)
             return toast.error("ساعت و تاریخ را به درستی وارد کنید")
         setDate(_date)
-        const formattedDate = date.replaceAll('/', '-')
+        const formattedDate = _date.replaceAll('/', '-')
+        
         api.get<Tables[]>(`/coffee-shops-unreserved?date=${formattedDate}&time=${_checkInHour}`)
             .then(data => setTables(data.data)
             ).catch(_ => {
@@ -58,7 +59,6 @@ export default function ReserveFormPage() {
             <div className="bg-transparent dark:bg-slate-900 mb-5">
                 <form onSubmit={submitHandler} className="grid grid-cols-1 gap-6 gap-y-16 rounded-xl p-6 items-center max-w-3xl mx-auto w-2/3 my-12 px-8">
                     <div className='flex gap-2 flex-col border-b border-gray-700 focus-within:border-b-2'>
-
                         <label htmlFor="date">تاریخ </label>
                         <DatePicker name='date'
                             id='date'

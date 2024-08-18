@@ -1,4 +1,5 @@
 import api from '@/Configs/api'
+import useRole from '@/store/useRole'
 import { useRouter } from 'next/navigation'
 import React, { FormEvent } from 'react'
 import toast from 'react-hot-toast'
@@ -12,8 +13,13 @@ interface Props {
 
 const ConfirmReserve = ({ checkInHour, checkOutHour, tableId, date }: Props) => {
     const { push } = useRouter()
+    const { role } = useRole()
     const reserveTable = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        if (role === 'UnAuthenticated') {
+            toast.error('برای رزرو میز ابتدا وارد حساب کاربری خود شوید.')
+            return push('/auth')
+        }
         const formData = new FormData(e.currentTarget)
         const firstName = formData.get('firstName') as string
         const lastName = formData.get('lastName') as string
@@ -27,6 +33,11 @@ const ConfirmReserve = ({ checkInHour, checkOutHour, tableId, date }: Props) => 
             return toast.error("شماره تلفن را به درستی وارد کنید")
         if (!number_of_guest || +number_of_guest < -1)
             return toast.error('تعداد مهمان را به درستی وارد کنید')
+        if (role === 'Admin') {
+            toast.error("رزرو میز برای ادمین امکان پذیر نیست.")
+            return push('/coffee-shop')
+        }
+
         api.post('/coffee-shop/reserves', {
             number_of_guest,
             coffee_shop_table_id: tableId,
