@@ -5,11 +5,13 @@ import cls from "classnames";
 import { HambergerMenu } from "iconsax-react";
 import useMenu from "./use";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
-import { CiShoppingCart } from "react-icons/ci";
-import { FaUserEdit } from "react-icons/fa";
+import { CiLogout, CiShoppingCart } from "react-icons/ci";
+import { FaUser, FaUserEdit } from "react-icons/fa";
 import { useCart } from '@/Context/FoodContextProvider'
 
 import { useEffect, useState } from "react";
+import useRole from "@/store/useRole";
+import { IoLogOutOutline } from "react-icons/io5";
 
 const links = [
   {
@@ -43,13 +45,8 @@ const links = [
 ];
 
 const Menu = () => {
-  const { setToggleMenu, showStickyMenu, toggleMenu, dashboardPage } =
-    useMenu();
-  const cart = useCart();
-
-  const [selectedItems, setSelectItems] = useState(cart.selectedItems)
-   
-  const amountOfCart = (cart.selectedItems || []).reduce((acc, item) => item.quantity + acc, 0);
+  const { setToggleMenu, showStickyMenu, toggleMenu, dashboardPage } = useMenu();
+  const { role, changeRole } = useRole()
 
   return (
     <>
@@ -139,27 +136,23 @@ const Menu = () => {
                   {name}
                 </Link>
               ))}
+
             </div>
           </div>
         </div>
+        <div className="flex mx-8 sm:mx-4 sm:gap-1 gap-2 items-center">
 
-        {/* ThemeSwitcher-icon */}
-        <div className={cls(`p-5`, showStickyMenu ? 'text-black' : 'text-white')}>
-          <ThemeSwitcher />
-        </div>
-        {/* 
-        //////////////////////////////////////// */}
-        {/* <div>
-          <span className={cls(`mt-8 font-bold flex`, showStickyMenu ? 'text-black' : 'text-white')}>{amountOfCart}</span>
+          <div className={cls(`p-5`, showStickyMenu ? 'text-black' : 'text-white')}>
+            <ThemeSwitcher />
+          </div>
 
-        </div> */}
-        {/* /////shoping */}
-        {/* <div className={cls(` text-5xl z-50 m-0 border w-12 border-dashed border-yellow-200  flex rounded-full justify-center`, showStickyMenu ? "text-black" : "text-white")}>
-          <Link href={'/ShopingCard'}> <CiShoppingCart className='p-1 cursor-pointer' /> </Link>
-        </div> */}
+          <div className={cls(` text-5xl mx-1 z-50 m-0 border w-12 border-none hover:text-blue-300 cursor-pointer  flex rounded-full justify-center`, showStickyMenu ? "text-black" : "text-white")}>
+            {role === 'UnAuthenticated' ?
+              <Link href={'/auth'}><FaUser title="ورود به حساب کاربری" size={36} /></Link> :
+              <IoLogOutOutline title="خروج از حساب کاربری" onClick={() => changeRole('UnAuthenticated')} />
+            }
 
-        <div className={cls(` text-5xl mx-1 z-50 m-0 border w-12 border-none hover:text-blue-300 cursor-pointer  flex rounded-full justify-center`, showStickyMenu ? "text-black" : "text-white")}>
-          <Link href={'/auth'}><FaUserEdit className="p-1" /></Link>
+          </div>
         </div>
       </div>
 

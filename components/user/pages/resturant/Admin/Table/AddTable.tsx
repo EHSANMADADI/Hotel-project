@@ -8,7 +8,7 @@ const AddTable = () => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget)
         const number_of_chairs = formData.get("capacity");
-        const number_of_tables = formData.get("tableNumber")
+        const number_of_table = formData.get("tableNumber")
         const rates = formData.get("price");
         const type = formData.get("type");
         const description = formData.get("description")
@@ -17,7 +17,7 @@ const AddTable = () => {
             toast.error("ظرفیت میز را به درستی مشخص کنید.", { duration: 3000 })
             return
         }
-        if (!number_of_tables) {
+        if (!number_of_table) {
             toast.error("شماره میز را مشخص کنید.", { duration: 3000 })
             return
         }
@@ -31,7 +31,7 @@ const AddTable = () => {
             rates,
             type,
             number_of_chairs,
-            number_of_tables,
+            number_of_table,
             description,
             is_disabled:false
         }).then(() => {

@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { clearCookie } from "@/utils/cookie";
 
 type Role = "Admin" | "Client" | "UnAuthenticated";
 
@@ -12,7 +13,10 @@ const useRole = create<AuthState>()(
   persist(
     (set) => ({
       role: "UnAuthenticated",
-      changeRole: (role) => set({ role }),
+      changeRole: (role) => {
+        if (role === "UnAuthenticated") clearCookie();
+        set({ role });
+      },
     }),
     {
       name: "auth",
