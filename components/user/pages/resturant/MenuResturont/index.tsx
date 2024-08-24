@@ -1,14 +1,12 @@
 "use client";
+import useRole from "@/store/useRole";
 import Link from "next/link";
 import React from "react";
 import { CiShoppingCart } from "react-icons/ci";
 import { FaUserEdit } from "react-icons/fa";
-import useStore from "@/store/Store";
-import { log } from "console";
-export default function MenuResturont() {
-  const { isAdmin } = useStore();
-  console.log(isAdmin);
 
+export default function MenuResturont() {
+  const { role } = useRole()
   return (
     <div className="flex z-50 text-center justify-between border-b-2 border-dashed m-5 p-5">
       <div className="flex justify-around">
@@ -37,7 +35,7 @@ export default function MenuResturont() {
         >
           کترینگ
         </Link>
-        {isAdmin === false && (
+        {role === 'Client' && (
           <Link
             className="mx-5 text-xl cursor-pointer hover:text-blue-500 duration-200"
             href="/resturant/personalPage"

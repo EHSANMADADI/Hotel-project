@@ -3,17 +3,19 @@ import ArshiveRezerv from "@/components/shared/ArshiveRezerv/ArshiveRezerv";
 import CancellRezerved from "@/components/shared/CancellRezerv/CancellRezerved";
 import CurrentRezerv from "@/components/shared/CurrentRezerv/CurrentRezerv";
 import React, { useState } from "react";
-import useStore from "@/store/Store";
+// import useStore from "@/store/Store";
 import Link from "next/link";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
+import useRole from "@/store/useRole";
 export default function page() {
-  const { isAdmin } = useStore();
+  // const { isAdmin } = useStore();
+   const {role} = useRole()
   const [arshive, setArshive] = useState(false);
   const [currentRezerv, setCurrentRezerv] = useState(true);
   const [cancellRezerved, setCancellRezerved] = useState(false);
   return (
     <>
-      {isAdmin === false && (
+      {role !== 'Admin' && (
         <div className="w-full h-screen mt-14 bg-white pr-10">
           <div className="flex mb-5 pt-5 justify-start">
             <button

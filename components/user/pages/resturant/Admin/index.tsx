@@ -17,7 +17,7 @@ const AdminPanel = () => {
     const { role } = useRole()
     if (typeof window !== "undefined")
         if (role !== 'Admin') {
-            push('/coffee-shop')
+            push('/resturant')
         }
         else
             return (

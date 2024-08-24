@@ -9,4 +9,11 @@ const getCookie = (cookieName: string) => {
     ?.split("=")[1];
 };
 
-export { setCookie, getCookie };
+const clearCookie = () => {
+  console.log(document.cookie);
+  document.cookie =
+    "accessToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path/=;";
+  console.log(document.cookie);
+};
+
+export { setCookie, getCookie, clearCookie };
