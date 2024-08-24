@@ -84,7 +84,7 @@ const AddItem = () => {
 
                 <form onSubmit={submitHandler} className='flex flex-col items-center gap-4'>
                     <label htmlFor="Name" className='font-semibold'>نام  : </label>
-                    <input id='Name' name='name' placeholder='مثلا اسپرسو'
+                    <input id='Name' name='name' placeholder='نام غذا'
                         className='w-1/4 bg-slate-50 dark:bg-zinc-900 ring-1 ring-coffee min-w-[300px] md:min-w-[200px] px-2 py-1 rounded-lg focus:outline-none focus:ring-2'
                     />
                     <label htmlFor="price" className='font-semibold'>قیمت (به تومان) : </label>
@@ -94,11 +94,11 @@ const AddItem = () => {
                     <label htmlFor="description" className='font-semibold'> ترکیبات : </label>
                     <input id='description' name='description'
                         className='w-1/4 bg-slate-50 dark:bg-zinc-900 ring-1 ring-coffee min-w-[300px] md:min-w-[200px] px-2 py-1 rounded-lg focus:outline-none focus:ring-2'
-                        placeholder='مثلا ترکیب شیرسرد و اسپرسو' />
+                        placeholder='' />
                     <label htmlFor="slug" className='font-semibold'> اضافه کردن SLUG (به زبان انگلیسی) </label>
                     <input id='slug' name='slug'
                         className='w-1/4 bg-slate-50 dark:bg-zinc-900 ring-1 ring-coffee min-w-[300px] md:min-w-[200px] px-2 py-1 rounded-lg focus:outline-none focus:ring-2'
-                        placeholder='مثلا espresso' />
+                        placeholder='مثلا kabab' />
                     <button className='bg-coffee hover:bg-coffee/90 duration-200 w-fit px-6 py-1.5 rounded-lg font-semibold text-slate-200'>اضافه کردن به منو</button>
                 </form>
                 <form onSubmit={submitImage} className='flex flex-col gap-2 items-center'>
