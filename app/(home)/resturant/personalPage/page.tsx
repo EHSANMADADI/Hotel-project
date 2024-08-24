@@ -72,7 +72,7 @@ export default function page() {
           شما به این صفحه دسترسی ندارید
           <div dir="ltr" className="p-5 m-2">
             <Link
-              className="text-blue-800 text-6xl md:text-3xl bg-white hover:text-blue-800"
+              className="text-red-800 text-6xl md:text-3xl bg-white hover:text-blue-800"
               href="/resturant"
             >
               {" "}
