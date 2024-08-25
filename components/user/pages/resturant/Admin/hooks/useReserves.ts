@@ -10,10 +10,7 @@ export interface CafeReserves {
   status: string;
   coffee_shop_table_id: number;
   number_of_guest: string;
-  table: {
-    id: number;
-    number_of_table: string;
-  };
+  table_id: string;
 }
 
 const useReserves = () => {

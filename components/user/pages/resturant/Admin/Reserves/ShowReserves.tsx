@@ -1,12 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import useReserves from '../hooks/useReserves'
-import { Tabledata , TableHeader } from '../../../cafe/user/Utils';
+import { Tabledata, TableHeader } from '../../../cafe/user/Utils';
 import Title from '../Title';
 import Spinner from '../Spinner';
 import useDeleteReserve from '../hooks/useDeleteReserve';
+import api from '@/Configs/api';
 
 const ShowReserves = () => {
   const { data: reserves, isPending } = useReserves()
+  const [tableNumbers, setTableNumbers] = useState([] as string[])
+  useEffect(() => {
+    const fetchTableNumber = () => {
+      try {
+        reserves?.map((reserve) => api.get(`/tables/${reserve.table_id}`)
+          .then((res) => setTableNumbers(tableNumbers => [...tableNumbers, res.data.number_of_table
+          ])
+          ))
+      } catch (er) {
+
+      }
+    }
+    fetchTableNumber()
+  }, [reserves])
+
   const { mutate } = useDeleteReserve()
   if (isPending || !reserves)
     return <Spinner />
@@ -30,11 +46,11 @@ const ShowReserves = () => {
             </tr>
           </thead>
           <tbody>
-            {reserves?.length && reserves.map(reserve => <tr key={reserve.id}>
+            {reserves?.length && reserves.map((reserve, index) => <tr key={reserve.id}>
               <Tabledata>{reserve.id}</Tabledata>
               <Tabledata>{reserve.check_in_hour.slice(0, 5)}</Tabledata>
               <Tabledata>{reserve.check_out_hour.slice(0, 5)}</Tabledata>
-              <Tabledata>{reserve.table.number_of_table}</Tabledata>
+              <Tabledata>{tableNumbers[index]}</Tabledata>
               <Tabledata>{reserve.date}</Tabledata>
               <Tabledata>{reserve.number_of_guest}</Tabledata>
               <Tabledata>{reserve.status.toLocaleLowerCase() === 'full' ? 'پرداخت شده' : 'تسویه نشده'}</Tabledata>
