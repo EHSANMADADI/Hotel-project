@@ -1,7 +1,6 @@
 import { StaticImageData } from "next/image";
 import Image from "next/image";
-import Link from "next/link";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Swal from 'sweetalert2';
 import { useCart, useSetCart } from '@/Context/FoodContextProvider';
 
@@ -12,14 +11,11 @@ type ImageCardProps = {
     price: number;
     id: number | any;
     onClose: () => void;
-
+    description:string
 }
 
 
-const Selected = ({ imageSrc, name, price, id, onClose }: ImageCardProps) => {
-    const [img, setImg] = useState(imageSrc);
-    const [names, setNames] = useState(name);
-    const [prices, setPrices] = useState(price);
+const Selected = ({ imageSrc, name, price, id, onClose , description}: ImageCardProps) => {
     const [quantity, setQuantity] = useState();
 
     const cart = useCart()
@@ -48,7 +44,7 @@ const Selected = ({ imageSrc, name, price, id, onClose }: ImageCardProps) => {
                     alt='img-food'
                     width={300}
                     height={500}
-                    className='w-full h-full'
+                    className='w-full max-h-[400px] object-cover'
                 />
             </div>
 
@@ -57,7 +53,7 @@ const Selected = ({ imageSrc, name, price, id, onClose }: ImageCardProps) => {
                 <div><h2 className="text-2xl font-black">{name}</h2></div>
                 <div className="font-black">{price}</div>
                 <div className="mt-5">
-                    <p>در این قسمت اطلاعات  مربوط به غذای انتخابی نمایش داده میشود</p>
+                    <p>{description}</p>
                 </div>
                 <div className="my-5">
                     <form onSubmit={(e) => { e.preventDefault() }}>
@@ -70,9 +66,6 @@ const Selected = ({ imageSrc, name, price, id, onClose }: ImageCardProps) => {
                 <div className="my-5">
                     <button onClick={click} className="transition-all p-2 bg-transparent border border-blue-200 rounded-md hover:bg-blue-300">افزودن به سبد خرید</button>
                 </div>
-
-
-
             </div>
         </div>
     )
