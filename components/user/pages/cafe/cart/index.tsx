@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import CartItem from './CartItem'
-import { useCart } from '@/Context/CartContextProvider'
+import { useCart, useSetCart } from '@/Context/CartContextProvider'
 import api from '@/Configs/api'
 import { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
@@ -14,6 +14,7 @@ const Cart = () => {
   const cart = useCart()
   const { push } = useRouter()
   const { role } = useRole()
+  const dispatch = useSetCart()
   const [reserves, setReserves] = useState([] as CafeReserves[])
   const [selectedReserve, setSelectedReserve] = useState(-1)
   const [tableNumbers, setTableNumbers] = useState([] as string[])
@@ -97,18 +98,19 @@ const Cart = () => {
                 cart.selectedItems.map(item => {
                   menuItemQuantities.push(item.quantity)
                   menuItemIds.push(item.id)
-                  api.post('/coffee-shop/1/orders', {
-                    reserve_id: selectedReserve,
-                    menu_item_quantities: menuItemQuantities,
-                    date: "2222/02/02",
-                    menu_item_id: menuItemIds
-                  }).then(() => {
-                    toast.success('آیتم ها با موفقیت رزرو شدند. منتظر شما هستیم🌹'); push('/coffee-shop')
-                  })
-                    .catch(() => toast.error('خطایی در پشت صحنه رخ داد. دقایقی دیگر دوباره تلاش کنید.'))
                 })
-
-              }} title='اتصال به درگاه پرداخت' className='bg-orange-500 hover:bg-orange-600 duration-200 hover:-translate-y-1 text-neutral-900 w-4/5 max-w-lg rounded-xl sm:px-6 px-12 py-4 text-center font-bold tracking-wide'>
+                api.post('/coffee-shop/1/orders', {
+                  reserve_id: selectedReserve,
+                  menu_item_quantities: menuItemQuantities,
+                  date: "2222/02/02",
+                  menu_item_id: menuItemIds
+                }).then(() => {
+                  dispatch({ type: "CHECKOUT" })
+                  toast.success('آیتم ها با موفقیت رزرو شدند. منتظر شما هستیم🌹'); push('/coffee-shop')
+                })
+                  .catch(() => toast.error('خطایی در پشت صحنه رخ داد. دقایقی دیگر دوباره تلاش کنید.'))
+              }}
+                title='اتصال به درگاه پرداخت' className='bg-orange-500 hover:bg-orange-600 duration-200 hover:-translate-y-1 text-neutral-900 w-4/5 max-w-lg rounded-xl sm:px-6 px-12 py-4 text-center font-bold tracking-wide'>
                 پرداخت
                 {" "} {cart.total.toLocaleString()} {""}
                 تومان

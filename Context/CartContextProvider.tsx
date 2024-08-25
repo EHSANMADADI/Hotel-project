@@ -5,8 +5,8 @@ interface SelectedItems {
     name: string
     price: number
     quantity: number
-    image:string
-    
+    image: string
+
 }
 
 interface Props {
@@ -33,7 +33,7 @@ interface Action {
         id: number,
         name: string,
         price: string,
-        image:string
+        image: string
     }
 }
 
@@ -42,7 +42,7 @@ const reducer = (state: Cart, action: Action) => {
         case "ADD": {
             const index = state.selectedItems.findIndex(item => item.id === action.payload.id)
             if (index === -1) {
-                state.selectedItems.push({ id: action.payload.id, name: action.payload.name, price: +action.payload.price , image:action.payload.image, quantity: 1 })
+                state.selectedItems.push({ id: action.payload.id, name: action.payload.name, price: +action.payload.price, image: action.payload.image, quantity: 1 })
                 state.total += +action.payload.price;
             }
             else {
@@ -71,6 +71,7 @@ const reducer = (state: Cart, action: Action) => {
         }
         case "CHECKOUT": {
             state.checkout = true;
+            state.selectedItems = []
             return {
                 ...state
             }
