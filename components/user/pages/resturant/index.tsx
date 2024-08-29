@@ -21,7 +21,7 @@ const Resturant = () => {
      }
      return (
           <>
-               <div className=" sm:w-full bg-food">
+               <div className=" sm:w-full bg-food pb-2">
 
 
                     <div className="text-white"> <MenuResturont /></div>
