@@ -19,9 +19,9 @@ const Resturant = () => {
           console.log(newsearch);
 
      }
-     return (<>
+     return (
           <>
-               <div className="absolute sm:w-full bg-food">
+               <div className=" sm:w-full bg-food">
 
 
                     <div className="text-white"> <MenuResturont /></div>
@@ -56,6 +56,7 @@ const Resturant = () => {
                               </div>
                          </div>
                     </div>
+                    </div>
 
                     <div className='flex flex-wrap'>
                          <Product type={typefood} searchItem={searchItem} />
@@ -68,7 +69,7 @@ const Resturant = () => {
                          <Footer />
                     </div>
                     <ChatOnline />
-               </div>
+              
              
 
           </>
@@ -76,6 +77,6 @@ const Resturant = () => {
 
 
 
-     </>)
+)
 }
 export default Resturant;

@@ -1,11 +1,11 @@
 import Resturant from "@/components/user/pages/resturant";
-import MenuResturont from "@/components/user/pages/resturant/MenuResturont";
 
 const Page = () => {
   return (
     <>
-     
-      <Resturant />
+      <div className="w-full">
+        <Resturant />
+      </div>
     </>
   );
 };
