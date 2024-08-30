@@ -3,7 +3,6 @@ import React from 'react'
 import { useState } from 'react';
 import Product from './prodoct';
 import { LiaSearchSolid } from "react-icons/lia";
-import { useRef } from 'react';
 import Testimonials from '../home/testmonials/index';
 import Footer from '@/components/user/pages/home/footer/index';
 import Link from 'next/link';
@@ -16,8 +15,6 @@ const Resturant = () => {
      function handelSearchItem(e: any) {
           const newsearch = e.target.value;
           setSerchItem(newsearch);
-          console.log(newsearch);
-
      }
      return (
           <>
@@ -57,11 +54,7 @@ const Resturant = () => {
                          </div>
                     </div>
                     </div>
-
-                    <div className='flex flex-wrap'>
                          <Product type={typefood} searchItem={searchItem} />
-
-                    </div>
                     <div className='mt-8'>
                          <Testimonials id={1} />
                     </div>

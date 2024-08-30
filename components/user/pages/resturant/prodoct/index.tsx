@@ -29,11 +29,11 @@ export default function Product(props: { type: string; searchItem: any; }) {
      if (props.searchItem) {
 
           return (
-               <div className='grid grid-cols-3 gap-x-6 gap-y-3 overflow-hidden'>
+               <div className='grid grid-cols-3 md:grid-cols-2 gap-x-6 gap-y-3 overflow-hidden p-4 md:p-4'>
                     {
                          menuItems.map((p, index) => {
                               if (p.name.toLocaleLowerCase().includes(props.searchItem.toLocaleLowerCase()))
-                                   return <div key={p.id} className="mx-4 sm:w-full md:w-2/4 h-[30vw] relative overflow-hidden card p-2">
+                                   return <div key={p.id} className="w-full h-[30vw] relative overflow-hidden card p-2">
                                         <div className=" hover:left-0 h-full w-full flex  justify-center items-center flex-col absolute  -left-full top-0 text-white bg-blue-500 opacity-60 z-20 dark:bg-zinc-700  card-over">
                                              <h1 className="text-4xl md:text-base font-bold card-overlay-heading">{p.name}</h1>
                                              <p className="text-xl font-bold m-5 md:text-sm md:m-2 border-b-2 card-overlay-paragraph">{p.price + 'T'} </p>
@@ -60,11 +60,10 @@ export default function Product(props: { type: string; searchItem: any; }) {
      }
 
      return (
-
-          <div className='grid grid-cols-3 gap-x-6 gap-y-3 overflow-hidden'>
+          <div className='grid grid-cols-3 md:grid-cols-2 gap-x-6 gap-y-3 overflow-hidden p-4 md:p-4'>
                {
                     menuItems.map((p, index) => (
-                         <div key={p.id} className="w-full mx-4 sm:w-full md:w-2/4 h-[30vw] relative overflow-hidden card p-2">
+                         <div key={p.id} className="w-full h-[30vw] relative overflow-hidden card p-2">
                               <div className=" hover:left-0 h-full w-full flex  justify-center items-center flex-col absolute  -left-full top-0 text-white bg-blue-500 opacity-60 z-20 dark:bg-zinc-700  card-over">
                                    <h1 className="text-4xl md:text-base font-bold card-overlay-heading">{p.name}</h1>
                                    <p className="text-xl font-bold m-5 md:text-sm md:m-2 border-b-2 card-overlay-paragraph">{p.price + 'T'} </p>
