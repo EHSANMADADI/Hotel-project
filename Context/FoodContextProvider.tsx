@@ -40,14 +40,15 @@ const reducer = (state: Cart, action: Action) => {
     switch (action.type) {
         case "ADD": {
             const index = state.selectedItems.findIndex(item => item.id === action.payload.id)
+            
             if (index === -1) {
                 state.selectedItems.push({ id: action.payload.id, name: action.payload.name, price: action.payload.price, quantity: action.payload.quantity })
-                state.total += action.payload.price;
+                state.total += (action.payload.price * action.payload.quantity);
             }
             else {
                 state.selectedItems[index].quantity++;
                 state.total += state.selectedItems[index].price;
-            }
+            }            
             return {
                 ...state
             }
@@ -89,7 +90,6 @@ const CartContextProvider = ({ children }: Props) => {
 }
 
 const useCart = () => useContext(CartContext)
-
 
 const useSetCart = () => useContext(SetCartContext)
 

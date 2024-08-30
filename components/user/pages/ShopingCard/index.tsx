@@ -20,20 +20,12 @@ export default function Index() {
      const [reserves, setReserves] = useState([] as CafeReserves[])
      const [selectedReserve, setSelectedReserve] = useState(-1)
      const { push } = useRouter()
-     useEffect(() => {
-          api.get('/my-reserves').then(data => console.log(data.data)
-          )
-     }, [])
-
-
+     console.log(cart);
      const [selectedItems, setSelectItems] = useState(cart.selectedItems)
      const handeldel = (id: number, q: number) => {
-          // console.log(id);
-          // const newArray = cart.selectedItems.filter((item) => item.id !== id);
-          // setSelectItems(newArray);
           dispatch({ type: "REMOVE", payload: { id, q } })
      }
-     const handelAdd = (id:  , price: number, name: string, q: number = 1) => {
+     const handelAdd = (id:number , price: number, name: string, q: number = 1) => {
           dispatch({ type: "ADD", payload: { id, payload: { id, price, name, q } } })
      }
      return (
