@@ -13,7 +13,7 @@ const CardItem = ({ item: { description, id, media: image, name, price } }: Menu
     const selectedItem = cart.selectedItems.find(item => item.id === id)
     return (<article className='flex xs:flex-col rounded-lg bg-stone-300/80 dark:bg-stone-950/80 justify-between px-4 lg:px-8 md:px-6 py-2 items-center'>
         <div className='flex gap-4 items-center'>
-            <Image className='rounded-full border-2 border-dashed border-coffee bg-coffee/25' src={`http://127.0.0.1:8000/menu-item/${image[image.length -1]?.url}` || ''} alt='' width={72} height={72} />
+            <Image className='rounded-full border-2 border-dashed border-coffee bg-coffee/25' src={`http://87.107.54.231/menu-item/${image[image.length -1]?.url}` || ''} alt='' width={72} height={72} />
             <div>
                 <p className='dark:text-white text-slate-900 font-mono font-semibold'>{name}</p>
                 <p className='dark:text-slate-400 text-slate-700'>{description}</p>

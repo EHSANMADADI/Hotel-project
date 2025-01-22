@@ -3,7 +3,7 @@ import { getCookie } from "@/utils/cookie";
 
 const api = axios.create({
 
-  baseURL: "http://87.107.54.23/api",
+  baseURL: "http://87.107.54.231/api",
 
   headers: {
     Accept: "application/json",

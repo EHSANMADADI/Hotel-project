@@ -1,14 +1,17 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 import ArshiveRezerv from "@/components/shared/ArshiveRezerv/ArshiveRezerv";
 import CancellRezerved from "@/components/shared/CancellRezerv/CancellRezerved";
 import CurrentRezerv from "@/components/shared/CurrentRezerv/CurrentRezerv";
 import React, { useState } from "react";
-// import useStore from "@/store/Store";
+import useStore from "@/store/Store";
 import Link from "next/link";
+
 import { IoArrowBackCircleSharp } from "react-icons/io5";
 import useRole from "@/store/useRole";
 export default function page() {
-  // const { isAdmin } = useStore();
+  const { isAdmin } = useStore();
+   // eslint-disable-next-line react-hooks/rules-of-hooks
    const {role} = useRole()
   const [arshive, setArshive] = useState(false);
   const [currentRezerv, setCurrentRezerv] = useState(true);

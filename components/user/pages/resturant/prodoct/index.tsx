@@ -43,7 +43,7 @@ export default function Product(props: { type: string; searchItem: any; }) {
                                              }
                                              }>سفارش</button>
                                         </div>
-                                        <Image className='w-full h-full rounded-md dark:opacity-40 object-cover' src={`http://127.0.0.1:8000/menu-item/${p.media[p.media.length - 1]?.url}` || ''} alt={p.name} fill />
+                                        <Image className='w-full h-full rounded-md dark:opacity-40 object-cover' src={`http://87.107.54.231/menu-item/${p.media[p.media.length - 1]?.url}` || ''} alt={p.name} fill />
                                    </div>
                          }
                          )
@@ -51,7 +51,7 @@ export default function Product(props: { type: string; searchItem: any; }) {
                     }
                     {open &&
                          <Modal Open={open} onClose={() => setOpen(false)} >
-                              <Selected imageSrc={`http://127.0.0.1:8000/menu-item/${menuItems[index].media[menuItems[index].media.length - 1]?.url}` || ''} description={menuItems[index].description} name={menuItems[index].name} price={+menuItems[index].price} id={menuItems[index].id} onClose={() => setOpen(false)} />
+                              <Selected imageSrc={`http://87.107.54.231/menu-item/${menuItems[index].media[menuItems[index].media.length - 1]?.url}` || ''} description={menuItems[index].description} name={menuItems[index].name} price={+menuItems[index].price} id={menuItems[index].id} onClose={() => setOpen(false)} />
                          </Modal>
                     }
                </div>
@@ -73,13 +73,13 @@ export default function Product(props: { type: string; searchItem: any; }) {
                                    }
                                    }>سفارش</button>
                               </div>
-                              <Image className='w-full h-full rounded-md dark:opacity-40 object-cover' src={`http://127.0.0.1:8000/menu-item/${p.media[p.media.length - 1]?.url}` || ''} alt={p.name} fill />
+                              <Image className='w-full h-full rounded-md dark:opacity-40 object-cover' src={`http://87.107.54.231/menu-item/${p.media[p.media.length - 1]?.url}` || ''} alt={p.name} fill />
                          </div>
                     ))
                }
                {open &&
                     <Modal Open={open} onClose={() => setOpen(false)} >
-                         <Selected imageSrc={`http://127.0.0.1:8000/menu-item/${menuItems[index].media[menuItems[index].media.length - 1]?.url}` || ''} name={menuItems[index].name} description={menuItems[index].description} price={+menuItems[index].price} id={menuItems[index].id} onClose={() => setOpen(false)} />
+                         <Selected imageSrc={`http://87.107.54.231/menu-item/${menuItems[index].media[menuItems[index].media.length - 1]?.url}` || ''} name={menuItems[index].name} description={menuItems[index].description} price={+menuItems[index].price} id={menuItems[index].id} onClose={() => setOpen(false)} />
                     </Modal>
                }
           </div>
