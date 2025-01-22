@@ -21,7 +21,7 @@ const AdminPanel = () => {
         }
         else
             return (
-                <main className='min-h-[600px] flex gap-2 sm:flex-col sm:gap-4 m-2 rounded-lg bg-transparent'>
+                <main className='h-screen flex gap-2 sm:flex-col sm:gap-4 m-2 rounded-lg bg-transparent'>
                     <Sidebar setStep={setStep} step={step} />
                     <section className='bg-neutral-300 dark:bg-slate-800 w-full py-4 px-4 xs:px-1 xs:text-sm rounded-lg shadow-xl'>
                         {step === "Edit Table" && <EditTables />}

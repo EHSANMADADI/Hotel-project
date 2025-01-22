@@ -53,6 +53,7 @@ export default function FormRezerv() {
                })
           }
      }
+console.log(date,Ocloack.current?.value,checkOutTime,tableId);
 
      return (
           <>
@@ -133,7 +134,10 @@ export default function FormRezerv() {
                               status: "full",
                               number_of_guest: numGuests
                          }).then(_ => { toast.success("میز با موفقیت رزرو شد."); push('/resturant') })
-                              .catch(_ => toast.error("رزرو انجام نشد."))
+                              .catch(err=> {toast.error("رزرو انجام نشد.")
+                                   console.log(err);
+                                   
+                              })
                     }}>ثبت نهایی</button>}
           </>
      )

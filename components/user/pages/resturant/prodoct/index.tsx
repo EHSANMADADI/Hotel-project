@@ -24,7 +24,8 @@ export default function Product(props: { type: string; searchItem: any; }) {
      }, [])
      const [open, setOpen] = useState(false);
      const [index, setIndex] = useState(-1)
-
+    console.log(menuItems);
+    
      // /search-user
      if (props.searchItem) {
 
