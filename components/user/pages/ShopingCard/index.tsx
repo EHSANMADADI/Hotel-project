@@ -29,7 +29,7 @@ export default function Index() {
           dispatch({ type: "ADD", payload: { id, payload: { id, price, name, q } } })
      }
      return (
-          <div className='flex justify-center flex-col gap-12 items-center'>
+          <div className='flex justify-center flex-col gap-12 items-center h-screen overflow-auto'>
                <div className="p-5 flex self-end bg-transparent">
                     <Link className=' text-blue-500 text-6xl md:text-3xl hover:text-blue-800' href='/resturant'> <IoArrowBackCircleSharp /> </Link>
                </div>

@@ -22,7 +22,7 @@ const AdminPanel = () => {
         }
         else
             return (
-                <div className='bg-slate-900'>
+                <div className='bg-slate-900 h-screen'>
                     <MenuResturont />
                     <main className='min-h-[600px] flex gap-2 sm:flex-col sm:gap-4 m-2 rounded-lg bg-transparent'>
                         <Sidebar setStep={setStep} step={step} />
