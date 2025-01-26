@@ -105,7 +105,15 @@ const Cart = () => {
                   date: "2222/02/02",
                   menu_item_id: menuItemIds
                 }).then(() => {
-                  dispatch({ type: "CHECKOUT" })
+                  dispatch({
+                    type: "CHECKOUT",
+                    payload: {
+                      id: 0,
+                      name: '',
+                      price: 0,
+                      image: ''
+                    }
+                  })
                   toast.success('آیتم ها با موفقیت رزرو شدند. منتظر شما هستیم🌹'); push('/coffee-shop')
                 })
                   .catch(() => toast.error('خطایی در پشت صحنه رخ داد. دقایقی دیگر دوباره تلاش کنید.'))

@@ -43,13 +43,9 @@ const AddItem = () => {
             setId(response.data?.id)
             toast.success("با موفقیت به منو اضافه شد.")
         } catch (err) {
-            const statusCode = err?.response?.status
-            if (statusCode === 422)
-                toast.error("تعریف محصول با خطا مواجه شد. (اطلاعات ورودی کافی نمی باشد.)", { duration: 3000 })
-            else if (statusCode >= 500)
-                toast.error("تعریف محصول با خطا مواجه شد. (خطای سمت سرور رخ داد.)", { duration: 3000 })
-            else
-                toast.error("تعریف محصول با خطا مواجه شد.", { duration: 3000 })
+            console.log(err);
+            
+          toast.error("عملیات با خطا مواجه شد لطفا دوباره تلاش کنید")
         }
     }
 

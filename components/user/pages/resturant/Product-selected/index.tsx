@@ -8,7 +8,7 @@ import { useCart, useSetCart } from '@/Context/FoodContextProvider';
 type ImageCardProps = {
     imageSrc: StaticImageData | string;
     name: string;
-    price: number;
+    price: number|string;
     id: number | any;
     onClose: () => void;
     description:string

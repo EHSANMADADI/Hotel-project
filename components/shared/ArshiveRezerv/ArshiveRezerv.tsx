@@ -1,6 +1,6 @@
 import React from 'react'
 interface ArshiveRezerv {
-  Food: true
+  Food: boolean
 }
 export default function ArshiveRezerv({Food}:ArshiveRezerv) {
   return (

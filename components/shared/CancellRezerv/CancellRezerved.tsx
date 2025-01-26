@@ -1,6 +1,6 @@
 import React from 'react'
 interface CancellRezerved {
-  Food: true
+  Food: boolean
 }
 export default function CancellRezerved({Food}:CancellRezerved) {
   return (

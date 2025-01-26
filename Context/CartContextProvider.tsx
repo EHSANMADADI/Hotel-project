@@ -1,102 +1,107 @@
-import { createContext, useReducer, useContext, ReactNode } from "react";
+import { createContext, useReducer, useContext, ReactNode, Dispatch } from "react";
 
 interface SelectedItems {
-    id: number
-    name: string
-    price: number
-    quantity: number
-    image: string
-
+    id: number;
+    name: string;
+    price: number|string|any;
+    quantity: number;
+    image: string;
 }
 
 interface Props {
-    children: ReactNode
+    children: ReactNode;
 }
 
 interface Cart {
-    selectedItems: SelectedItems[]
-    checkout: boolean
-    total: number
+    selectedItems: SelectedItems[];
+    checkout: boolean;
+    total: number;
 }
 
-const CartContext = createContext({} as Cart)
-const SetCartContext = createContext({})
+const CartContext = createContext<Cart>(null!);
+const SetCartContext = createContext<Dispatch<Action> | undefined>(undefined);
 
-const initialState = {
+const initialState: Cart = {
     total: 0,
     checkout: false,
-    selectedItems: []
-}
+    selectedItems: [],
+};
+
 interface Action {
-    type: "ADD" | "REMOVE" | "CHECKOUT",
+    type: "ADD" | "REMOVE" | "CHECKOUT";
     payload: {
-        id: number,
-        name: string,
-        price: string,
-        image: string
-    }
+        id: number;
+        name: string;
+        price: number|string|any;
+        image: string;
+    };
 }
 
-const reducer = (state: Cart, action: Action) => {
+const reducer = (state: Cart, action: Action): Cart => {
     switch (action.type) {
         case "ADD": {
-            const index = state.selectedItems.findIndex(item => item.id === action.payload.id)
+            const index = state.selectedItems.findIndex((item) => item.id === action.payload.id);
             if (index === -1) {
-                state.selectedItems.push({ id: action.payload.id, name: action.payload.name, price: +action.payload.price, image: action.payload.image, quantity: 1 })
+                state.selectedItems.push({
+                    id: action.payload.id,
+                    name: action.payload.name,
+                    price: +action.payload.price,
+                    image: action.payload.image,
+                    quantity: 1,
+                });
                 state.total += +action.payload.price;
-            }
-            else {
+            } else {
                 state.selectedItems[index].quantity++;
                 state.total += state.selectedItems[index].price;
             }
             return {
-                ...state
-            }
+                ...state,
+            };
         }
         case "REMOVE": {
-            const index = state.selectedItems.findIndex(item => item.id === action.payload.id)
-            if (index === -1)
-                return state;
-            else if (state.selectedItems[index].quantity === 1) {
+            const index = state.selectedItems.findIndex((item) => item.id === action.payload.id);
+            if (index === -1) return state;
+            if (state.selectedItems[index].quantity === 1) {
                 state.total -= +state.selectedItems[index].price;
                 state.selectedItems.splice(index, 1);
-            }
-            else {
+            } else {
                 state.total -= +state.selectedItems[index].price;
                 state.selectedItems[index].quantity--;
             }
             return {
-                ...state
-            }
+                ...state,
+            };
         }
         case "CHECKOUT": {
-            state.checkout = true;
-            state.selectedItems = []
             return {
-                ...state
-            }
+                ...state,
+                checkout: true,
+                selectedItems: [],
+            };
         }
-
-        default: return state
+        default:
+            return state;
     }
-}
+};
 
 const CartContextProvider = ({ children }: Props) => {
     const [cart, dispatch] = useReducer(reducer, initialState);
-    return <CartContext.Provider value={cart}>
-        <SetCartContext.Provider value={dispatch}>
-            {children}
-        </SetCartContext.Provider>
-    </CartContext.Provider>
-}
+    return (
+        <CartContext.Provider value={cart}>
+            <SetCartContext.Provider value={dispatch}>{children}</SetCartContext.Provider>
+        </CartContext.Provider>
+    );
+};
 
-const useCart = () => useContext(CartContext)
+const useCart = () => useContext(CartContext);
 
+const useSetCart = () => {
+    const context = useContext(SetCartContext);
+    if (!context) {
+        throw new Error("useSetCart must be used within a CartContextProvider");
+    }
+    return context;
+};
 
-const useSetCart = () => useContext(SetCartContext)
-
-
-export default CartContextProvider
-
-export { useCart, useSetCart }
-
+export default CartContextProvider;
+export { useCart, useSetCart };
