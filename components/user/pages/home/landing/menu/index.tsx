@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import Link from "next/link";
 import cls from "classnames";
 import { HambergerMenu } from "iconsax-react";
@@ -102,7 +102,7 @@ const Menu = () => {
         items-center border-b-[1px] border-white/20 py-5 md:px-3"
           >
             <Link href={"/"} className="ml-3 relative">
-              <Image
+              <img
                 src={
                   showStickyMenu
                     ? "/images/logo-dark.png"

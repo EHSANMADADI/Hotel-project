@@ -74,7 +74,7 @@ const Testimonials = (props: { id?: number }) => {
                         </div>
                         <div className="flex justify-start items-center w-full">
                           <div className="min-w-[60px] max-w-[60px] aspect-square rounded-full overflow-hidden">
-                            <Image
+                            <img
                               src={"/images/1.jpg"}
                               alt="landing"
                               className="w-full h-full object-cover object-center"

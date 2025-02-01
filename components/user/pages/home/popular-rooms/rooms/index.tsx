@@ -3,7 +3,7 @@ import Slider from "@/components/shared/slider";
 // @ts-ignore
 import { SplideSlide } from "@splidejs/react-splide";
 import Footer from "@/components/user/pages/home/footer/index";
-import Image from 'next/image';
+
 import Link from 'next/link';
 export default function RoomsS() {
      return (
@@ -23,7 +23,7 @@ export default function RoomsS() {
                          .map((_, i) => (
                               <SplideSlide key={i} >
                                    <div className="h-auto w-auto">
-                                        <Image src={`/images/room/item-room${i + 1}.jpg`} alt="image" width={800} height={10} />
+                                        <img src={`/images/room/item-room${i + 1}.jpg`} alt="image" width={800} height={10} />
                                    </div>
                               </SplideSlide>
                          ))}
