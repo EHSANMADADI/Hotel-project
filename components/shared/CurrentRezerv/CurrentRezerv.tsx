@@ -1,7 +1,7 @@
 import React from "react";
 
 interface CurrentRezerv {
-  Food: true
+  Food: boolean
 }
 
 export default function CurrentRezerv({ Food }: CurrentRezerv) {

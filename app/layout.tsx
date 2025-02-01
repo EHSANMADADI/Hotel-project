@@ -8,12 +8,12 @@ import { Inter } from "next/font/google";
 import RootContainer from "@/components/shared/containers/root";
 import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-  weight: "500",
-});
+// const inter = Inter({
+//   subsets: ["latin"],
+//   variable: "--font-inter",
+//   display: "swap",
+//   weight: "500",
+// });
 
 const yekanBakh = localFont({
   src: [
@@ -77,7 +77,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" dir="rtl">
-      <body className={`${inter.variable} ${yekanBakh.className}`}>
+      <body className={`${yekanBakh.className}`}>
           <Suspense fallback={<Loading />}>
             <Provider>
               <RootContainer>

@@ -22,11 +22,11 @@ export default function Index() {
      const { push } = useRouter()
      console.log(cart);
      const [selectedItems, setSelectItems] = useState(cart.selectedItems)
-     const handeldel = (id: number, q: number) => {
-          dispatch({ type: "REMOVE", payload: { id, q } })
+     const handeldel = (id: number, quantity: number) => {
+          dispatch({ type: "REMOVE", payload: { id, quantity } })
      }
-     const handelAdd = (id:number , price: number, name: string, q: number = 1) => {
-          dispatch({ type: "ADD", payload: { id, payload: { id, price, name, q } } })
+     const handelAdd = (id:number , price: number, name: string, quantity: number = 1) => {
+          dispatch({ type: "ADD", payload: { id, price, name, quantity}})
      }
      return (
           <div className='flex justify-center flex-col gap-12 items-center h-screen overflow-auto'>
@@ -55,7 +55,7 @@ export default function Index() {
                                         <div>
                                              <h3 className="text-3xl text-gray-400 p-2"> قیمت:{item.price * item.quantity}تومان</h3>
                                         </div>
-                                        <div className='text-4xl  rounded-full hover:bg-blue-300 duration-200 cursor-pointer border border-dashed border-blue-700' onClick={() => handelAdd(item.id, item.name, item.price)}>
+                                        <div className='text-4xl  rounded-full hover:bg-blue-300 duration-200 cursor-pointer border border-dashed border-blue-700' onClick={() => handelAdd(item.id,item.price,item.name)}>
                                              <IoAdd />
                                         </div>
                                         <div className='text-3xl p-1 hover:text-white hover:bg-red-700 rounded-full duration-200 border border-dashed border-red-500 cursor-pointer' onClick={() => handeldel(item.id, item.quantity)}>

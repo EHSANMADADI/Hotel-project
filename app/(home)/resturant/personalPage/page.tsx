@@ -4,13 +4,13 @@ import ArshiveRezerv from "@/components/shared/ArshiveRezerv/ArshiveRezerv";
 import CancellRezerved from "@/components/shared/CancellRezerv/CancellRezerved";
 import CurrentRezerv from "@/components/shared/CurrentRezerv/CurrentRezerv";
 import React, { useState } from "react";
-import useStore from "@/store/Store";
+
 import Link from "next/link";
 
 import { IoArrowBackCircleSharp } from "react-icons/io5";
 import useRole from "@/store/useRole";
 export default function page() {
-  const { isAdmin } = useStore();
+  // const { isAdmin } = useStore();
    // eslint-disable-next-line react-hooks/rules-of-hooks
    const {role} = useRole()
   const [arshive, setArshive] = useState(false);
@@ -71,7 +71,7 @@ export default function page() {
         </div>
       )}
 
-      {(isAdmin === false || isAdmin === null) && (
+      {/* {(isAdmin === false || isAdmin === null) && (
         <div className="w-full h-screen flex justify-center items-center font-bold text-red-600 text-2xl ">
           
           شما به این صفحه دسترسی ندارید
@@ -85,7 +85,7 @@ export default function page() {
             </Link>
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 }
