@@ -48,7 +48,7 @@ const EditMenu = () => {
               <th className='align-middle p-1 border-2 border-indigo-400'>توضیحات</th>
               <th className='align-middle p-1 border-2 border-indigo-400' colSpan={0.3} >ویرایش و حذف</th>
               {menuItems?.map((item: MenuType) => <tr key={item.id}>
-                <TableData> <Image src={`http://87.107.54.231/menu-item/${typeof item.media === 'object' && item.media[item.media.length - 1]?.url}` || ''} alt={item.name.substring(0, 10)} width={40} height={40} className='object-cover m-auto' /> </TableData>
+                <TableData> <Image src={`https://87.107.54.231/menu-item/${typeof item.media === 'object' && item.media[item.media.length - 1]?.url}` || ''} alt={item.name.substring(0, 10)} width={40} height={40} className='object-cover m-auto' /> </TableData>
                 <TableData>{item.name}</TableData>
                 <TableData>{Number(item.price).toLocaleString()}</TableData>
                 <TableData title={item.description}>{item.description?.slice(0,255) || " - "}</TableData>
