@@ -29,7 +29,7 @@ const CheckOtpForm = ({ mobile, setStep }: Props) => {
         <form
             className='flex flex-col justify-between gap-10 items-center'
             onSubmit={submitHandler}>
-            <Image src='/images/logo1.png' width={120} height={120} alt='logo' />
+            <img src='/images/logo1.png' width={120} height={120} alt='logo' />
             <label htmlFor="OTP" className='text-slate-100 font-semibold text-lg w-11/12 text-center'
             >کد پنج رقمی پیامک شده به شماره &quot;<span className='font-bold tracking-wide'>{mobile}</span>&quot; را وارد کنید</label>
             <input type="number" id='OTP' value={OTPInput}

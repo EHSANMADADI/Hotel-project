@@ -50,7 +50,7 @@ const Videos = () => {
               </div>
               <div className="w-full h-full overflow-hidden">
                 <div className="w-full transition-all duration-500 group-hover:scale-110">
-                  <Image
+                  <img
                     src={"/images/11.jpg"}
                     alt="landing"
                     className="w-full h-full object-cover object-center"
@@ -97,7 +97,7 @@ const Videos = () => {
               </div>
               <div className="w-full h-full overflow-hidden">
                 <div className="w-full transition-all duration-500 group-hover:scale-110">
-                  <Image
+                  <img
                     src={"/images/miladtawer.jpg"}
                     alt="landing"
                     className="w-full  object-center"

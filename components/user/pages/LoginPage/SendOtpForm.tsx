@@ -26,7 +26,7 @@ const SendOtpForm = ({ setStep, mobile, setMobile }: SendOTPPRops) => {
             <form onSubmit={submitHandler}
                 className='flex flex-col justify-between gap-10 items-center'
             >
-                <Image src='/images/logo1.png' width={120} height={120} alt='logo' />
+                <img src='/images/logo1.png' width={120} height={120} alt='logo' />
                 <label htmlFor="mobileNumber"
                     className='text-slate-100 font-semibold text-lg '
                 >لطفا شماره موبایل خود را وارد نمایید</label>

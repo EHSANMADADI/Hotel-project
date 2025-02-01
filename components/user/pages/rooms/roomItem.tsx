@@ -17,7 +17,7 @@ export default function RoomItem() {
                                    return (
                                         <div key={i} className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-5">
                                              <Link href='#'>
-                                                  <Image className="rounded-t-lg" width={500} height={300} src={`/images/room/item-room${i + 1}.jpg`} alt="RoomItem" />
+                                                  <img className="rounded-t-lg" width={500} height={300} src={`/images/room/item-room${i + 1}.jpg`} alt="RoomItem" />
                                              </Link>
                                              <div className="p-5 text-center">
                                                   <Link href="#">

@@ -14,7 +14,7 @@ const AboutUs = () => {
           <div className="w-[400px] h-[500px] relative md:w-[350px] md:h-[400px] sm:h-[350px]">
             <div className="absolute inset-0 z-10">
               <span className="absolute -top-8 -left-8 sm:-left-4 sm:-top-4 h-[200px] w-[200px] bg-[url('/images/dots.png')] z-10"></span>
-              <Image
+              <img
                 src={"/images/11.jpg"}
                 alt="about"
                 className="w-full h-full shadow-inner object-cover rounded object-center relative z-20 hover:scale-95 transition-all duration-500"

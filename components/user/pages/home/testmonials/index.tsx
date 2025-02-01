@@ -98,7 +98,7 @@ const Testimonials = (props: { id?: number }) => {
           </div>
         </div>
         <div className="absolute inset-0 bg-slate-950  opacity-60 z-10"></div>
-        {props.id ? (<Image
+        {props.id ? (<img
           src={"/images/res1.jpg"}
           alt="landing"
           className="fixed top-0 left-0 w-full h-full object-cover object-center"
@@ -152,7 +152,7 @@ const Testimonials = (props: { id?: number }) => {
                         </div>
                         <div className="flex justify-start items-center w-full">
                           <div className="min-w-[60px] max-w-[60px] aspect-square rounded-full overflow-hidden">
-                            <Image
+                            <img
                               src={"/images/1.jpg"}
                               alt="landing"
                               className="w-full h-full object-cover object-center"

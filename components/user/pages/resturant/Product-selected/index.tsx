@@ -38,8 +38,7 @@ const Selected = ({ imageSrc, name, price, id, onClose , description}: ImageCard
     return (
 
         <div className='w-full h-fit group relative flex overflow-hidden rounded-md  outline outline-2 outline-Theme-cream justify-between'>
-                <Image
-                    src={imageSrc}
+                <img src={imageSrc}
                     alt='img-food'
                     width={300}
                     height={500}

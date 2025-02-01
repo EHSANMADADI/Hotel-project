@@ -84,7 +84,7 @@ const Stats = () => {
           ))}
         </div>
         <div className="absolute inset-0 bg-blue-950 opacity-60 z-10"></div>
-        <Image
+        <img
           src={"/images/15.jpg"}
           alt="landing"
           className="fixed top-0 left-0 w-full h-full object-cover object-center"

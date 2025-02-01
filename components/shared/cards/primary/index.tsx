@@ -45,7 +45,7 @@ const PrimaryCard = ({
           ></span>
           {children}
         </div>
-        <Image
+        <img
           src={image}
           alt="landing"
           className={cls(

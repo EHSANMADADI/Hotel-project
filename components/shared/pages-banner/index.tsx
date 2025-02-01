@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import PagesBanner from "./types";
 
 const PagesBanner = ({ children, src, alt }: PagesBanner) => {
@@ -12,7 +12,7 @@ const PagesBanner = ({ children, src, alt }: PagesBanner) => {
           {children}
         </div>
         <div className="absolute inset-0 bg-blue-950 opacity-50 z-10"></div>
-        <Image
+        <img
           src={src}
           alt={alt}
           className="fixed top-0 left-0 w-full h-full object-cover object-center"

@@ -6,7 +6,7 @@ export default function Rooms() {
 
           <div className="w-full h-screen relative z-50">
                <div className="absolute  inset-0 bg-slate-900 opacity-40 dark:bg-slate-950"></div>
-               <Image
+               <img
                     src={"/images/room/1.jpg"}
                     alt="bg-Rooms"
                     className="w-full h-screen  object-cover object-center bg-center overflow-hidden  bg-fixed"

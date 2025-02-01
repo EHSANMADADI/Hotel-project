@@ -1,6 +1,4 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
 // @ts-ignore
 import { SplideSlide } from "@splidejs/react-splide";
 import Slider from "@/components/shared/slider";

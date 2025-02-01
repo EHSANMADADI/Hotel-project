@@ -20,7 +20,7 @@ const BlogCard = ({ date, desc, href, src, title }: BlogCardImpl) => {
             <span className="font-bold text-xs mb-1">{date.month}</span>
             <span className="font-medium leading-[1]">{date.day}</span>
           </div>
-          <Image
+          <img
             className="w-full h-full object-cover object-center group-hover:scale-110 transition-all duration-700"
             src={src}
             alt={title}
