@@ -74,7 +74,7 @@ export default function Product(props: { type: string; searchItem: any; }) {
                                    }
                                    }>سفارش</button>
                               </div>
-                              <img className='w-full h-full rounded-md dark:opacity-40 object-cover' src={`https://87.107.54.231/menu-item/${p.media[p.media.length - 1]?.url}` || ''} alt={p.name} fill />
+                              <img className='w-full h-full rounded-md dark:opacity-40 object-cover' src={`https://87.107.54.231/menu-item/${p.media[p.media.length - 1]?.url}` || ''} alt={p.name}  />
                          </div>
                     ))
                }

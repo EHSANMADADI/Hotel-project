@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { IoArrowBackCircleSharp } from "react-icons/io5";
 import { PiSmileyStickerThin } from "react-icons/pi";
 import bgFood from '@/public/images/BgFood.jpg';
-import Image from 'next/image';
+
 import { FaMinus } from "react-icons/fa";
 import { IoAdd } from "react-icons/io5";
 import { CafeReserves } from '../resturant/Admin/hooks/useReserves';
@@ -45,7 +45,7 @@ export default function Index() {
                          {
                               selectedItems.map((item, index) => (
                                    <div key={index} className="hover:bg-gray-300 hover:scale-110 duration-300 p-5 border my-3 flex flex-row items-center justify-between mx-auto rounded-md">
-                                        <div className='border border-blue-400 rounded-full'><Image className='rounded-full' src={bgFood} width={100} height={100} alt="avatar_food" /></div>
+                                        <div className='border border-blue-400 rounded-full'><img className='rounded-full' src={bgFood.src} width={100} height={100} alt="avatar_food" /></div>
                                         <div>
                                              <h3 className="text-3xl text-gray-400 p-2">{item.name}</h3>
                                         </div>

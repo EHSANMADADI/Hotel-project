@@ -16,7 +16,7 @@ const CartItem = ({ details: { name, price, quantity, id, image } }: Props) => {
     return (
         <article className='bg-[#e79a3c] flex justify-between xs:flex-col items-center shadow-lg text-neutral-900 max-w-3xl w-5/6 rounded-xl p-6'>
             
-            <Image src={`http://127.0.0.1:8000/menu-item/${image}` || ''} alt={`${name} Photo`} width={80} height={80} className='rounded-full' />
+            <img src={`http://127.0.0.1:8000/menu-item/${image}` || ''} alt={`${name} Photo`} width={80} height={80} className='rounded-full' />
             <span className='font-bold text-center text-lg '>{name} </span>
             <div className='flex flex-col gap-4'>
                 <div className='flex gap-2 items-center justify-center mt-2'>

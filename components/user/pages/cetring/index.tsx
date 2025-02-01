@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Menu from "@/components/user/pages/home/landing/menu/index";
-import Image from "next/image";
+
 import { useState } from "react";
 import { LiaSearchSolid } from "react-icons/lia";
 import { useRef } from "react";
@@ -26,7 +26,7 @@ export default function Cetring() {
       <div className="w-full h-screen relative z-50">
         <div className="absolute  inset-0 bg-gray-700 opacity-40 dark:bg-slate-950"></div>
 
-        <Image
+        <img
           src={"/images/discover-menu.jpg"}
           alt="bg-cetring"
           className="w-full h-screen  object-cover object-center bg-center overflow-hidden  bg-fixed"

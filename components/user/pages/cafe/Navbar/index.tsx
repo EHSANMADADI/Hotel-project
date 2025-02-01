@@ -1,5 +1,5 @@
 'use client'
-import Image from 'next/image'
+
 import Link from 'next/link'
 import { BsCart2 } from "react-icons/bs";
 import { useCart } from '@/Context/CartContextProvider'
@@ -38,7 +38,7 @@ const Navbar = () => {
           <BsCart2 color='#eee' className='hover:fill-slate-300 duration-100' size={32} />
         </Link>
         <Link href='#' className='md:self-end' >
-          <Image src={'/images/cafe/Clogo.webp'} className='border-dotted
+          <img src={'/images/cafe/Clogo.webp'} className='border-dotted
                      border-amber-600 border-2' alt='logo' width={48} height={44} />
         </Link>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image';
+
 import { IoLocationSharp } from "react-icons/io5";
 import { FaPhoneFlip } from "react-icons/fa6";
 import PrimaryButton from '@/components/shared/buttons/primary';
@@ -48,7 +48,7 @@ const Footer = () => {
           <div className="w-full flex justify-center items-start mt-10 md:flex-col">
             <div className="w-1/3 flex justify-start items-start flex-col md:w-full md:max-w-md">
               <Link href={"/"} className="w-[150px]">
-                <Image
+                <img
                   src={"/images/cafe/Clogo.webp"}
                   alt="landing"
                   className=" object-center"

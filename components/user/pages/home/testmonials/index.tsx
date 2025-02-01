@@ -1,7 +1,7 @@
 "use client";
 
 import { CallCalling } from "iconsax-react";
-import Image from "next/image";
+
 import Link from "next/link";
 // @ts-ignore
 import { SplideSlide } from "@splidejs/react-splide";
@@ -104,7 +104,7 @@ const Testimonials = (props: { id?: number }) => {
           className="fixed top-0 left-0 w-full h-full object-cover object-center"
           width={1500}
           height={800}
-        />) : (<Image
+        />) : (<img
           src={"/images/15.jpg"}
           alt="landing"
           className="fixed top-0 left-0 w-full h-full object-cover object-center"
