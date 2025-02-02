@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 import React, { ReactNode } from 'react'
 import Image, { StaticImageData } from "next/image";
@@ -68,7 +69,7 @@ export default function Product(props: { type: string; searchItem: any; }) {
                                              </Modal>
 
                                         </div>
-                                        <img className='w-full h-full rounded-md dark:opacity-40  object-cover' src={p.img} alt={'Food photo'} />
+                                        <img className='w-full h-full rounded-md dark:opacity-40  object-cover' src={p.img.src} alt={'Food photo'} />
                                    </div>
                               ) : (<div key={index}></div>)
 
@@ -98,7 +99,7 @@ export default function Product(props: { type: string; searchItem: any; }) {
                                                   </Modal>
 
                                              </div>
-                                             <Image className='w-full h-full rounded-md dark:opacity-40  object-cover' src={p.img} alt={'Food photo'} />
+                                             <img className='w-full h-full rounded-md dark:opacity-40  object-cover' src={p.img.src} alt={'Food photo'} />
                                         </div>
                                    ) : (<div key={index}></div>)
                               ))
@@ -124,7 +125,7 @@ export default function Product(props: { type: string; searchItem: any; }) {
                                                   </Modal>
 
                                              </div>
-                                             <Image className='w-full h-full rounded-md dark:opacity-40  object-cover' src={p.img} alt={'Food photo'} />
+                                             <img className='w-full h-full rounded-md dark:opacity-40  object-cover' src={p.img.src} alt={'Food photo'} />
                                         </div>
                                    ) : (<div key={index}></div>)
                               ))
@@ -153,7 +154,7 @@ export default function Product(props: { type: string; searchItem: any; }) {
                                         </Modal>
 
                                    </div>
-                                   <Image className='w-full h-full rounded-md dark:opacity-40  object-cover' src={p.img} alt={'Food photo'} />
+                                   <img className='w-full h-full rounded-md dark:opacity-40  object-cover' src={p.img.src} alt={'Food photo'} />
                               </div>
                          ))
                     }
